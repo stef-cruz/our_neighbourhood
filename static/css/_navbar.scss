@@ -6,6 +6,11 @@
 
 .list-unstyled {
   a {
-      color: $prim-colour;
+      color: black;
+      text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
