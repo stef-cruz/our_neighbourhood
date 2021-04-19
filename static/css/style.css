@@ -1,6 +1,31 @@
-html {
-  background-color: #1b1b1b;
-  color: white;
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700|Lora:100,200,300,400,500,600,700&display=swap");
+.hero {
+  background-color: #5710b2;
+}
+
+.navbar i {
+  margin-right: 0.5rem;
+}
+
+.list-unstyled a {
+  color: #5710b2;
+}
+
+* {
+  margin: 0;
+}
+
+body,
+footer {
+  font-family: "Poppins", sans-serif;
+}
+
+.btn-green {
+  border-color: #20D489;
+  color: #20D489;
+}
+.btn-green:hover {
+  background-color: #20D489;
 }
 
 /*# sourceMappingURL=style.css.map */

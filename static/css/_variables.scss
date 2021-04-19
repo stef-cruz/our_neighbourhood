@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700|Lora:100,200,300,400,500,600,700&display=swap");
+
+//Fonts
+$title: "Lora", serif;
+$paragraph: "Poppins", sans-serif;
+
+//Font sizes
+$normal-text-size: 1.6rem;
+
+//Colours
+$prim-colour: #5710b2;
+$sec-colour: #20D489;
+$gray: #a1a5b7;
+
+// Mixins
+@mixin flexbox($display, $align, $justify) {
+  display: $display;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+
+//Media queries, source https://css-tricks.com/conditional-media-query-mixins/
+
+@mixin bp($point) {
+  @if $point == mobile {
+    @media (min-width: 30rem) { @content; }
+  }
+  @else if $point == tablet {
+    @media (min-width: 48rem) { @content; }
+  }
+  @else if $point == desktop {
+    @media (min-width: 64rem)  { @content; }
+  }
+  @else if $point == desktop-large {
+    @media (min-width: 90rem)  { @content; }
+  }
+}
