@@ -1,0 +1,43 @@
+<!-- Nav -->
+    <div class="collapse bg-light" id="navbarHeader">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-md-7 py-4">
+                    <h4 class="text-black">About</h4>
+                    <p class="text-muted">Wonder which services are available in your neighbourhood? Our neighbourhood
+                        is a service that enables communities to share and promote local events, activities, services
+                        and businesses.</p>
+                </div>
+                <div class="col-sm-4 offset-md-1 py-4">
+                    <h4 class="text-black">Navigation</h4>
+                    <ul class="list-unstyled">
+                        {% if request.user.is_authenticated %}
+                            {% if request.user.is_superuser %}
+                                <li><a href="#" class="text-black">Event Management</a></li>
+                            {% endif %}
+                                <li><a href="#" class="text-black">My Profile</a></li>
+                                <li><a href="#" class="text-black">Local Events</a></li>
+                                <li><a href="#" class="text-black">FAQ</a></li>
+                                <li><a href="#" class="text-black">Log Out</a></li>
+                        {% else %}
+                            <li><a href="#" class="text-black">Log In</a></li>
+                            <li><a href="#" class="text-black">Register</a></li>
+                            <li><a href="#" class="text-black">Local Events</a></li>
+                            <li><a href="#" class="text-black">FAQ</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="navbar navbar-light bg-light shadow-sm">
+        <div class="container">
+            <a href="{% url 'home' %}" class="navbar-brand d-flex align-items-center">
+                <i class="fas fa-map-marked-alt"></i><strong>Our Neighbourhood</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
+                    aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </div>

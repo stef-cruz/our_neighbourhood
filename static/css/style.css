@@ -15,6 +15,54 @@
   text-decoration: underline;
 }
 
+#footer-brand a {
+  color: rgba(87, 16, 178, 0.8);
+}
+#footer-brand a:hover {
+  color: #5710b2;
+}
+
+.menu {
+  font-size: 0.9rem;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  margin-bottom: 1rem;
+}
+.menu a {
+  text-decoration: none;
+}
+.menu a:hover {
+  color: #20D489;
+}
+@media (min-width: 48rem) {
+  .menu {
+    margin-bottom: 0;
+  }
+}
+
+.menu-sub {
+  display: none;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  flex-direction: column;
+}
+
+.menu-item {
+  display: block;
+  padding: 0;
+}
+.menu-item .menu-link {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  flex: 0 0 100%;
+  transition: none;
+}
+
 * {
   margin: 0;
 }
@@ -34,6 +82,18 @@ footer {
 }
 .btn-green:hover {
   background-color: #20D489;
+}
+
+.text-green-custom {
+  color: #20D489;
+}
+
+.text-purple-custom {
+  color: #5710b2;
+}
+
+.text-gray-custom {
+  color: #6c757d;
 }
 
 /*# sourceMappingURL=style.css.map */

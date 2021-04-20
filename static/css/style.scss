@@ -1,6 +1,7 @@
 @import "variables";
 @import "index";
 @import "navbar";
+@import "footer";
 
 //
 // General Styling
@@ -14,7 +15,7 @@ footer {
   font-family: $paragraph;
 }
 
-//Heading
+//Page header
 .page-header {
   margin: 3rem 0;
 }
@@ -28,3 +29,17 @@ footer {
     background-color: $sec-colour;
   }
 }
+
+//Text colour
+.text-green-custom {
+  color: $sec-colour;
+}
+
+.text-purple-custom {
+  color: $prim-colour;
+}
+
+.text-gray-custom {
+  color: $gray;
+}
+

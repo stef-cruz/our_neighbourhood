@@ -1,0 +1,60 @@
+// Footer source: https://themes.getbootstrap.com/preview/?theme_id=85897
+
+#footer-brand {
+  a {
+    color: rgba($prim-colour, 0.8);
+
+    &:hover {
+      color: $prim-colour;
+    }
+  }
+}
+
+.menu {
+  font-size: 0.9rem;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  margin-bottom: 1rem;
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      color: $sec-colour;
+    }
+  }
+
+  @include bp(tablet) {
+    margin-bottom: 0;
+  }
+}
+
+
+// Sub menu
+.menu-sub {
+  display: none;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  flex-direction: column;
+}
+
+// Menu item
+.menu-item {
+  display: block;
+  padding: 0;
+
+  // Menu Link
+  .menu-link {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    flex: 0 0 100%;
+    transition: none;
+
+  }
+
+}
