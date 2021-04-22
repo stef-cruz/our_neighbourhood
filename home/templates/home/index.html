@@ -13,8 +13,8 @@
                 <p class="fs-5 mb-4">Enabling communities to share and promote local events, activities, services and
                     businesses.</p>
                 <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                    <button type="button" class="btn btn-green btn-lg px-4 me-sm-3 fw-bold">Sign up</button>
-                    <button type="button" class="btn btn-outline-light btn-lg px-4">Log in</button>
+                    <a href="{% url 'account_signup' %}"><button type="button" class="btn btn-green btn-lg px-4 me-sm-3 fw-bold">Sign up</button></a>
+                    <a href="{% url 'account_login' %}"><button type="button" class="btn btn-outline-light btn-lg px-4">Log in</button></a>
                 </div>
             </div>
         </div>
