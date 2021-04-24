@@ -5,42 +5,68 @@
 
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
-{% block content %}
+{% block inner_content %}
 
-<h1>{% trans "Sign In" %}</h1>
+<div id="authentication" class="container">
+        <div class="row pb-0 pe-lg-0 pt-lg-5 align-items-center">
 
-{% get_providers as socialaccount_providers %}
+            <!-- Left side -->
+            <div class="col-lg-7 p-3 p-lg-5 pt-lg-3 bg-primary">
 
-{% if socialaccount_providers %}
-<p>{% blocktrans with site.name as site_name %}Please sign in with one
-of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
-for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
+                <!-- Content top-->
+                <div class="d-flex pt-lg-40 pt-15 text-center">
+                    <h3 class="fw-bolder fs-2x text-white lh-lg">Discover your local events, activites, services and business</h3>
+                </div>
 
-<div class="socialaccount_ballot">
+                <!-- Image bottom -->
 
-  <ul class="socialaccount_providers">
-    {% include "socialaccount/snippets/provider_list.html" with process="login" %}
-  </ul>
+            </div>
 
-  <div class="login-or">{% trans 'or' %}</div>
+            <!-- Right side -->
+            <div class="col-lg-5 position-relative overflow-hidden ps-4 pe-4">
 
+                <h2 class="text-center page-header">{% trans "Sign In" %}</h2>
+
+                <div class="mx-auto">
+                    {% get_providers as socialaccount_providers %}
+
+                    {% if socialaccount_providers %}
+                    <p>{% blocktrans with site.name as site_name %}Please sign in with one
+                        of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
+                        for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
+
+                    <div class="socialaccount_ballot">
+                        <ul class="socialaccount_providers">
+                            {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+                        </ul>
+
+                        <div class="login-or">{% trans 'or' %}</div>
+                    </div>
+
+                    {% include "socialaccount/snippets/login_extra.html" %}
+
+                    {% else %}
+                    <p class="text-muted fw-bold">{% blocktrans %}New here?
+                        <a class="text-green-custom fw-bolder" href="{{ signup_url }}">Create an account</a>.{% endblocktrans %}
+                    </p>
+                    {% endif %}
+
+                    <form class="login" method="POST" action="{% url 'account_login' %}">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        {% if redirect_field_value %}
+                        <p><input class="form-control" type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/></p>
+                        {% endif %}
+                        <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
+                        <p class="mt-2">
+                            <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+                        </p>
+                    </form>
+                </div>
+
+
+            </div>
+        </div>
 </div>
-
-{% include "socialaccount/snippets/login_extra.html" %}
-
-{% else %}
-<p>{% blocktrans %}If you have not created an account yet, then please
-<a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
-{% endif %}
-
-<form class="login" method="POST" action="{% url 'account_login' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-  <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
-</form>
 
 {% endblock %}
