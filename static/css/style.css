@@ -68,9 +68,23 @@
 }
 
 #authentication {
-  height: 100%;
   display: flex;
   flex-direction: column;
+}
+
+.auth-left-panel {
+  background-color: #20D489;
+  height: 100%;
+}
+.auth-left-panel__img {
+  background: url("/media/bg-auth.png") no-repeat center center;
+  background-size: contain;
+  min-height: 21rem;
+}
+@media (min-width: 48rem) {
+  .auth-left-panel__img {
+    min-height: 35rem;
+  }
 }
 
 .authentication-link a {
