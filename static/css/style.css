@@ -22,6 +22,10 @@
   color: #5710b2;
 }
 
+.footer {
+  margin: 3rem 0 1.5rem 0;
+}
+
 .menu {
   font-size: 0.9rem;
   display: flex;
@@ -67,6 +71,77 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+}
+
+.authentication-link a {
+  color: #20D489;
+  text-decoration: none;
+}
+.authentication-link a:hover {
+  color: #20D489;
+}
+
+.allauth-inner-content p {
+  margin-top: 1.5rem;
+  /* mt-4 */
+}
+.allauth-inner-content input {
+  background-color: rgba(108, 117, 125, 0.1);
+  border-color: rgba(108, 117, 125, 0.05);
+  color: #6c757d;
+  transition: color 0.2s ease, background-color 0.2s ease;
+  padding: 0.825rem 1.5rem;
+  border-radius: 0.3rem;
+}
+.allauth-inner-content label:not([for=id_remember]) {
+  padding-top: 1.25rem;
+  /* pt-4 */
+  font-weight: 600;
+  /* fw-bolder */
+}
+.allauth-inner-content input::placeholder {
+  color: rgba(108, 117, 125, 0.5);
+}
+.allauth-inner-content .control-group {
+  margin: 0.75rem 0;
+}
+.allauth-inner-content .checkboxinput {
+  margin: 0.75rem 0;
+}
+.allauth-inner-content .primaryAction-wrapper {
+  margin: 1rem 0;
+}
+.allauth-inner-content .secondaryAction {
+  color: #20D489;
+  text-decoration: none;
+  font-weight: 600;
+  /* fw-bolder */
+}
+.allauth-inner-content button,
+.allauth-inner-content input[type=submit] {
+  /* btn standard bootstrap */
+  color: #fff;
+  background-color: #20D489;
+  border: 1px solid transparent;
+  display: inline-block;
+  font-weight: 600;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.3rem;
+  margin-top: 0.75rem !important;
+  margin-bottom: 0.75rem !important;
+  /* standard bootstrap btn transitions */
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.allauth-inner-content button:hover,
+.allauth-inner-content input[type=submit]:hover {
+  background-color: #fff;
+  border: 0.12rem solid #20D489;
+  color: #212529;
 }
 
 * {

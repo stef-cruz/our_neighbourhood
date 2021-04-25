@@ -3,3 +3,90 @@
   display: flex;
   flex-direction: column;
 }
+
+.authentication-link {
+  a {
+    color: $sec-colour;
+    text-decoration: none;
+
+    &:hover {
+      color: $sec-colour;
+    }
+  }
+
+}
+
+.allauth-inner-content {
+  p {
+    margin-top: 1.5rem; /* mt-4 */
+  }
+
+  input {
+    background-color: rgba($gray, 0.1);
+    border-color: rgba($gray, 0.05);
+    color: $gray;
+    transition: color .2s ease, background-color .2s ease;
+    padding: .825rem 1.5rem;
+    border-radius: .3rem;
+  }
+
+  label:not([for='id_remember']) {
+    padding-top: 1.25rem; /* pt-4 */
+    font-weight: 600; /* fw-bolder */
+  }
+
+  input::placeholder {
+    color: rgba($gray, 0.5);
+  }
+
+  .control-group {
+    margin: .75rem 0;
+  }
+
+  .checkboxinput {
+    margin: .75rem 0;
+  }
+
+  .primaryAction-wrapper {
+    margin: 1rem 0;
+  }
+
+  .secondaryAction {
+    color: $sec-colour;
+    text-decoration: none;
+    font-weight: 600; /* fw-bolder */
+  }
+
+  button,
+  input[type='submit'] {
+    /* btn standard bootstrap */
+    color: #fff;
+    background-color: $sec-colour;
+    border: 1px solid transparent;
+    display: inline-block;
+    font-weight: 600;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .3rem;
+    margin-top: .75rem !important;
+    margin-bottom: .75rem !important;
+
+    /* standard bootstrap btn transitions */
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+    &:hover {
+      background-color: #fff;
+      border: .12rem solid $sec-colour;;
+      color: #212529;
+    }
+  }
+
+}
+
+.form-control.form-control-solid {
+
+}
