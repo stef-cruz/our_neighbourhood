@@ -1,0 +1,9 @@
+.my-profile {
+  &__link {
+    text-decoration: none;
+
+    &:hover {
+      color: $sec-colour;
+    }
+  }
+}

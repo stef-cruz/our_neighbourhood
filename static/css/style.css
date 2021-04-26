@@ -87,6 +87,11 @@
   }
 }
 
+.help-block {
+  color: #5710b2;
+  font-weight: 300;
+}
+
 .authentication-link a {
   color: #20D489;
   text-decoration: none;
@@ -125,18 +130,30 @@
 .allauth-inner-content .primaryAction-wrapper {
   margin: 1rem 0;
 }
-.allauth-inner-content .secondaryAction {
+.allauth-inner-content .forgot-password-link {
   color: #20D489;
   text-decoration: none;
   font-weight: 600;
   /* fw-bolder */
+}
+.allauth-inner-content .btn-outline-sec-colour {
+  color: #5710b2;
+  border-color: #5710b2;
+}
+.allauth-inner-content .btn-outline-sec-colour:hover {
+  color: #fff;
+  background-color: #5710b2;
+  border-color: #5710b2;
+}
+.allauth-inner-content__align-center {
+  text-align: center;
 }
 .allauth-inner-content button,
 .allauth-inner-content input[type=submit] {
   /* btn standard bootstrap */
   color: #fff;
   background-color: #20D489;
-  border: 1px solid transparent;
+  border: 0.12rem solid transparent;
   display: inline-block;
   font-weight: 600;
   text-align: center;
@@ -156,6 +173,13 @@
   background-color: #fff;
   border: 0.12rem solid #20D489;
   color: #212529;
+}
+
+.my-profile__link {
+  text-decoration: none;
+}
+.my-profile__link:hover {
+  color: #20D489;
 }
 
 * {

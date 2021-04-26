@@ -6,11 +6,35 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <p>Content Profile</p>
-                <p>{{ profile }}</p>
+<!-- Profile -->
+<div class="container my-profile">
+    <div class="row">
+        <!-- Anchor links -->
+        <div class="col d-flex align-items-center flex-nowrap text-nowrap overflow-auto py-1">
+            <a class="btn btn-active-accent fw-bolder ms-3 my-profile__link" href="#js-my-details" id="js-my-details-button">My details</a>
+            <a class="btn btn-active-accent fw-bolder ms-3 my-profile__link" href="#js-my-posts" id="js-my-posts-button">My posts</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <!-- My details -->
+            <div id="js-my-details-content" style="display: block;">
+                {% include './profile-details.html' %}
+            </div>
+
+            <!-- My posts -->
+            <div id="js-my-posts-content">
+                {% include './profile-posts.html' %}
             </div>
         </div>
+    </div>
+
+
+</div>
+
+{% endblock %}
+
+{% block postload_js %}
+{{ block.super }}
+<script src="{% static 'profiles/js/hideShowContent.js' %}"></script>
 {% endblock %}
