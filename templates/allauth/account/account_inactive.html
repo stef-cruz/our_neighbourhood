@@ -5,7 +5,17 @@
 {% block head_title %}{% trans "Account Inactive" %}{% endblock %}
 
 {% block inner_content %}
-<h2 class="text-center page-header">{% trans "Account Inactive" %}</h2>
 
-<p>{% trans "This account is inactive." %}</p>
+<div class="row pb-0 pe-lg-0">
+    <div class="col-12">
+        <h2 class="text-center page-header">{% trans "Account Inactive" %}</h2>
+    </div>
+    <div class="col-12 allauth-inner-content__align-center">
+        <p>{% trans "This account is inactive." %}</p>
+        <a href="{% url 'home' %}">
+            <button type="submit">Back to the site</button>
+        </a>
+    </div>
+</div>
+
 {% endblock %}

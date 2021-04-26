@@ -70,10 +70,25 @@
     margin: 1rem 0;
   }
 
-  .secondaryAction {
+  .forgot-password-link {
     color: $sec-colour;
     text-decoration: none;
     font-weight: 600; /* fw-bolder */
+  }
+
+  .btn-outline-sec-colour {
+    color: $prim-colour;
+    border-color: $prim-colour;
+
+    &:hover {
+      color: #fff;
+      background-color: $prim-colour;
+      border-color: $prim-colour;
+    }
+  }
+
+  &__align-center {
+    text-align: center;
   }
 
   button,
@@ -81,7 +96,7 @@
     /* btn standard bootstrap */
     color: #fff;
     background-color: $sec-colour;
-    border: 1px solid transparent;
+    border: 0.12rem solid transparent;
     display: inline-block;
     font-weight: 600;
     text-align: center;
