@@ -146,11 +146,24 @@
   border: 0.12rem solid #20D489;
   color: #212529;
 }
+.form-custom .deactivate-account {
+  text-decoration: none;
+  color: #6c757d;
+  /* texted-muted class */
+  font-size: 0.9rem;
+}
+.form-custom .deactivate-account:hover {
+  color: #5710b2;
+}
 
 .my-profile__link {
   text-decoration: none;
 }
 .my-profile__link:hover {
+  color: #20D489;
+}
+
+.active {
   color: #20D489;
 }
 

@@ -87,4 +87,14 @@
     }
   }
 
+  .deactivate-account {
+    text-decoration: none;
+    color: #6c757d; /* texted-muted class */
+    font-size: .9rem;
+
+    &:hover {
+      color: $prim-colour;
+    }
+  }
+
 }

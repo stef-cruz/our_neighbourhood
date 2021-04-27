@@ -5,7 +5,7 @@ from .models import UserProfile
 class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
-        exclude = ('user',)
+        fields = ['user', 'full_name', 'email_address', 'bio']
 
     def __init__(self, *args, **kwargs):
         """
