@@ -11,8 +11,9 @@ class UserProfile(models.Model):
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     full_name = models.CharField(max_length=50, null=False, blank=False)
-    email_address = models.CharField(max_length=40, null=True, blank=True)
-    password = models.CharField(max_length=20, null=True, blank=True)
+    email_address = models.CharField(max_length=40, null=False, blank=False)
+    bio = models.CharField(max_length=1500, null=True, blank=True)
+    img_url = models.CharField(max_length=1500, blank=True, null=True)
     creation_date = models.CharField(max_length=80, null=True, blank=True)
     is_superuser = models.CharField(max_length=80, null=True, blank=True)
 

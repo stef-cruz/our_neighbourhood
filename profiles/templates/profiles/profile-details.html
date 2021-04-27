@@ -1,1 +1,11 @@
-<p>{{ profile }} details</p>
+<div class="row mt-4">
+    <div class="col-5">
+        <p>image</p>
+    </div>
+    <div class="col-7 form-custom">
+        <form action="{% url 'profile' %}" method="POST">
+            {% csrf_token %}
+            {{ form|crispy }}
+        </form>
+    </div>
+</div>
