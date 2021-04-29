@@ -6,15 +6,16 @@
 
 {% block inner_content %}
 
-<div class="row pb-0 pe-lg-0">
-    <div class="col-12">
-        <h2 class="text-center page-header">{% trans "Account Inactive" %}</h2>
-    </div>
-    <div class="col-12 allauth-inner-content__align-center">
-        <p>{% trans "This account is inactive." %}</p>
-        <a href="{% url 'home' %}">
-            <button type="submit">Back to the site</button>
-        </a>
+<h2 class="text-center page-header-bg">{% trans "Account Inactive" %}</h2>
+
+<div id="authentication" class="container-fluid form-custom">
+    <div class="row pb-0 pe-lg-0">
+        <div class="col-12 form-custom__align-center">
+            <p>{% trans "This account is inactive." %}</p>
+            <a href="{% url 'home' %}">
+                <button type="submit">Back to the site</button>
+            </a>
+        </div>
     </div>
 </div>
 

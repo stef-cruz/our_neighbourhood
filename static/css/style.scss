@@ -19,6 +19,14 @@ footer {
 }
 
 //Page header
+.page-header-bg {
+    width: 100vw;
+    margin-bottom: 3rem;
+    padding: 2rem 0.2rem 2rem 0.2rem;
+    color: white;
+    background: linear-gradient(165deg, rgba($prim-colour, .95) 50%, rgba($prim-colour,.75) 100%);
+}
+
 .page-header {
   margin: 3rem 0;
 }
