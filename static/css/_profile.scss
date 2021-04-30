@@ -21,13 +21,25 @@
     border-right: .1rem solid rgba($gray, .3);
     border-top: 0;
     border-left: 0;
+    text-align: center;
+
+    img {
+      max-width: 10%;
+      height: auto;
+      min-width: 15rem;
+      cursor: pointer;
+      border-radius: 50%;
+      display: inline-block;
+      margin: 2%;
+      box-sizing: border-box;
+    }
+
   }
 }
 
 .active {
   color: $sec-colour;
 }
-
 
 .account-settings {
   a {
@@ -37,5 +49,17 @@
     &:hover {
       color: $prim-colour;
     }
+  }
+}
+
+#order-1 {
+  @include bp(tablet) {
+    order: 1;
+  }
+}
+
+#order-2 {
+  @include bp(tablet) {
+    order: 2;
   }
 }

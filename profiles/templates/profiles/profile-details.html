@@ -1,6 +1,14 @@
 <div class="row">
-    <div class="col-md-7 p-3 p-lg-5 pt-lg-3 form-custom my-profile__form">
-
+    <div id="order-2" class="col-md-5 p-3 p-lg-5 pt-lg-3 my-profile__image">
+        {% if profile.img_url %}
+            <img src="{{ profile.img_url }}" alt="User Profile Pic" class="mt-5">
+        {% else %}
+        <a id="example" href="#" data-bs-toggle="tooltip" title="" data-bs-placement="bottom" data-bs-original-title="Change profile picture">
+            <img src="{{ MEDIA_URL }}default-profile-pic.png" alt="Default Profile Pic" class="mt-5">
+        </a>
+        {% endif %}
+    </div>
+    <div id="order-1" class="col-md-7 p-3 p-lg-5 pt-lg-3 form-custom my-profile__form">
         <h4 class="text-dark fw-bolder fs-5 mt-5">My details</h4>
         <form action="{% url 'profile' %}" method="POST">
             {% csrf_token %}
@@ -15,13 +23,7 @@
                 account</a></p>
         </div>
     </div>
-    <div class="col-md-5 p-3 pt-5 p-lg-5 pt-lg-3 my-profile__image">
-        {% if profile.img_url %}
-        <img src="{{ user_profile.img_url }}" alt="User Profile Pic">
-        {% else %}
-        <img src="{{ MEDIA_URL }}default-profile-pic.png" alt="Default Profile Pic">
-        {% endif %}
-    </div>
+
 </div>
 
 <!--Modal delete account-->
@@ -42,3 +44,4 @@
         </div>
     </div>
 </div>
+
