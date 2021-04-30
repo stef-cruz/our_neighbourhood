@@ -11,19 +11,31 @@
 
   &__form {
     border-bottom: .1rem solid rgba($gray, .3);
-    border-right: .1rem solid rgba($gray, .3);
+    border-right: 0;
+    border-left: .1rem solid rgba($gray, .3);
     border-top: 0;
-    border-left: 0;
   }
 
   &__image {
     border-bottom: .1rem solid rgba($gray, .3);
     border-right: .1rem solid rgba($gray, .3);
-    border-left: .1rem solid rgba($gray, .3);
     border-top: 0;
+    border-left: 0;
   }
 }
 
 .active {
   color: $sec-colour;
+}
+
+
+.account-settings {
+  a {
+    text-decoration: none;
+    color: #212529; /* text-dark */
+
+    &:hover {
+      color: $prim-colour;
+    }
+  }
 }
