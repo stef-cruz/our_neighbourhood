@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 
 from .models import UserProfile
@@ -24,3 +24,16 @@ def profile(request):
         # 'events': events,
     }
     return render(request, template, context)
+
+
+def delete_profile(request, user):
+    """ A view to delete current user"""
+
+    if not request.user.is_authenticated:
+        return render(request, 'home/index.html')
+
+    if request.user.username == user:
+        user = request.user
+        user.delete()
+
+    return redirect(reverse('home'))

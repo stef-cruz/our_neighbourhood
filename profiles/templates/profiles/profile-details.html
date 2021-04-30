@@ -11,11 +11,34 @@
         <div class="account-settings">
             <h4 class="text-dark fw-bolder fs-5 mt-5">Settings</h4>
             <p><a href="{% url 'account_change_password' %}">Change Password</a></p>
-            <p><a href="">Deactive account</a></p>
+            <p><a href="submit-btn anchors" data-bs-target="#exampleModal" data-bs-toggle="modal">Deactive
+                account</a></p>
         </div>
     </div>
     <div class="col-md-5 p-3 pt-5 p-lg-5 pt-lg-3 my-profile__image">
-        <p>image</p>
+        {% if profile.img_url %}
+        <img src="{{ user_profile.img_url }}" alt="User Profile Pic">
+        {% else %}
+        <img src="{{ MEDIA_URL }}default-profile-pic.png" alt="Default Profile Pic">
+        {% endif %}
     </div>
+</div>
+
+<!--Modal delete account-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a href="{% url 'delete_profile' request.user.username %}" class="btn btn-primary">Deactive account</a>
+            </div>
+        </div>
     </div>
 </div>
