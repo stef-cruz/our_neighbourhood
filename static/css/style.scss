@@ -32,12 +32,23 @@ footer {
 }
 
 //Buttons
-.btn-green {
+.btn-outline-green {
   border-color: $sec-colour;
   color: $sec-colour;
 
   &:hover {
     background-color: $sec-colour;
+  }
+}
+
+.btn-green {
+  border-color: $sec-colour;
+  background-color: $sec-colour;
+  color: #fff;
+
+  &:hover {
+    border-color: $sec-colour;
+    background-color: #fff;
   }
 }
 

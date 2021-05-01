@@ -1,2 +1,2 @@
-let exampleEl = document.getElementById('example')
-let tooltip = new bootstrap.Tooltip(exampleEl)
+let tooltipProfilePic = document.getElementById('tooltip-js')
+let tooltip = new bootstrap.Tooltip(tooltipProfilePic)
