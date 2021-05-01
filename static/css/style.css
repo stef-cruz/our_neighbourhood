@@ -107,6 +107,7 @@
   text-decoration: none;
   font-weight: 600;
   /* fw-bolder */
+  font-size: 0.9rem;
 }
 .form-custom .btn-outline-sec-colour {
   color: #5710b2;
@@ -225,7 +226,16 @@
 
 .auth-left-panel {
   background-color: #20D489;
-  height: 100%;
+}
+@media (min-width: 48rem) {
+  .auth-left-panel {
+    height: 70vh;
+  }
+}
+@media (min-width: 64rem) {
+  .auth-left-panel {
+    height: 120vh;
+  }
 }
 .auth-left-panel__img {
   background: url("/media/bg-auth.png") no-repeat center center;
@@ -233,6 +243,11 @@
   min-height: 21rem;
 }
 @media (min-width: 48rem) {
+  .auth-left-panel__img {
+    min-height: 20rem;
+  }
+}
+@media (min-width: 64rem) {
   .auth-left-panel__img {
     min-height: 35rem;
   }
@@ -244,6 +259,12 @@
 }
 .authentication-link a:hover {
   color: #20D489;
+}
+
+.login-or {
+  text-transform: uppercase;
+  font-weight: 600;
+  /* fw-bolder */
 }
 
 * {

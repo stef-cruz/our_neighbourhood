@@ -1,12 +1,13 @@
 {% extends "account/base.html" %}
 
 {% load i18n %}
+{% load account socialaccount %}
 
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
 {% block inner_content %}
 
-<div id="authentication" class="container-fluid form-custom">
+<div id="authentication" class="container form-custom">
     <div class="row pb-0 pe-lg-0 align-items-center">
         <!-- Left panel -->
         <div class="col-lg-7 p-3 p-lg-5 pt-lg-3 auth-left-panel">
@@ -35,8 +36,31 @@
                 {% if redirect_field_value %}
                 <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
                 {% endif %}
-                <button type="submit">{% trans "Sign Up" %} &raquo;</button>
+                <div class="primaryAction-wrapper">
+                    <button type="submit">{% trans "Sign Up" %} &raquo;</button>
+                </div>
             </form>
+
+                <!-- Social login-->
+                {% get_providers as socialaccount_providers %}
+
+                {% if socialaccount_providers %}
+
+                <div class="socialaccount_ballot">
+                    <div class="login-or">{% trans 'or' %}</div>
+                    <br>
+                    <div class="socialaccount_providers">
+                        {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+                    </div>
+                </div>
+
+                {% include "socialaccount/snippets/login_extra.html" %}
+
+                {% else %}
+                    <p class="text-muted fw-bold authentication-link">{% blocktrans %}New here?
+                        <a class="fw-bolder" href="{{ signup_url }}">Create an account</a>{% endblocktrans %}
+                    </p>
+                {% endif %}
             </div>
         </div>
     </div>

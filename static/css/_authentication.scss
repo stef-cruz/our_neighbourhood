@@ -5,7 +5,15 @@
 
 .auth-left-panel {
   background-color: $sec-colour;
-  height: 100%;
+
+  @include bp(tablet) {
+    height: 70vh;
+  }
+
+  @include bp(desktop) {
+    height: 120vh;
+  }
+
 
   &__img {
     background: url('/media/bg-auth.png') no-repeat center center;
@@ -13,6 +21,10 @@
     min-height: 21rem;
 
     @include bp(tablet) {
+      min-height: 20rem;
+    }
+
+    @include bp(desktop) {
       min-height: 35rem;
     }
   }
@@ -27,5 +39,9 @@
       color: $sec-colour;
     }
   }
+}
 
+.login-or {
+    text-transform: uppercase;
+    font-weight: 600; /* fw-bolder */
 }
