@@ -156,15 +156,66 @@
   color: #5710b2;
 }
 
+.my-profile {
+  border: 0.1rem solid rgba(108, 117, 125, 0.3);
+}
 .my-profile__link {
   text-decoration: none;
 }
 .my-profile__link:hover {
   color: #20D489;
 }
+.my-profile__form {
+  border-bottom: 0.1rem solid rgba(108, 117, 125, 0.3);
+  border-right: 0;
+  border-left: 0.1rem solid rgba(108, 117, 125, 0.3);
+  border-top: 0;
+}
+.my-profile__image {
+  border-bottom: 0.1rem solid rgba(108, 117, 125, 0.3);
+  border-right: 0.1rem solid rgba(108, 117, 125, 0.3);
+  border-top: 0;
+  border-left: 0;
+  text-align: center;
+}
+.my-profile__image img {
+  max-width: 10%;
+  height: auto;
+  min-width: 15rem;
+  cursor: pointer;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 2%;
+  box-sizing: border-box;
+}
 
 .active {
   color: #20D489;
+}
+
+.account-settings a {
+  text-decoration: none;
+  color: #212529;
+  /* text-dark */
+}
+.account-settings a:hover {
+  color: #5710b2;
+}
+
+@media (min-width: 48rem) {
+  #order-1 {
+    order: 1;
+  }
+}
+
+@media (min-width: 48rem) {
+  #order-2 {
+    order: 2;
+  }
+}
+
+.modal-footer {
+  justify-content: center;
 }
 
 #authentication {
@@ -204,16 +255,34 @@ footer {
   font-family: "Poppins", sans-serif;
 }
 
+.page-header-bg {
+  width: 100vw;
+  margin-bottom: 3rem;
+  padding: 2rem 0.2rem 2rem 0.2rem;
+  color: white;
+  background: linear-gradient(165deg, rgba(87, 16, 178, 0.95) 50%, rgba(87, 16, 178, 0.75) 100%);
+}
+
 .page-header {
   margin: 3rem 0;
 }
 
-.btn-green {
+.btn-outline-green {
   border-color: #20D489;
   color: #20D489;
 }
-.btn-green:hover {
+.btn-outline-green:hover {
   background-color: #20D489;
+}
+
+.btn-green {
+  border-color: #20D489;
+  background-color: #20D489;
+  color: #fff;
+}
+.btn-green:hover {
+  border-color: #20D489;
+  background-color: #fff;
 }
 
 .text-green-custom {
