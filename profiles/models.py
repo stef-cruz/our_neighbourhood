@@ -13,9 +13,10 @@ class UserProfile(models.Model):
     full_name = models.CharField(max_length=50, null=False, blank=False)
     email_address = models.CharField(max_length=40, null=False, blank=False)
     bio = models.CharField(max_length=1500, null=True, blank=True)
-    img_url = models.CharField(max_length=1500, blank=True, null=True)
-    creation_date = models.CharField(max_length=80, null=True, blank=True)
-    is_superuser = models.CharField(max_length=80, null=True, blank=True)
+    img_url = models.URLField(max_length=1500, blank=True, null=True)
+    profile_pic = models.ImageField(null=True, blank=True, upload_to='upload/')
+    creation_date = models.DateTimeField(auto_now_add=True)
+    is_superuser = models.BooleanField(default=False, blank=True, null=True)
 
     def __str__(self):
         return self.user.username

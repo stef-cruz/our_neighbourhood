@@ -5,12 +5,11 @@ from .models import UserProfile
 class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
-        fields = ['user', 'full_name', 'email_address', 'bio']
+        fields = ['full_name', 'email_address', 'bio', 'profile_pic']
 
     def __init__(self, *args, **kwargs):
         """
-        Add placeholders and classes, remove auto-generated
-        labels and set autofocus on first field
+        Add placeholders
         """
         super().__init__(*args, **kwargs)
         placeholders = {
