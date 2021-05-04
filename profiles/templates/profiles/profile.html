@@ -10,37 +10,43 @@
 <!-- Profile -->
 <!--Design inspired by https://themes.getbootstrap.com/preview/?theme_id=85897-->
 <div class="container my-profile">
-    <div class="row">
-        <!-- Anchor links -->
-        <div class="col d-flex align-items-center flex-nowrap text-nowrap overflow-auto py-1">
-            <a class="btn btn-active-accent fw-bolder ms-3 my-profile__link" href="#js-my-details"
-               id="js-my-details-button">My account</a>
-            <a class="btn btn-active-accent fw-bolder ms-3 my-profile__link" href="#js-my-posts"
-               id="js-my-posts-button">My posts</a>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active fw-bolder" id="home-tab" data-bs-toggle="tab" data-bs-target="#account" type="button"
+                    role="tab" aria-controls="account" aria-selected="true">Account
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link fw-bolder" id="profile-tab" data-bs-toggle="tab" data-bs-target="#posts" type="button"
+                    role="tab" aria-controls="posts" aria-selected="false">Posts
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link fw-bolder" id="contact-tab" data-bs-toggle="tab" data-bs-target="#settings" type="button"
+                    role="tab" aria-controls="settings" aria-selected="false">Settings
+            </button>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <!-- My details -->
+        <div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab">
+            {% include './profile-details.html' %}
+        </div>
+        <!-- My posts -->
+        <div class="tab-pane fade" id="posts" role="tabpanel" aria-labelledby="posts-tab">
+            {% include './profile-posts.html' %}
+        </div>
+        <!-- Settings -->
+        <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+            {% include './profile-settings.html' %}
         </div>
     </div>
 </div>
 
-<!-- My details -->
-<div id="js-my-details-content" class="container" style="display: block;">
-    {% include './profile-details.html' %}
-</div>
-
-<!-- My posts -->
-<div id="js-my-posts-content" class="container">
-    <div class="row">
-        <div class="col">
-            <div >
-                {% include './profile-posts.html' %}
-            </div>
-        </div>
-    </div>
-</div>
 
 {% endblock %}
 
 {% block postload_js %}
 {{ block.super }}
-<script src="{% static 'profiles/js/hideShowContent.js' %}"></script>
 <script src="{% static 'profiles/js/bootstrapInit.js' %}"></script>
 {% endblock %}

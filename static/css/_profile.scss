@@ -1,26 +1,20 @@
 .my-profile {
   border: .1rem solid rgba($gray, .3);
 
-  &__link {
-    text-decoration: none;
+  .nav-tabs,
+  .nav-link {
+    .active {
+      color: $sec-colour;
 
-    &:hover {
+    }
+    &:hover,
+    &:focus,
+    &:active {
       color: $sec-colour;
     }
   }
 
-  &__form {
-    border-bottom: .1rem solid rgba($gray, .3);
-    border-right: 0;
-    border-left: .1rem solid rgba($gray, .3);
-    border-top: 0;
-  }
-
   &__image {
-    border-bottom: .1rem solid rgba($gray, .3);
-    border-right: .1rem solid rgba($gray, .3);
-    border-top: 0;
-    border-left: 0;
     text-align: center;
 
     img {
@@ -66,4 +60,8 @@
 
 .modal-footer {
   justify-content: center;
+}
+
+.my-details-content {
+  display: block;
 }

@@ -160,23 +160,17 @@
 .my-profile {
   border: 0.1rem solid rgba(108, 117, 125, 0.3);
 }
-.my-profile__link {
-  text-decoration: none;
-}
-.my-profile__link:hover {
+.my-profile .nav-tabs .active,
+.my-profile .nav-link .active {
   color: #20D489;
 }
-.my-profile__form {
-  border-bottom: 0.1rem solid rgba(108, 117, 125, 0.3);
-  border-right: 0;
-  border-left: 0.1rem solid rgba(108, 117, 125, 0.3);
-  border-top: 0;
+.my-profile .nav-tabs:hover, .my-profile .nav-tabs:focus, .my-profile .nav-tabs:active,
+.my-profile .nav-link:hover,
+.my-profile .nav-link:focus,
+.my-profile .nav-link:active {
+  color: #20D489;
 }
 .my-profile__image {
-  border-bottom: 0.1rem solid rgba(108, 117, 125, 0.3);
-  border-right: 0.1rem solid rgba(108, 117, 125, 0.3);
-  border-top: 0;
-  border-left: 0;
   text-align: center;
 }
 .my-profile__image img {
@@ -217,6 +211,10 @@
 
 .modal-footer {
   justify-content: center;
+}
+
+.my-details-content {
+  display: block;
 }
 
 #authentication {
