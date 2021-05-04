@@ -5,8 +5,8 @@
   .nav-link {
     .active {
       color: $sec-colour;
-
     }
+
     &:hover,
     &:focus,
     &:active {
@@ -29,10 +29,6 @@
     }
 
   }
-}
-
-.active {
-  color: $sec-colour;
 }
 
 .account-settings {
@@ -64,4 +60,33 @@
 
 .my-details-content {
   display: block;
+}
+
+// Hide image path from profile picture
+.controls {
+  color: #fff;
+
+  & > label {
+    display: none;
+  }
+
+  a,
+  #profile_pic-clear_id,
+  #profile_pic-clear_id label {
+    display: none;
+  }
+
+  #id_profile_pic {
+    font-size: 0.9rem;
+    background-color: transparent;
+    padding: 0;
+    width: 13rem;
+  }
+
+}
+
+#div_id_profile_pic {
+  & > label {
+    display: none;
+  }
 }

@@ -136,8 +136,8 @@
   font-size: 1rem;
   line-height: 1.5;
   border-radius: 0.3rem;
-  margin-top: 0.75rem !important;
-  margin-bottom: 0.75rem !important;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
   /* standard bootstrap btn transitions */
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
@@ -184,10 +184,6 @@
   box-sizing: border-box;
 }
 
-.active {
-  color: #20D489;
-}
-
 .account-settings a {
   text-decoration: none;
   color: #212529;
@@ -215,6 +211,28 @@
 
 .my-details-content {
   display: block;
+}
+
+.controls {
+  color: #fff;
+}
+.controls > label {
+  display: none;
+}
+.controls a,
+.controls #profile_pic-clear_id,
+.controls #profile_pic-clear_id label {
+  display: none;
+}
+.controls #id_profile_pic {
+  font-size: 0.9rem;
+  background-color: transparent;
+  padding: 0;
+  width: 13rem;
+}
+
+#div_id_profile_pic > label {
+  display: none;
 }
 
 #authentication {

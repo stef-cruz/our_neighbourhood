@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load crispy_forms_field %}
 
 {% block page_header %}
 <h2 class="text-center page-header-bg">Hello, {{ profile.user }}</h2>
@@ -42,8 +43,6 @@
         </div>
     </div>
 </div>
-
-
 {% endblock %}
 
 {% block postload_js %}
