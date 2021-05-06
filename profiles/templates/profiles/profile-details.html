@@ -11,13 +11,10 @@
             {{ form.profile_pic|as_crispy_field }}
         </div>
         <!-- User information -->
-        <div id="order-1" class="col-md-7 p-3 p-lg-5 p-md-4">
-            <h4 class="text-dark fw-bolder fs-5 mt-4">My details</h4>
+        <div id="order-1" class="col-md-7 p-3 p-lg-5 pt-lg-3">
+            <h4 class="text-dark fw-bolder fs-5 pt-4">My details</h4>
                 <div class="form-group">
                     {{ form.full_name|as_crispy_field }}
-                </div>
-                <div class="form-group">
-                    {{ form.email_address|as_crispy_field }}
                 </div>
                 <div class="form-group">
                     {{ form.bio|as_crispy_field }}

@@ -1,10 +1,10 @@
 <div class="row">
     <div class="col-12 p-3 p-lg-5 pt-lg-3 form-custom my-profile__form">
+        <h4 class="text-dark fw-bolder fs-5 pt-4">Settings</h4>
         <div class="account-settings">
-            <h4 class="text-dark fw-bolder fs-5 mt-4">Settings</h4>
-            <p><a href="{% url 'account_change_password' %}">Change Password</a></p>
-            <p><a href="submit-btn anchors" data-bs-target="#exampleModal" data-bs-toggle="modal">Deactivate
-                account</a></p>
+            <p class="pt-2"><i class="fas fa-envelope text-purple-custom pe-2"></i><a href="{% url 'account_email' %}"> Change email address</a></p>
+            <p class="pt-2"><i class="fas fa-lock text-purple-custom pe-2"></i><a href="{% url 'account_change_password' %}"> Change Password</a></p>
+            <p class="pt-2"><i class="fas fa-trash-alt text-purple-custom pe-2"></i><a href="submit-btn anchors" data-bs-target="#exampleModal" data-bs-toggle="modal"> Deactivate account</a></p>
         </div>
     </div>
 </div>
