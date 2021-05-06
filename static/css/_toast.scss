@@ -1,0 +1,15 @@
+.message-container {
+    position: fixed;
+    top: 3rem;
+    right: 2rem;
+    z-index: 9999999;
+
+    .toast {
+        background-color: $sec-colour;
+    }
+
+}
+
+//.toast:not(.showing):not(.show) {
+//    opacity: 100%;
+//}

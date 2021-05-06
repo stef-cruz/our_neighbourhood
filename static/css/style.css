@@ -283,6 +283,16 @@
   /* fw-bolder */
 }
 
+.message-container {
+  position: fixed;
+  top: 3rem;
+  right: 2rem;
+  z-index: 9999999;
+}
+.message-container .toast {
+  background-color: #20D489;
+}
+
 * {
   margin: 0;
 }

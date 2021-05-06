@@ -44,7 +44,11 @@
 
     <!-- Messages -->
     {% if messages %}
-    <div class="message-container"></div>
+    <div class="message-container">
+        {% for message in messages %}
+            {% include './toasts/toast.html' %}
+        {% endfor %}
+    </div>
     {% endif %}
 
     {% block page_header %}
@@ -63,6 +67,14 @@
 
     <!-- Scripts -->
     {% block postload_js %}
+    <script type="text/javascript">
+        const toastEl = document.getElementById('js-toast');
+        const myToast = new bootstrap.Toast(toastEl, {
+            autohide: false,
+        });
+        myToast.show();
+        myToast.hide();
+    </script>
     {% endblock %}
 
 </body>
