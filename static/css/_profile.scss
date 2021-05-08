@@ -1,3 +1,4 @@
+//Profile - main page
 .my-profile {
   border: .1rem solid rgba($gray, .3);
 
@@ -31,6 +32,7 @@
   }
 }
 
+//Settings
 .account-settings {
   a {
     text-decoration: none;
@@ -62,8 +64,9 @@
   display: block;
 }
 
-// Hide image path from profile picture
+// Details
 .controls {
+  // Hide image path from profile picture
   color: #fff;
 
   & > label {
@@ -88,5 +91,19 @@
 #div_id_profile_pic {
   & > label {
     display: none;
+  }
+}
+
+//Posts
+
+.my-posts {
+
+  &__btn-container {
+    @include flexbox(flex, center, center);
+  }
+  &__img {
+    background: url('/media/add-event.png') no-repeat center center;
+    background-size: contain;
+    min-height: 10rem;
   }
 }

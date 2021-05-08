@@ -1,20 +1,38 @@
-<div class="row">
-    <div class="col-xl-4">
-        <div class="card card-stretch bg-danger mb-5 mb-xxl-8">
-            <div class="card-body">
-                <div class="d-flex align-items-center">
-                    <div class="symbol symbol-50px me-5">
+<div class="container my-posts">
+    <div class="row my-5">
+        <div class="col-md-7 p-3 p-lg-5 pt-lg-3">
+            <div class="my-posts__img"></div>
+        </div>
+        <div class="col-md-5 p-3 p-lg-5 pt-lg-3 my-posts__btn-container">
+            <a href="{% url 'add_event' %}">
+                <button type="button" class="btn btn-outline-green btn-md px-4 me-sm-3 fw-bold">Create new events
+                </button>
+            </a>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            <h4 class="text-center page-header">My Events</h4>
+        </div>
+        <div class="col-12">
+            <div class="card card-stretch bg-danger mb-5 mb-xxl-8">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <div class="symbol symbol-50px me-5">
                         <span class="symbol-label bg-white bg-opacity-10">
                     </span>
+                        </div>
+                        <div>
+                            <a href="#" class="fs-4 text-white text-hover-primary fw-bolder">Yoga classes in the
+                                park</a>
+                            <div class="fs-7 text-white opacity-75 fw-bold mt-1">Sunday, 10am</div>
+                        </div>
                     </div>
-                    <div>
-                        <a href="#" class="fs-4 text-white text-hover-primary fw-bolder">Yoga classes in the park</a>
-                        <div class="fs-7 text-white opacity-75 fw-bold mt-1">Sunday, 10am</div>
+                    <div class="fw-bolder text-white pt-7">
+                        <span class="d-block">Details X</span>
+                        <span class="d-block pt-2">Details Y</span>
                     </div>
-                </div>
-                <div class="fw-bolder text-white pt-7">
-                    <span class="d-block">Details X</span>
-                    <span class="d-block pt-2">Details Y</span>
                 </div>
             </div>
         </div>
