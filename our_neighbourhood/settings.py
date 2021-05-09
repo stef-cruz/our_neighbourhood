@@ -65,7 +65,8 @@ INSTALLED_APPS = [
 
     # project's apps
     'home',
-    'profiles'
+    'profiles',
+    'events',
 ]
 
 MIDDLEWARE = [
