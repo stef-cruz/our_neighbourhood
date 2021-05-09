@@ -4,7 +4,39 @@ from .models import Event
 
 class EventForm(forms.ModelForm):
 
-    description = forms.CharField(max_length=2000, required=True, widget=forms.Textarea)
+    # Title field
+    title = forms.CharField(label='Title',
+                            max_length=100,
+                            required=True,
+                            widget=forms.TextInput(attrs={'placeholder': 'Add the event title'}))
+
+    # Description field
+    description = forms.CharField(label='Description',
+                                  max_length=2000,
+                                  required=True,
+                                  widget=forms.Textarea(attrs={'placeholder': 'Add the event description'}))
+
+    # Date field - format DD/MM/YYYY
+    event_date = forms.DateField(label='Date',
+                                 widget=forms.DateInput(format='%d/%m/%Y', attrs={'placeholder': '01/01/2021'}),
+                                 input_formats=('%d/%m/%Y', ))
+
+    # Time field - format HH:MM
+    event_time = forms.TimeField(label='Time',
+                                 widget=forms.DateInput(format='%H:%M', attrs={'placeholder': '17:30'}),
+                                 input_formats=('%H:%M', ))
+
+    # Price field
+    event_price = forms.CharField(label='Price',
+                                  max_length=50,
+                                  required=True,
+                                  widget=forms.TextInput(attrs={'placeholder': 'e.g. 10 per person or Free'}))
+
+    # Contact field
+    event_contact = forms.CharField(label='Contact',
+                                    max_length=100,
+                                    required=True,
+                                    widget=forms.TextInput(attrs={'placeholder': 'e.g. John Doe, 083 833 5566'}))
 
     class Meta:
         model = Event
@@ -17,30 +49,5 @@ class EventForm(forms.ModelForm):
                   'event_category']
 
         labels = {
-            'title': 'Title',
-            'description': 'Description',
-            'event_date': 'Date',
-            'event_time': 'Time',
-            'event_price': 'Price',
-            'event_contact': 'Contact',
             'event_category': 'Category'
         }
-
-        def __init__(self, *args, **kwargs):
-            """
-            Add placeholders
-            """
-            super().__init__(*args, **kwargs)
-            placeholders = {
-                'title': 'Event title',
-                'description': 'What is the event about?',
-                'event_contact': 'Add a contact name and number',
-            }
-
-            for field in self.fields:
-                if field != 'event_category':
-                    if self.fields[field].required:
-                        placeholder = f'{placeholders[field]} *'
-                    else:
-                        placeholder = placeholders[field]
-                    self.fields[field].widget.attrs['placeholder'] = placeholder

@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
+<div class="container add-edit-event">
     <form action="{% url 'add_event' %}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="row form-custom form-group">
@@ -19,9 +19,11 @@
                 </div>
                 <div class="col-12 col-md-5 offset-md-1">
                     {{ form.event_date|as_crispy_field }}
+                    <span class="text-muted helper-text">Format expected DD/MM/YYYY</span>
                 </div>
                 <div class="col-12 col-md-5">
                     {{ form.event_time|as_crispy_field }}
+                    <span class="text-muted helper-text">Format expected HH:MM 24h</span>
                 </div>
                 <div class="col-12 col-md-10 offset-md-1">
                     {{ form.event_price|as_crispy_field }}

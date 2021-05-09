@@ -8,6 +8,10 @@
     margin-top: 1.5rem; /* mt-4 */
   }
 
+  .helper-text {
+    font-size: 0.8rem;
+  }
+
   input,
   select,
   textarea {
@@ -29,7 +33,8 @@
     font-weight: 600; /* fw-bolder */
   }
 
-  input::placeholder {
+  input::placeholder,
+  textarea::placeholder {
     color: rgba($gray, 0.5);
   }
 
@@ -93,6 +98,7 @@
       border: .12rem solid $sec-colour;;
       color: #212529;
     }
+
   }
 
   .deactivate-account {
