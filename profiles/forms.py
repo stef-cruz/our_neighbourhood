@@ -3,9 +3,16 @@ from .models import UserProfile
 
 
 class UserProfileForm(forms.ModelForm):
+
+    bio = forms.CharField(max_length=2000, required=True, widget=forms.Textarea)
+
     class Meta:
         model = UserProfile
         fields = ['full_name', 'email_address', 'bio', 'profile_pic']
+
+        labels = {
+            'full_name': 'Name',
+        }
 
     def __init__(self, *args, **kwargs):
         """
