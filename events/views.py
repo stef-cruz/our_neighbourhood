@@ -20,7 +20,7 @@ def add_event(request):
             messages.success(request, 'Event created successfully')
             return redirect(reverse('profile'))
         else:
-            messages.error(request, 'Event could not be created, please try again')
+            messages.error(request, 'Event could not be created, please ensure the form is valid.')
     else:
         form = EventForm
 
