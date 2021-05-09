@@ -6,15 +6,6 @@
 .auth-left-panel {
   background-color: $sec-colour;
 
-  @include bp(tablet) {
-    height: 70vh;
-  }
-
-  @include bp(desktop) {
-    height: 120vh;
-  }
-
-
   &__img {
     background: url('/media/bg-auth.png') no-repeat center center;
     background-size: contain;
