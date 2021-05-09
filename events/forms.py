@@ -16,6 +16,16 @@ class EventForm(forms.ModelForm):
                   'event_contact',
                   'event_category']
 
+        labels = {
+            'title': 'Title',
+            'description': 'Description',
+            'event_date': 'Date',
+            'event_time': 'Time',
+            'event_price': 'Price',
+            'event_contact': 'Contact',
+            'event_category': 'Category'
+        }
+
         def __init__(self, *args, **kwargs):
             """
             Add placeholders
@@ -23,13 +33,14 @@ class EventForm(forms.ModelForm):
             super().__init__(*args, **kwargs)
             placeholders = {
                 'title': 'Event title',
-                'description': 'Add as much information as possible',
-                'event_contact': 'Add name, phone number, email address if relevant',
+                'description': 'What is the event about?',
+                'event_contact': 'Add a contact name and number',
             }
 
             for field in self.fields:
-                if self.fields[field].required:
-                    placeholder = f'{placeholders[field]} *'
-                else:
-                    placeholder = placeholders[field]
-                self.fields[field].widget.attrs['placeholder'] = placeholder
+                if field != 'event_category':
+                    if self.fields[field].required:
+                        placeholder = f'{placeholders[field]} *'
+                    else:
+                        placeholder = placeholders[field]
+                    self.fields[field].widget.attrs['placeholder'] = placeholder
