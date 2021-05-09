@@ -7,33 +7,35 @@
 {% endblock %}
 
 {% block content %}
-<form action="{% url 'add_event' %}" method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    <div class="row form-custom">
-        <div class="col-md-12 p-3 p-lg-5 pt-lg-3">
-            <div class="form-group">
-                {{ form.title|as_crispy_field }}
-            </div>
-            <div class="form-group">
-                {{ form.description|as_crispy_field }}
-            </div>
-            <div class="form-group">
-                {{ form.event_date|as_crispy_field }}
-            </div>
-            <div class="form-group">
-                {{ form.event_time|as_crispy_field }}
-            </div>
-            <div class="form-group">
-                {{ form.event_price|as_crispy_field }}
-            </div>
-            <div class="form-group">
-                {{ form.event_contact|as_crispy_field }}
-            </div>
-            <div class="form-group">
-                {{ form.event_category|as_crispy_field }}
-            </div>
-            <button type="submit" class="mt-4">Create event</button>
+<div class="container">
+    <form action="{% url 'add_event' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="row form-custom form-group">
+                <div class="col-12 col-md-10 offset-md-1">
+                    {{ form.title|as_crispy_field }}
+                </div>
+                <div class="col-12 col-md-10 offset-md-1">
+                    {{ form.description|as_crispy_field }}
+                </div>
+                <div class="col-12 col-md-5 offset-md-1">
+                    {{ form.event_date|as_crispy_field }}
+                </div>
+                <div class="col-12 col-md-5">
+                    {{ form.event_time|as_crispy_field }}
+                </div>
+                <div class="col-12 col-md-10 offset-md-1">
+                    {{ form.event_price|as_crispy_field }}
+                </div>
+                <div class="col-12 col-md-10 offset-md-1">
+                    {{ form.event_contact|as_crispy_field }}
+                </div>
+                <div class="col-12 col-md-10 offset-md-1">
+                    {{ form.event_category|as_crispy_field }}
+                </div>
+                <div class="col-12 col-md-10 offset-md-1 text-center">
+                    <button type="submit" class="mt-4">Create event</button>
+                </div>
         </div>
-    </div>
-</form>
+    </form>
+</div>
 {% endblock %}

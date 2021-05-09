@@ -8,13 +8,20 @@
     margin-top: 1.5rem; /* mt-4 */
   }
 
-  input {
+  input,
+  select,
+  textarea {
+    width: 100%;
     background-color: rgba($gray, 0.1);
     border-color: rgba($gray, 0.05);
     color: $gray;
     transition: color .2s ease, background-color .2s ease;
     padding: .825rem 1.5rem;
     border-radius: .3rem;
+  }
+
+  textarea {
+    height: 5rem;
   }
 
   label:not([for='id_remember']) {
