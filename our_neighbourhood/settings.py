@@ -15,11 +15,10 @@ import os
 import dj_database_url
 
 if os.path.exists("env.py"):
-   import env
+    import env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -93,7 +92,7 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth', #required by allauth
+                'django.contrib.auth.context_processors.auth',  # required by allauth
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
             ],
@@ -152,22 +151,20 @@ SOCIALACCOUNT_PROVIDERS = {
 
 WSGI_APPLICATION = 'our_neighbourhood.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 if development:
-   DATABASES = {
-       'default': {
-           'ENGINE': 'django.db.backends.sqlite3',
-           'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-       }
-   }
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 else:
-   DATABASES = {
-       'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-   }
-
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -187,7 +184,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -200,7 +196,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
