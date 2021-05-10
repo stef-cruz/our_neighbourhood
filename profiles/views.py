@@ -24,13 +24,14 @@ def profile(request):
             messages.error(request, 'Something went wrong, please try again')
     else:
         form = UserProfileForm(instance=profile)
-    # TODO: events = profile.orders.all()
+
+    events = profile.events.all()
 
     template = 'profiles/profile.html'
     context = {
         'profile': profile,
         'form': form,
-        # 'events': events,
+        'events': events,
     }
     return render(request, template, context)
 

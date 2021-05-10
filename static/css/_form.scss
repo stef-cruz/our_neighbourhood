@@ -34,7 +34,8 @@
   }
 
   input::placeholder,
-  textarea::placeholder {
+  textarea::placeholder,
+  select::placeholder {
     color: rgba($gray, 0.5);
   }
 
