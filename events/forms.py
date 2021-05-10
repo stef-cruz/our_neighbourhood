@@ -38,12 +38,19 @@ class EventForm(forms.ModelForm):
                                     required=True,
                                     widget=forms.TextInput(attrs={'placeholder': 'e.g. John Doe, 083 833 5566'}))
 
+    # Location field
+    event_location = forms.CharField(label='Location',
+                                     max_length=150,
+                                     required=True,
+                                     widget=forms.TextInput(attrs={'placeholder': 'e.g. War Memorial Gardens'}))
+
     class Meta:
         model = Event
         fields = ['title',
                   'description',
                   'event_date',
                   'event_time',
+                  'event_location',
                   'event_price',
                   'event_contact',
                   'event_category']
