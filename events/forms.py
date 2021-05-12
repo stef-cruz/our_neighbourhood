@@ -41,7 +41,6 @@ class EventForm(forms.ModelForm):
     # Location field
     event_location = forms.CharField(label='Location',
                                      max_length=150,
-                                     required=True,
                                      widget=forms.TextInput(attrs={'placeholder': 'e.g. War Memorial Gardens'}))
 
     class Meta:
@@ -58,3 +57,4 @@ class EventForm(forms.ModelForm):
         labels = {
             'event_category': 'Category'
         }
+

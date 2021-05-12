@@ -25,7 +25,10 @@
                     {{ form.event_time|as_crispy_field }}
                     <span class="text-muted helper-text">Format expected HH:MM 24h</span>
                 </div>
-                <div class="col-12 col-md-10 offset-md-1">
+                <div class="col-12 col-md-5 offset-md-1">
+                    {{ form.event_location|as_crispy_field }}
+                </div>
+                <div class="col-12 col-md-5">
                     {{ form.event_price|as_crispy_field }}
                 </div>
                 <div class="col-12 col-md-10 offset-md-1">
