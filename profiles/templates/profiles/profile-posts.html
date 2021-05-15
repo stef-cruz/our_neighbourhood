@@ -32,24 +32,36 @@
 
                     <!-- Event details -->
                     <div class="py-3">
-                        <div class="card-content__key fw-bolder">
-                            <p>Date:</p>
-                        </div>
-                        <div class="card-content__value">
-                            <p>{{ event.event_date }}</p>
-                        </div>
-                        <div class="card-content__key fw-bolder">
-                            <p>Time:</p>
-                        </div>
-                        <div class="card-content__value">
-                            <p>{{ event.event_time }}</p>
-                        </div>
-                        <div class="card-content__key fw-bolder">
-                            <p>Location:</p>
-                        </div>
-                        <div class="card-content__value">
-                            <p>{{ event.event_location }}</p>
-                        </div>
+                        {% if event.event_date %}
+                            <div class="card-content__key fw-bolder">
+                                <p>Date:</p>
+                            </div>
+                            <div class="card-content__value">
+                                <p>{{ event.event_date }}</p>
+                            </div>
+                        {% else %}
+                            <div style="display: block;"></div>
+                        {% endif %}
+                        {% if event.event_time %}
+                            <div class="card-content__key fw-bolder">
+                                <p>Time:</p>
+                            </div>
+                            <div class="card-content__value">
+                                <p>{{ event.event_time }}</p>
+                            </div>
+                        {% else %}
+                            <div style="display: block;"></div>
+                        {% endif %}
+                        {% if event.event_location %}
+                            <div class="card-content__key fw-bolder">
+                                <p>Location:</p>
+                            </div>
+                            <div class="card-content__value">
+                                <p>{{ event.event_location }}</p>
+                            </div>
+                        {% else %}
+                            <div style="display: block;"></div>
+                        {% endif %}
                         <div class="card-content__key fw-bolder">
                             <p>Price:</p>
                         </div>
