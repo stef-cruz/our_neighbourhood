@@ -10,6 +10,7 @@ class EventAdmin(admin.ModelAdmin):
         'description',
         'event_date',
         'event_time',
+        'event_location',
         'event_price',
         'event_contact',
         'event_category',
