@@ -63,31 +63,31 @@ class EventForm(forms.ModelForm):
 
     def clean_title(self):
         title = self.cleaned_data.get('title')
-        if not title.isalnum():
-            raise forms.ValidationError('Only letters and numbers allowed.')
-        return title
+        if title.isalnum() or " " in title:
+            return title
+        raise forms.ValidationError('Only letters and numbers allowed.')
 
     def clean_description(self):
         description = self.cleaned_data.get('description')
-        if not description.isalnum():
-            raise forms.ValidationError('Only letters and numbers allowed.')
-        return description
+        if description.isalnum() or " " in description:
+            return description
+        raise forms.ValidationError('Only letters and numbers allowed.')
 
     def clean_event_price(self):
         event_price = self.cleaned_data.get('event_price')
-        if not event_price.isalnum():
-            raise forms.ValidationError('Only letters, numbers and euro symbol allowed.')
-        return event_price
+        if event_price.isalnum() or " " in event_price:
+            return event_price
+        raise forms.ValidationError('Only letters and numbers allowed.')
 
     def clean_event_contact(self):
         event_contact = self.cleaned_data.get('event_contact')
-        if not event_contact.isalnum():
-            raise forms.ValidationError('Only letters and numbers allowed.')
-        return event_contact
+        if event_contact.isalnum() or " " in event_contact:
+            return event_contact
+        raise forms.ValidationError('Only letters and numbers allowed.')
 
     def clean_event_location(self):
         event_location = self.cleaned_data.get('event_location')
         if event_location != "":
-            if not event_location.isalnum():
-                raise forms.ValidationError('Only letters and numbers allowed.')
-            return event_location
+            if event_location.isalnum() or " " in event_location:
+                return event_location
+            raise forms.ValidationError('Only letters and numbers allowed.')
