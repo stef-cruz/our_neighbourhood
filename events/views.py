@@ -19,7 +19,7 @@ def event_detail(request, event_id):
     return render(request, 'events/event-detail.html', context)
 
 
-@login_required(login_url='login')
+@login_required
 def add_event(request):
     """ A view to enable the user to add events """
 
@@ -53,7 +53,7 @@ def add_event(request):
     return render(request, template, context)
 
 
-@login_required(login_url='login')
+@login_required
 def edit_event(request, event_id):
     """ A view to enable the user to edit events """
 
@@ -91,3 +91,5 @@ def edit_event(request, event_id):
     }
 
     return render(request, template, context)
+
+

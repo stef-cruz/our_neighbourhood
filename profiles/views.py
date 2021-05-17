@@ -6,7 +6,7 @@ from .models import UserProfile
 from .forms import UserProfileForm
 
 
-@login_required(login_url='login')
+@login_required
 def profile(request):
     """ A view to return the profile page """
 
@@ -36,7 +36,7 @@ def profile(request):
     return render(request, template, context)
 
 
-@login_required(login_url='login')
+@login_required
 def delete_profile(request, user):
     """ A view to delete current user"""
 
