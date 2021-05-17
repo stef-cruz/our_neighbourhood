@@ -70,10 +70,14 @@
     <script type="text/javascript">
         const toastEl = document.getElementById('js-toast');
         const myToast = new bootstrap.Toast(toastEl, {
-            autohide: false,
+            autohide: true,
+            delay: 5000,
         });
-        myToast.show();
-        myToast.hide();
+        if (toastEl) {
+            myToast.show();
+            myToast.hide();
+        }
+
     </script>
     {% endblock %}
 
