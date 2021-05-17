@@ -7,9 +7,9 @@
 {% block inner_content %}
 <h2 class="text-center page-header-bg">{% trans "E-mail Addresses" %}</h2>
 
-<div id="authentication" class="container-fluid form-custom">
+<div id="authentication" class="container form-custom">
     <div class="row pb-0 pe-lg-0">
-        <div class="col-12 form-custom__align-center">
+        <div class="col-12 col-md-10 offset-md-1 form-custom__align-center">
             {% if user.emailaddress_set.all %}
             <p>{% trans 'The following e-mail addresses are associated with your account:' %}</p>
 

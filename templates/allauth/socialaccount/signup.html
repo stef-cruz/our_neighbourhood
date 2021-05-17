@@ -8,9 +8,9 @@
 
 <h2 class="text-center page-header-bg">{% trans "Sign Up" %}</h2>
 
-<div id="authentication" class="container-fluid form-custom">
+<div id="authentication" class="container form-custom">
   <div class="row pb-0 pe-lg-0">
-    <div class="col-12 form-custom__align-center">
+    <div class="col-12 col-md-10 offset-md-1 form-custom__align-center">
         <p>{% blocktrans with provider_name=account.get_provider.name site_name=site.name %}You are about to use your {{provider_name}} account to login to
         {{site_name}}. As a final step, please complete the following form:{% endblocktrans %}</p>
 
