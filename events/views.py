@@ -51,3 +51,43 @@ def add_event(request):
         'form': form,
     }
     return render(request, template, context)
+
+
+@login_required(login_url='login')
+def edit_event(request, event_id):
+    """ A view to enable the user to edit events """
+
+    if not request.user.is_authenticated:
+        return redirect(reverse('home'))
+
+    event = get_object_or_404(Event, pk=event_id)
+    user_db = get_object_or_404(UserProfile, user=request.user)
+
+    # check if event is created by the user editing it
+    if event.user == user_db:
+        if request.method == 'POST':
+            form = EventForm(request.POST, instance=event)
+            if form.is_valid():
+                form.save()
+                messages.success(request, 'Event updated successfully.')
+                return redirect(reverse('event_detail', args=[event.id]))
+            else:
+                messages.error(request, 'Event could not be updated, please ensure the form is valid.')
+        else:
+            form = EventForm(instance=event)
+            messages.info(request, f'You are editing {event.title}')
+
+    # if event is not created by the user editing it
+    else:
+        messages.error(request, 'You do not have permission to edit this event.')
+        return redirect(reverse('home'))
+
+    template = 'events/edit-event.html'
+
+    context = {
+        'form': form,
+        'event': event,
+        'user_db': user_db,
+    }
+
+    return render(request, template, context)
