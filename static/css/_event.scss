@@ -1,0 +1,12 @@
+.event-detail {
+  &__return {
+    a {
+      text-decoration: none;
+      color: #212529; /* text-dark */
+
+      &:hover {
+        color: $prim-colour;
+      }
+    }
+  }
+}

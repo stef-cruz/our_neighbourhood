@@ -7,6 +7,7 @@
 @import "authentication";
 @import "toast";
 @import "card";
+@import "event";
 
 //
 // General Styling
@@ -22,11 +23,11 @@ footer {
 
 //Page header
 .page-header-bg {
-    width: 100vw;
-    margin-bottom: 3rem;
-    padding: 2rem 0.2rem 2rem 0.2rem;
-    color: white;
-    background: linear-gradient(165deg, rgba($prim-colour, .95) 50%, rgba($prim-colour,.75) 100%);
+  width: 100vw;
+  margin-bottom: 3rem;
+  padding: 2rem 0.2rem 2rem 0.2rem;
+  color: white;
+  background: linear-gradient(165deg, rgba($prim-colour, .95) 50%, rgba($prim-colour, .75) 100%);
 }
 
 .page-header {
@@ -51,6 +52,17 @@ footer {
   &:hover {
     border-color: $sec-colour;
     background-color: #fff;
+  }
+}
+
+.btn-outline-sec-colour {
+  color: $prim-colour;
+  border-color: $prim-colour;
+
+  &:hover {
+    color: #fff;
+    background-color: $prim-colour;
+    border-color: $prim-colour;
   }
 }
 

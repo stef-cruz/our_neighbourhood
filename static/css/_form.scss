@@ -58,17 +58,6 @@
     font-size: 0.9rem;
   }
 
-  .btn-outline-sec-colour {
-    color: $prim-colour;
-    border-color: $prim-colour;
-
-    &:hover {
-      color: #fff;
-      background-color: $prim-colour;
-      border-color: $prim-colour;
-    }
-  }
-
   &__align-center {
     text-align: center;
   }

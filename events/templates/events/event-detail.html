@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<h2 class="text-center page-header-bg">{{ event.title }}</h2>
+{% endblock %}
+
+{% block content %}
+<div class="container event-detail">
+    <div class="row">
+
+        <!-- Event description -->
+        <div class="col-12 col-md-10 offset-md-2 text-muted my-4">
+            {{ event.description }}
+        </div>
+
+        <!-- Event category -->
+        <div class="col-12 col-md-10 offset-md-2 my-4">
+            <h4><span class="badge card-content__badge">{{ event.event_category }}</span></h4>
+        </div>
+
+        <!-- Event details -->
+        <div class="col-12 col-md-10 py-3 offset-md-2">
+            {% if event.event_date %}
+            <div class="card-content__key fw-bolder">
+                <p>Date:</p>
+            </div>
+            <div class="card-content__value">
+                <p>{{ event.event_date }}</p>
+            </div>
+            {% else %}
+            <div style="display: block;"></div>
+            {% endif %}
+            {% if event.event_time %}
+            <div class="card-content__key fw-bolder">
+                <p>Time:</p>
+            </div>
+            <div class="card-content__value">
+                <p>{{ event.event_time }}</p>
+            </div>
+            {% else %}
+            <div style="display: block;"></div>
+            {% endif %}
+            {% if event.event_location %}
+            <div class="card-content__key fw-bolder">
+                <p>Location:</p>
+            </div>
+            <div class="card-content__value">
+                <p>{{ event.event_location }}</p>
+            </div>
+            {% else %}
+            <div style="display: block;"></div>
+            {% endif %}
+            <div class="card-content__key fw-bolder">
+                <p>Price:</p>
+            </div>
+            <div class="card-content__value">
+                <p>{{ event.event_price }}</p>
+            </div>
+            <div class="card-content__key fw-bolder">
+                <p>Contact:</p>
+            </div>
+            <div class="card-content__value">
+                <p>{{ event.event_contact }}</p>
+            </div>
+        </div>
+
+            <div class="col-12 col-md-10 offset-md-1 text-center my-4">
+                <a href="{% url 'edit_event' event.id %}"><button class="btn btn-outline-green btn-md px-4 me-sm-3 fw-bold">Edit event</button></a>
+                <a href=""><button class="btn btn-outline-green btn-md px-4 me-sm-3 fw-bold">Delete event</button></a>
+            </div>
+
+            <div class="col-12 col-md-10 offset-md-1 text-center mt-4 mb-3 event-detail__return">
+                <p class="pt-2"><i class="fas fa-undo-alt text-purple-custom"></i><a href="{% url 'profile' %}"> Return to profile</a></p>
+            </div>
+    </div>
+</div>
+{% endblock %}

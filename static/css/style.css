@@ -68,7 +68,8 @@
 }
 
 .help-block {
-  color: #5710b2;
+  color: #dc3545;
+  /* colour danger */
   font-weight: 300;
 }
 
@@ -100,7 +101,8 @@
   /* fw-bolder */
 }
 .form-custom input::placeholder,
-.form-custom textarea::placeholder {
+.form-custom textarea::placeholder,
+.form-custom select::placeholder {
   color: rgba(108, 117, 125, 0.5);
 }
 .form-custom .control-group {
@@ -118,15 +120,6 @@
   font-weight: 600;
   /* fw-bolder */
   font-size: 0.9rem;
-}
-.form-custom .btn-outline-sec-colour {
-  color: #5710b2;
-  border-color: #5710b2;
-}
-.form-custom .btn-outline-sec-colour:hover {
-  color: #fff;
-  background-color: #5710b2;
-  border-color: #5710b2;
 }
 .form-custom__align-center {
   text-align: center;
@@ -304,6 +297,40 @@
   background-color: #20D489;
 }
 
+.card-content__title {
+  color: #5710b2;
+}
+.card-content__badge {
+  background-color: #20D489;
+}
+.card-content__key, .card-content__value {
+  padding-right: 0.8rem;
+  display: inline-block;
+}
+.card-content__key p, .card-content__value p {
+  margin: 0;
+}
+.card-content__key {
+  width: 30%;
+  margin-right: 1.2rem;
+  padding-top: 0.2rem;
+  vertical-align: top;
+  font-size: 0.9rem;
+}
+.card-content__value {
+  position: relative;
+  width: 60%;
+}
+
+.event-detail__return a {
+  text-decoration: none;
+  color: #212529;
+  /* text-dark */
+}
+.event-detail__return a:hover {
+  color: #5710b2;
+}
+
 * {
   margin: 0;
 }
@@ -341,6 +368,16 @@ footer {
 .btn-green:hover {
   border-color: #20D489;
   background-color: #fff;
+}
+
+.btn-outline-sec-colour {
+  color: #5710b2;
+  border-color: #5710b2;
+}
+.btn-outline-sec-colour:hover {
+  color: #fff;
+  background-color: #5710b2;
+  border-color: #5710b2;
 }
 
 .text-green-custom {
