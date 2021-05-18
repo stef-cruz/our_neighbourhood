@@ -93,3 +93,21 @@ def edit_event(request, event_id):
     return render(request, template, context)
 
 
+@login_required
+def delete_event(request, event_id):
+    """ A view to enable the user to delete events """
+
+    if not request.user.is_authenticated:
+        return redirect(reverse('home'))
+
+    event = get_object_or_404(Event, pk=event_id)
+    user_db = get_object_or_404(UserProfile, user=request.user)
+
+    if event.user == user_db:
+        event.delete()
+        messages.success(request, 'Event successfully deleted.')
+        return redirect(reverse('profile'))
+
+    else:
+        messages.error(request, 'You do not have permission to delete this event.')
+        return redirect(reverse('profile'))
