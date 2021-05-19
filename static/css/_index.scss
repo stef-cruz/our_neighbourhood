@@ -1,5 +1,25 @@
 .hero {
   background-color: $prim-colour;
+  position:relative;
+
+  //Source https://codepen.io/martinjkelly/pen/vEOBvL
+  #triangle-badge {
+    width: 0;
+    height: 0;
+    border-top: 9rem solid #fd7e14;
+    border-right: 13rem solid transparent;
+
+    span {
+      position: absolute;
+      top: 1.8rem;
+      width: 5rem;
+      left: 1.5rem;
+      text-align: center;
+      transform: rotate(325deg);
+      display: block;
+      color: #fff;
+    }
+  }
 }
 
 //Pagination home page

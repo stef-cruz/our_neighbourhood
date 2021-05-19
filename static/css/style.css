@@ -1,6 +1,36 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700|Lora:100,200,300,400,500,600,700&display=swap");
 .hero {
   background-color: #5710b2;
+  position: relative;
+}
+.hero #triangle-badge {
+  width: 0;
+  height: 0;
+  border-top: 9rem solid #fd7e14;
+  border-right: 13rem solid transparent;
+}
+.hero #triangle-badge span {
+  position: absolute;
+  top: 1.8rem;
+  width: 5rem;
+  left: 1.5rem;
+  text-align: center;
+  transform: rotate(325deg);
+  display: block;
+  color: #fff;
+}
+
+.page-link {
+  color: #5710b2;
+}
+.page-link:hover {
+  color: #20D489;
+}
+
+.page-item.active .page-link {
+  background-color: #5710b2;
+  border-color: #5710b2;
+  color: #fff;
 }
 
 .navbar i {
@@ -247,6 +277,10 @@
   background: url("/media/add-event.png") no-repeat center center;
   background-size: contain;
   min-height: 10rem;
+}
+.my-posts .btn-group a {
+  text-decoration: none;
+  color: inherit;
 }
 
 #authentication {
