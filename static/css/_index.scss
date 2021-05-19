@@ -1,3 +1,18 @@
 .hero {
   background-color: $prim-colour;
 }
+
+//Pagination home page
+.page-link {
+  color: $prim-colour;
+
+  &:hover {
+    color: $sec-colour;
+  }
+}
+
+.page-item.active .page-link {
+  background-color: $prim-colour;
+  border-color: $prim-colour;
+  color: #fff;
+}

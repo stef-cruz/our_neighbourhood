@@ -7,7 +7,7 @@
 <div class="album py-5 bg-light">
     <div class="container">
         <div class="row row-cols-1 row-cols-md-2 g-4 mb-4">
-            {% for event in events %}
+            {% for event in page_obj %}
             <div class="col">
                 <div class="card shadow-sm h-100">
                     <div class="card-body">
@@ -23,34 +23,34 @@
                         <!-- Event details -->
                         <div class="py-3">
                             {% if event.event_date %}
-                                <div class="card-content__key fw-bolder">
-                                    <p>Date:</p>
-                                </div>
-                                <div class="card-content__value">
-                                    <p>{{ event.event_date }}</p>
-                                </div>
+                            <div class="card-content__key fw-bolder">
+                                <p>Date:</p>
+                            </div>
+                            <div class="card-content__value">
+                                <p>{{ event.event_date }}</p>
+                            </div>
                             {% else %}
-                                <div style="display: block;"></div>
+                            <div style="display: block;"></div>
                             {% endif %}
                             {% if event.event_time %}
-                                <div class="card-content__key fw-bolder">
-                                    <p>Time:</p>
-                                </div>
-                                <div class="card-content__value">
-                                    <p>{{ event.event_time }}</p>
-                                </div>
+                            <div class="card-content__key fw-bolder">
+                                <p>Time:</p>
+                            </div>
+                            <div class="card-content__value">
+                                <p>{{ event.event_time }}</p>
+                            </div>
                             {% else %}
-                                <div style="display: block;"></div>
+                            <div style="display: block;"></div>
                             {% endif %}
                             {% if event.event_location %}
-                                <div class="card-content__key fw-bolder">
-                                    <p>Location:</p>
-                                </div>
-                                <div class="card-content__value">
-                                    <p>{{ event.event_location }}</p>
-                                </div>
+                            <div class="card-content__key fw-bolder">
+                                <p>Location:</p>
+                            </div>
+                            <div class="card-content__value">
+                                <p>{{ event.event_location }}</p>
+                            </div>
                             {% else %}
-                                <div style="display: block;"></div>
+                            <div style="display: block;"></div>
                             {% endif %}
                             <div class="card-content__key fw-bolder">
                                 <p>Price:</p>
@@ -69,7 +69,9 @@
                         <!-- Card buttons -->
                         <div class="d-flex justify-content-between align-items-center pt-3">
                             <div class="btn-group">
-                                <a href="{% url 'event_detail' event.id %}"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
+                                <a href="{% url 'event_detail' event.id %}">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -77,6 +79,34 @@
             </div>
             {% endfor %}
         </div>
+
+        <!-- Pagination -->
+        <!-- Source: https://origin.tiltingatwindmills.dev/how-to-show-a-range-of-page-numbers-using-djangos-pagination -->
+        {% load home_extras %}
+        <nav aria-label="Events page navigation">
+            <ul class="pagination">
+                {% if page_obj.has_previous %}
+                <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">previous</a></li>
+                {% else %}
+                <li class="page-item disabled"><a class="page-link" href="#" aria-disabled="true" tabindex="-1">previous</a></li>
+                {% endif %}
+
+                {% for page_number in page_obj.number|page_window:page_obj.paginator.num_pages  %}
+                <li class="page-item {% if page_number == page_obj.number %}active{% endif %}">
+                    <a class="page-link" href="?page={{ page_obj.number }}" aria-current="page">
+                        {{ page_number }}
+                        {% if page_number == page_obj.number %}
+                        {% endif %}
+                    </a>
+                </li>
+                {% endfor %}
+                {% if page_obj.has_next %}
+                <li class="page-item"><a href="?page={{ page_obj.next_page_number }}" class="page-link">next</a></li>
+                {% else %}
+                <li class="page-item disabled"><a class="page-link" href="#" aria-disabled="true" tabindex="-1">next</a></li>
+                {% endif %}
+            </ul>
+        </nav>
     </div>
 </div>
 
