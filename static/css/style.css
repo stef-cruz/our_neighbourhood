@@ -365,6 +365,20 @@
   color: #5710b2;
 }
 
+.checkout {
+  text-align: center;
+}
+@media (min-width: 48rem) {
+  .checkout__item {
+    text-align: left;
+  }
+}
+@media (min-width: 48rem) {
+  .checkout__amount {
+    text-align: right;
+  }
+}
+
 * {
   margin: 0;
 }

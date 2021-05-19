@@ -1,0 +1,14 @@
+.checkout {
+  text-align: center;
+
+  &__item {
+    @include bp(tablet) {
+      text-align: left;
+    }
+  }
+  &__amount {
+    @include bp(tablet) {
+      text-align: right;
+    }
+  }
+}

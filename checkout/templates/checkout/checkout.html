@@ -1,8 +1,29 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block page_header %}
+<h2 class="text-center page-header">Review your order</h2>
+{% endblock %}
+
 {% block content %}
 
-    <p>Checkout page</p>
+    <!-- Checkout -->
+    <section class="container checkout">
+        <div class="row mb-8 bg-light p-3">
+            <div class="col-12 col-md-6 checkout__item">
+                <p class="fw-bolder">Item</p>
+                <p>Our Neighbourhood Event Post</p>
+            </div>
+            <div class="col-12 col-md-6 checkout__amount">
+                <p class="fw-bolder">Amount</p>
+                <p>€1.00</p>
+            </div>
+        </div>
+        <div class="row my-5">
+            <div class="col text-center">
+                <a href="#" class="btn btn-green"><i class="fas fa-lock"></i> Secure checkout</a>
+            </div>
+        </div>
+    </section>
 
 {% endblock %}
