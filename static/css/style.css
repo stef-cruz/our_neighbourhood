@@ -367,6 +367,7 @@
 
 .checkout {
   text-align: center;
+  max-width: 70vw;
 }
 @media (min-width: 48rem) {
   .checkout__item {
@@ -377,6 +378,55 @@
   .checkout__amount {
     text-align: right;
   }
+}
+.checkout__pay-form {
+  border: 0.1rem solid rgba(108, 117, 125, 0.3);
+}
+
+.StripeElement,
+.stripe-style-input {
+  box-sizing: border-box;
+  padding: 0.825rem 1.5rem;
+  border-color: rgba(108, 117, 125, 0.05);
+  border-radius: 0.3rem;
+  background-color: rgba(108, 117, 125, 0.1);
+  box-shadow: 0 1px 3px 0 #e6ebf1;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: color 0.2s ease, background-color 0.2s ease;
+  color: #6c757d;
+}
+
+.StripeElement--focus,
+.stripe-style-input:focus,
+.stripe-style-input:active {
+  box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+
+.stripe-style-input::placeholder {
+  color: #aab7c4;
+}
+
+.fieldset-label {
+  position: relative;
+  right: 0.5rem;
+}
+
+#payment-form .form-control,
+#card-element {
+  max-width: 90vw;
+}
+
+.ElementsApp input {
+  font-family: "Poppins", sans-serif;
+}
+
+#card-errors {
+  color: #dc3545;
+  /* colour danger */
 }
 
 * {
