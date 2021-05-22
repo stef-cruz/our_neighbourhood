@@ -7,48 +7,47 @@
 
 {% block content %}
 
-    <!-- Checkout -->
-    <section class="container checkout">
-        <div class="row mb-8 bg-light p-3">
-            <div class="col-12 col-md-6 checkout__item">
-                <p class="fw-bolder">Item</p>
-                <p>Our Neighbourhood Event Post</p>
-            </div>
-            <div class="col-12 col-md-6 checkout__amount">
-                <p class="fw-bolder">Amount</p>
-                <p>€1.00</p>
-            </div>
+<!-- Checkout -->
+<section class="container checkout">
+    <div class="row mb-8 bg-light p-3">
+        <div class="col-12 col-md-6 checkout__item">
+            <p class="fw-bolder">Item</p>
+            <p>Our Neighbourhood Event Post</p>
         </div>
+        <div class="col-12 col-md-6 checkout__amount">
+            <p class="fw-bolder">Amount</p>
+            <p>€1.00</p>
+        </div>
+    </div>
 
-        <hr class="my-5">
+    <hr class="my-5">
 
-        <h5><i class="fas fa-credit-card"></i> Payment Details</h5>
+    <h5><i class="fas fa-credit-card"></i> Payment Details</h5>
 
-        <div class="row my-5">
-            <div class="col checkout__pay-form">
-                <p class="text-start py-3">Credit or debit card</p>
-                <!-- Stripe payment form-->
-                <form action="{% url 'checkout' %}" method="POST" id="payment-form">
-                  <div class="my-3" id="card-element">
+    <div class="row my-5">
+        <div class="col checkout__pay-form">
+            <p class="text-start py-3">Credit or debit card</p>
+            <!-- Stripe payment form-->
+            <form action="{% url 'checkout' %}" method="POST" id="payment-form">
+                {% csrf_token %}
+                <div class="my-3" id="card-element">
                     <!-- Elements will create input elements here -->
-                  </div>
+                </div>
+                <!-- We'll put the error messages in this element -->
+                <div id="card-errors" role="alert"></div>
 
-                  <!-- We'll put the error messages in this element -->
-                  <div id="card-errors" role="alert"></div>
-
-                  <button class="btn btn-green my-3" id="submit">Pay with Stripe</button>
-                </form>
-            </div>
+                <button class="btn btn-green my-3" id="submit">Pay with Stripe</button>
+            </form>
         </div>
-    </section>
-
+    </div>
+</section>
 
 
 {% endblock %}
 
 {% block postload_js %}
-    {{ block.super }}
-    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
-    {{ client_secret|json_script:"id_client_secret" }}
-    <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
+{{ block.super }}
+{{ stripe_public_key|json_script:"id_stripe_public_key" }}
+{{ client_secret|json_script:"id_client_secret" }}
+<script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
 {% endblock %}
