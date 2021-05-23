@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<h2 class="text-center page-header-bg">Thank you!</h2>
+{% endblock %}
+
+{% block content %}
+
+<!-- Checkout success -->
+<section class="container checkout-success">
+    <div class="row mb-8 bg-light m-3 text-center">
+        <div class="col-12">
+            <p>Thank you for your payment. A confirmation email will be sent to {{ user.email_address }}</p>
+        </div>
+        <div class="col-12 my-4">
+            <a href="{% url 'add_event' %}">
+                <button type="button" class="btn btn-outline-green btn-md px-4 me-sm-3 fw-bold">Proceed to create event
+                </button>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}
+
+{% block postload_js %}
+{{ block.super }}
+{{ stripe_public_key|json_script:"id_stripe_public_key" }}
+{{ client_secret|json_script:"id_client_secret" }}
+<script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
+{% endblock %}
