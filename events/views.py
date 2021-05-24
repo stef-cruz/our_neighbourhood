@@ -1,6 +1,7 @@
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, get_object_or_404, redirect, reverse
+from django.shortcuts import render, get_object_or_404, redirect, reverse, HttpResponseRedirect
 from django.contrib import messages
+from django.contrib.sessions.backends.db import SessionStore
 
 from profiles.models import UserProfile
 from .models import Event
@@ -39,8 +40,7 @@ def add_event(request):
             event.user = user
             # save to DB
             event.save()
-            messages.success(request, 'Event created successfully')
-            return redirect(reverse('profile'))
+            return redirect(reverse('preview_event', args=[event.id]))
         else:
             messages.error(request, 'Event could not be created, please ensure the form is valid.')
     else:
@@ -51,6 +51,19 @@ def add_event(request):
         'form': form,
     }
     return render(request, template, context)
+
+
+@login_required
+def preview_event(request, event_id):
+    """ Preview event before payment """
+
+    event = get_object_or_404(Event, pk=event_id)
+
+    context = {
+        'event': event,
+    }
+
+    return render(request, 'events/preview-event.html', context)
 
 
 @login_required

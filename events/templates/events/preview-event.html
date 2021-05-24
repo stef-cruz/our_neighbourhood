@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block page_header %}
-<h2 class="text-center page-header-bg">{{ event.title }}</h2>
+<h2 class="text-center page-header-bg">Preview Event</h2>
 {% endblock %}
 
 {% block content %}
@@ -64,28 +64,12 @@
                 <p>{{ event.event_contact }}</p>
             </div>
         </div>
-
-        {% if request.user.is_authenticated %}
-            {% if event.user != user_db %}
-                <div class="d-flex justify-content-between align-items-center my-4 offset-md-2">
-                    <div class="btn-group">
-                        <a href="{% url 'edit_event' event.id %}"><button type="button" class="btn btn-sm btn-outline-secondary">Edit</button></a>
-                        <a href="{% url 'delete_event' event.id %}"><button type="button" class="btn btn-sm btn-outline-secondary">Delete</button></a>
-                    </div>
-                </div>
-                <div class="col-12 col-md-10 offset-md-1 text-center mt-4 mb-3 event-detail__return">
-                    <p class="pt-2"><i class="fas fa-undo-alt text-purple-custom"></i><a href="{% url 'profile' %}"> Return to profile</a></p>
-                </div>
-            {% else %}
-                <div class="col-12 col-md-10 offset-md-1 text-center mt-4 mb-3 event-detail__return">
-                    <p class="pt-2"><i class="fas fa-undo-alt text-purple-custom"></i><a href="{% url 'profile' %}"> Return to profile</a></p>
-                </div>
-            {% endif %}
-        {% else %}
-            <div class="col-12 col-md-10 offset-md-1 text-center mt-4 mb-3 event-detail__return">
-                <p class="pt-2"><i class="fas fa-undo-alt text-purple-custom"></i><a href="{% url 'home' %}"> Return to home</a></p>
-            </div>
-        {% endif %}
+        <div class="col-12 col-md-10 offset-md-1 text-center my-4">
+            <a href="{% url 'checkout' %}">
+                <button type="button" class="btn btn-green btn-md px-4"><i class="fas fa-lock"></i> Proceed to payment
+                </button>
+            </a>
+        </div>
     </div>
 </div>
 {% endblock %}

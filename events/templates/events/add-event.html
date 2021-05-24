@@ -11,35 +11,35 @@
     <form action="{% url 'add_event' %}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="row form-custom form-group">
-                <div class="col-12 col-md-10 offset-md-1">
-                    {{ form.title|as_crispy_field }}
-                </div>
-                <div class="col-12 col-md-10 offset-md-1">
-                    {{ form.description|as_crispy_field }}
-                </div>
-                <div class="col-12 col-md-5 offset-md-1">
-                    {{ form.event_date|as_crispy_field }}
-                    <span class="text-muted helper-text">Format expected DD/MM/YYYY</span>
-                </div>
-                <div class="col-12 col-md-5">
-                    {{ form.event_time|as_crispy_field }}
-                    <span class="text-muted helper-text">Format expected HH:MM 24h</span>
-                </div>
-                <div class="col-12 col-md-5 offset-md-1">
-                    {{ form.event_location|as_crispy_field }}
-                </div>
-                <div class="col-12 col-md-5">
-                    {{ form.event_price|as_crispy_field }}
-                </div>
-                <div class="col-12 col-md-10 offset-md-1">
-                    {{ form.event_contact|as_crispy_field }}
-                </div>
-                <div class="col-12 col-md-10 offset-md-1">
-                    {{ form.event_category|as_crispy_field }}
-                </div>
-                <div class="col-12 col-md-10 offset-md-1 text-center">
-                    <button type="submit" class="mt-4">Create event</button>
-                </div>
+            <div class="col-12 col-md-10 offset-md-1">
+                {{ form.title|as_crispy_field }}
+            </div>
+            <div class="col-12 col-md-10 offset-md-1">
+                {{ form.description|as_crispy_field }}
+            </div>
+            <div class="col-12 col-md-5 offset-md-1">
+                {{ form.event_date|as_crispy_field }}
+                <span class="text-muted helper-text">Format expected DD/MM/YYYY</span>
+            </div>
+            <div class="col-12 col-md-5">
+                {{ form.event_time|as_crispy_field }}
+                <span class="text-muted helper-text">Format expected HH:MM 24h</span>
+            </div>
+            <div class="col-12 col-md-5 offset-md-1">
+                {{ form.event_location|as_crispy_field }}
+            </div>
+            <div class="col-12 col-md-5">
+                {{ form.event_price|as_crispy_field }}
+            </div>
+            <div class="col-12 col-md-10 offset-md-1">
+                {{ form.event_contact|as_crispy_field }}
+            </div>
+            <div class="col-12 col-md-10 offset-md-1">
+                {{ form.event_category|as_crispy_field }}
+            </div>
+            <div class="col-12 col-md-10 offset-md-1 text-center">
+                <button type="submit" class="mt-4">Create Event</button>
+            </div>
         </div>
     </form>
 </div>

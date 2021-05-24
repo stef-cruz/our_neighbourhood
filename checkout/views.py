@@ -2,9 +2,13 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.conf import settings
 from django.utils.datetime_safe import datetime
+from django.contrib import messages
+
 
 from .models import Order
 from profiles.models import UserProfile
+from events.forms import EventForm
+from events.models import Event
 
 import stripe
 
@@ -16,8 +20,9 @@ def checkout(request):
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
     if request.method == 'POST':
-        payment_date = datetime.now()
+        # Create object in Order Table
         user = get_object_or_404(UserProfile, user=request.user)
+        payment_date = datetime.now()
 
         Order.objects.create(
             user=user, amount='1.00',
@@ -33,9 +38,12 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY
         )
 
+        form = EventForm()
+
     template = 'checkout/checkout.html'
 
     context = {
+        'form': form,
         'stripe_public_key': stripe_public_key,
         'client_secret': intent.client_secret,
     }
