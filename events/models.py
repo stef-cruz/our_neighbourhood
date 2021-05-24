@@ -27,3 +27,4 @@ class Event(models.Model):
     event_contact = models.CharField(max_length=100, blank=False, null=True)
     event_category = models.CharField(max_length=100, default='Arts', choices=EVENTS_CATEGORY)
     creation_date = models.DateTimeField(auto_now_add=True)
+    is_paid = models.BooleanField(default=False, blank=True, null=True)

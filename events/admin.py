@@ -5,6 +5,7 @@ from .models import Event
 class EventAdmin(admin.ModelAdmin):
     """ Events admin """
     list_display = (
+        'is_paid',
         'user',
         'title',
         'description',
