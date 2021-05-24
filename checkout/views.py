@@ -19,7 +19,15 @@ def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
+    event_session = request.session.get('event_session', {})
+
     if request.method == 'POST':
+        # Change is_paid flag to true
+        for key in event_session:
+            event_paid = Event.objects.get(pk=key)
+            event_paid.is_paid = True
+            event_paid.save()
+
         # Create object in Order Table
         user = get_object_or_404(UserProfile, user=request.user)
         payment_date = datetime.now()
@@ -55,8 +63,6 @@ def checkout(request):
 def checkout_success(request):
     """ Success checkout """
     user = get_object_or_404(UserProfile, user=request.user)
-
-    print(user)
 
     template = 'checkout/checkout_success.html'
 
