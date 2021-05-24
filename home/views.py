@@ -8,7 +8,7 @@ def index(request):
     """ A view to return the index page which displays
         the events created by the users """
 
-    events = Event.objects.all()
+    events = Event.objects.get_queryset().order_by('id')
     paginator = Paginator(events, 8)  # Shows 8 events per page.
 
     page_number = request.GET.get('page')
