@@ -57,9 +57,10 @@ def add_event(request):
 def preview_event(request, event_id):
     """ Preview event before payment """
 
-    event = get_object_or_404(Event, pk=event_id)
     # check if session exists, if not create session dict
     event_session = request.session.get('event_session', {})
+    # get event id
+    event = get_object_or_404(Event, pk=event_id)
     # update session's title
     event_session[event_id] = event.title
     # update session
