@@ -54,7 +54,7 @@ form.addEventListener('submit', function (ev) {
     }).then(function (result) {
         if (result.error) {
             let displayError = document.getElementById('card-errors');
-            displayError.textContent = error.message;
+            displayError.textContent = result.error.message;
             console.log(result.error.message);
             card.update({'disabled': false})
             document.getElementById("submit-button").disabled = false;

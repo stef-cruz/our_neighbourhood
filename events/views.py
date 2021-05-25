@@ -57,6 +57,12 @@ def add_event(request):
 def preview_event(request, event_id):
     """ Preview event before payment """
 
+    # if event has been already paid in the DB, redirect to home and
+    # prevent session to be stored in the browser
+    event_is_paid = Event.objects.get(pk=event_id)
+    if event_is_paid.is_paid:
+        return redirect(reverse('home'))
+
     # check if session exists, if not create session dict
     event_session = request.session.get('event_session', {})
     # get event id

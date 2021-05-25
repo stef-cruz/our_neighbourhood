@@ -19,27 +19,31 @@ def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
-    event_session = request.session.get('event_session', {})
+    event_session = request.session.get('event_session')
 
     if not event_session:
         return redirect(reverse('home'))
 
     if request.method == 'POST':
-        # Change is_paid flag to true
-        for key in event_session:
-            event_paid = Event.objects.get(pk=key)
-            event_paid.is_paid = True
-            event_paid.save()
+        try:
+            # Change is_paid flag to true
+            for key in event_session:
+                event_paid = Event.objects.get(pk=key)
+                event_paid.is_paid = True
+                event_paid.save()
 
-        # Create object in Order Table
-        user = get_object_or_404(UserProfile, user=request.user)
-        payment_date = datetime.now()
+            # Create object in Order Table
+            user = get_object_or_404(UserProfile, user=request.user)
+            payment_date = datetime.now()
 
-        Order.objects.create(
-            user=user, amount='1.00',
-            payment_date=payment_date)
+            Order.objects.create(
+                user=user, amount='1.00',
+                payment_date=payment_date)
 
-        return redirect(reverse('checkout_success'))
+            return redirect(reverse('checkout_success'))
+
+        except stripe.error.CardError as e:
+            messages.info(request, f"There was a problem processing your payment. Error: {e.code}.")
 
     else:
         stripe_amount = round(1 * 100)
@@ -65,10 +69,12 @@ def checkout(request):
 @login_required
 def checkout_success(request):
     """ Success checkout """
-    event_session = request.session.get('event_session', {})
 
-    if not event_session:
-        return redirect(reverse('home'))
+    if request.session:
+        try:
+            del request.session['event_session']
+        except:
+            return redirect(reverse('home'))
 
     user = get_object_or_404(UserProfile, user=request.user)
 
