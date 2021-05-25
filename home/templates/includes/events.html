@@ -93,7 +93,7 @@
 
                 {% for page_number in page_obj.number|page_window:page_obj.paginator.num_pages  %}
                 <li class="page-item {% if page_number == page_obj.number %}active{% endif %}">
-                    <a class="page-link" href="?page={{ page_obj.number }}" aria-current="page">
+                    <a class="page-link" href="?page={{ page_number }}" aria-current="page">
                         {{ page_number }}
                         {% if page_number == page_obj.number %}
                         {% endif %}

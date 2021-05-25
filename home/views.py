@@ -8,7 +8,9 @@ def index(request):
     """ A view to return the index page which displays
         the events created by the users """
 
-    events = Event.objects.get_queryset().order_by('id')
+    # Source fix to issue unordered object list warning https://stackoverflow.com/questions/44033670/python-django-rest-framework-unorderedobjectlistwarning
+    events = Event.objects.filter(is_paid=True).order_by('id')
+
     paginator = Paginator(events, 8)  # Shows 8 events per page.
 
     page_number = request.GET.get('page')

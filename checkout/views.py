@@ -21,6 +21,9 @@ def checkout(request):
 
     event_session = request.session.get('event_session', {})
 
+    if not event_session:
+        return redirect(reverse('home'))
+
     if request.method == 'POST':
         # Change is_paid flag to true
         for key in event_session:
@@ -62,6 +65,11 @@ def checkout(request):
 @login_required
 def checkout_success(request):
     """ Success checkout """
+    event_session = request.session.get('event_session', {})
+
+    if not event_session:
+        return redirect(reverse('home'))
+
     user = get_object_or_404(UserProfile, user=request.user)
 
     template = 'checkout/checkout_success.html'
