@@ -30,10 +30,16 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 development = os.environ.get("DEVELOPMENT", False)
 DEBUG = development
 
-if development:
-    ALLOWED_HOSTS = [os.environ.get('LOCALHOST')]
-else:
-    ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
+# if development:
+#     ALLOWED_HOSTS = [os.environ.get('LOCALHOST')]
+# else:
+#     ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
+
+ALLOWED_HOSTS = [
+    '77f17fafcb7f.ngrok.io',
+    os.environ.get('LOCALHOST'),
+    'ci-milestone4.herokuapp.com'
+]
 
 # Application definition
 
