@@ -23,7 +23,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-12 col-md-3 order-1">
+            <div class="col-12 col-md-5 order-1">
                 <div class="d-flex justify-content-center align-items-center pt-3">
                     <form method="GET" action="{% url 'events' %}">
                         <div class="btn-group">
@@ -54,12 +54,15 @@
                             <!-- Event description -->
                             <p class="card-text text-muted">{{ event.description }}</p>
 
+                            <hr>
+
                             <!-- Event category -->
-                            <p class="pt-2"><span class="badge card-content__badge">{{ event.event_category }}</span>
+                            <p class="pt-2">
+                                <span class="badge card-content__badge">{{ event.event_category }}</span>
                             </p>
 
                             <!-- Event details -->
-                            <div class="py-3">
+                            <div class="pt-2 pb-3">
                                 {% if event.event_date %}
                                 <div class="card-content__key fw-bolder">
                                     <p>Date:</p>

@@ -1,12 +1,30 @@
 .event-detail {
-  &__return {
+  max-width: 70vw;
+
+  @include bp(tablet) {
+    &__wrapper {
+      padding-right: 1.5rem;
+      padding-left: 1.5rem;
+    }
+  }
+
+  &__buttons {
     a {
       text-decoration: none;
       color: #212529; /* text-dark */
 
-      &:hover {
-        color: $prim-colour;
-      }
+    }
+  }
+
+  .return-to-events {
+
+    a {
+      text-decoration: none;
+      color: #212529; /* text-dark */
+    }
+
+    &:hover {
+      color: $prim-colour;
     }
   }
 }

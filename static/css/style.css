@@ -214,7 +214,11 @@
 }
 
 .my-profile {
-  border: 0.1rem solid rgba(108, 117, 125, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  /* .card border */
+  border-radius: 0.25rem;
+  /* .card border-radius */
+  max-width: 70vw;
 }
 .my-profile .nav-tabs .active,
 .my-profile .nav-link .active {
@@ -379,12 +383,26 @@
   width: 60%;
 }
 
-.event-detail__return a {
+.event-detail {
+  max-width: 70vw;
+}
+@media (min-width: 48rem) {
+  .event-detail__wrapper {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+  }
+}
+.event-detail__buttons a {
   text-decoration: none;
   color: #212529;
   /* text-dark */
 }
-.event-detail__return a:hover {
+.event-detail .return-to-events a {
+  text-decoration: none;
+  color: #212529;
+  /* text-dark */
+}
+.event-detail .return-to-events:hover {
   color: #5710b2;
 }
 
@@ -511,6 +529,10 @@ footer {
 
 .text-gray-custom {
   color: #6c757d;
+}
+
+hr {
+  opacity: 0.15;
 }
 
 /*# sourceMappingURL=style.css.map */
