@@ -1,7 +1,8 @@
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, get_object_or_404, redirect, reverse, HttpResponseRedirect
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
-from django.contrib.sessions.backends.db import SessionStore
+from django.db.models import Q
+from django.core.paginator import Paginator
 
 from profiles.models import UserProfile
 from .models import Event
@@ -18,6 +19,40 @@ def event_detail(request, event_id):
     }
 
     return render(request, 'events/event-detail.html', context)
+
+
+def all_events(request):
+    """ Display all events including sorting and search queries """
+
+    # Source fix to issue unordered object list warning
+    # https://stackoverflow.com/questions/44033670/python-django-rest-framework-unorderedobjectlistwarning
+    events = Event.objects.filter(is_paid=True).order_by('id')
+
+    if request.GET:
+        if 'q' in request.GET:
+            query = request.GET['q']
+            if not query:
+                messages.error(request, "You didn't enter any search criteria")
+                return redirect(reverse('events'))
+
+            # Q is the only way to filter with an OR operator and
+            # i in icontains makes it case insensitive
+            queries = Q(title__icontains=query) | Q(description__icontains=query)
+            events = events.filter(queries)
+
+    paginator = Paginator(events, 8)  # Shows 8 events per page.
+
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    template = 'events/events.html'
+
+    context = {
+        'events': events,
+        'page_obj': page_obj,
+    }
+
+    return render(request, template, context)
 
 
 @login_required

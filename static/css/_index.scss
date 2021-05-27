@@ -1,6 +1,6 @@
 .hero {
   background-color: $prim-colour;
-  position:relative;
+  position: relative;
 
   //Source https://codepen.io/martinjkelly/pen/vEOBvL
   #triangle-badge {
@@ -35,4 +35,33 @@
   background-color: $prim-colour;
   border-color: $prim-colour;
   color: #fff;
+}
+
+//Faq
+.accordion-button:not(.collapsed) {
+  color: $prim-colour;
+}
+
+.accordion-button:focus {
+  border-color: $prim-colour;
+  box-shadow: 0 0 0 0.25rem rgb($prim-colour, 0.25);
+}
+
+//Events
+.filter-search {
+  &__filter-btn {
+    padding: .375rem 3rem;
+    font-size: 1rem;
+    position: relative;
+
+    i {
+      position: absolute;
+      right: 7.6rem;
+      top: 0.6rem;
+    }
+
+    span {
+      padding-left: 1rem;
+    }
+  }
 }

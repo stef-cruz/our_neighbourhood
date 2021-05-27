@@ -1,0 +1,159 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<h2 class="text-center page-header-bg">Local Events</h2>
+{% endblock %}
+
+{% block content %}
+<section>
+    <!--  Search bar and filter  -->
+    <div class="container filter-search">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-3 order-2">
+                <div class="d-flex justify-content-center align-items-center pt-3">
+                    <div class="btn btn-sm btn-secondary filter-search__filter-btn" id="dropdownFilter"
+                         data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-filter"></i>
+                        <span>Filter</span>
+                    </div>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownFilter">
+                        <li><a class="dropdown-item" href="#">Alphabetically</a></li>
+                        <li><a class="dropdown-item" href="#">Category</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-12 col-md-3 order-1">
+                <div class="d-flex justify-content-center align-items-center pt-3">
+                    <form method="GET" action="{% url 'events' %}">
+                        <div class="btn-group">
+                            <input class="form-control" type="text" name="q" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-sm btn-secondary" type="submit">
+                            <span class="icon">
+                                <i class="fas fa-search"></i>
+                            </span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--  Events  -->
+    <div class="album py-5">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-2 g-4 mb-4">
+                {% for event in page_obj %}
+                <div class="col">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body bg-light">
+                            <!-- Event title -->
+                            <h5 class="card-title card-content__title my-3 fw-bolder">{{ event.title }}</h5>
+
+                            <!-- Event description -->
+                            <p class="card-text text-muted">{{ event.description }}</p>
+
+                            <!-- Event category -->
+                            <p class="pt-2"><span class="badge card-content__badge">{{ event.event_category }}</span>
+                            </p>
+
+                            <!-- Event details -->
+                            <div class="py-3">
+                                {% if event.event_date %}
+                                <div class="card-content__key fw-bolder">
+                                    <p>Date:</p>
+                                </div>
+                                <div class="card-content__value">
+                                    <p>{{ event.event_date }}</p>
+                                </div>
+                                {% else %}
+                                <div style="display: block;"></div>
+                                {% endif %}
+                                {% if event.event_time %}
+                                <div class="card-content__key fw-bolder">
+                                    <p>Time:</p>
+                                </div>
+                                <div class="card-content__value">
+                                    <p>{{ event.event_time }}</p>
+                                </div>
+                                {% else %}
+                                <div style="display: block;"></div>
+                                {% endif %}
+                                {% if event.event_location %}
+                                <div class="card-content__key fw-bolder">
+                                    <p>Location:</p>
+                                </div>
+                                <div class="card-content__value">
+                                    <p>{{ event.event_location }}</p>
+                                </div>
+                                {% else %}
+                                <div style="display: block;"></div>
+                                {% endif %}
+                                <div class="card-content__key fw-bolder">
+                                    <p>Price:</p>
+                                </div>
+                                <div class="card-content__value">
+                                    <p>{{ event.event_price }}</p>
+                                </div>
+                                <div class="card-content__key fw-bolder">
+                                    <p>Contact:</p>
+                                </div>
+                                <div class="card-content__value">
+                                    <p>{{ event.event_contact }}</p>
+                                </div>
+                            </div>
+
+                            <!-- Card buttons -->
+                            <div class="d-flex justify-content-end align-items-center pt-3">
+                                <div class="btn-group">
+                                    <a href="{% url 'event_detail' event.id %}">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- Pagination -->
+            <!-- Source: https://origin.tiltingatwindmills.dev/how-to-show-a-range-of-page-numbers-using-djangos-pagination -->
+            {% load home_extras %}
+            <nav aria-label="Events page navigation">
+                <ul class="pagination">
+                    {% if page_obj.has_previous %}
+                    <li class="page-item"><a class="page-link"
+                                             href="?page={{ page_obj.previous_page_number }}">previous</a>
+                    </li>
+                    {% else %}
+                    <li class="page-item disabled"><a class="page-link" href="#" aria-disabled="true"
+                                                      tabindex="-1">previous</a></li>
+                    {% endif %}
+
+                    {% for page_number in page_obj.number|page_window:page_obj.paginator.num_pages %}
+                    <li class="page-item {% if page_number == page_obj.number %}active{% endif %}">
+                        <a class="page-link" href="?page={{ page_number }}" aria-current="page">
+                            {{ page_number }}
+                            {% if page_number == page_obj.number %}
+                            {% endif %}
+                        </a>
+                    </li>
+                    {% endfor %}
+                    {% if page_obj.has_next %}
+                    <li class="page-item"><a href="?page={{ page_obj.next_page_number }}" class="page-link">next</a>
+                    </li>
+                    {% else %}
+                    <li class="page-item disabled"><a class="page-link" href="#" aria-disabled="true"
+                                                      tabindex="-1">next</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}
