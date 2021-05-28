@@ -403,6 +403,9 @@
 .filter-search .dropdown-toggle::after {
   margin-left: 1rem;
 }
+.filter-search .disabled {
+  color: #5710b2;
+}
 
 .checkout {
   text-align: center;
@@ -531,6 +534,10 @@ footer {
 
 hr {
   opacity: 0.15;
+}
+
+.bg-light-gray {
+  background-color: rgba(108, 117, 125, 0.1);
 }
 
 /*# sourceMappingURL=style.css.map */

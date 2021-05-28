@@ -81,7 +81,11 @@ footer {
 }
 
 //HR
-
 hr {
   opacity: .15;
+}
+
+//Bg colour
+.bg-light-gray {
+  background-color: rgba($gray, 0.1);
 }

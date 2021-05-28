@@ -14,15 +14,19 @@
                 <div class="d-flex justify-content-center align-items-center pt-3">
                     <div class="btn btn-sm btn-secondary filter-search__filter-btn dropdown-toggle" id="dropdownFilter"
                          data-bs-toggle="dropdown" aria-expanded="false">
-                        <span>Category</span>
+                        <span>Filter</span>
                     </div>
                     <ul class="dropdown-menu" aria-labelledby="dropdownFilter">
-                        <li><a class="dropdown-item" href="{% url 'events' %}?category=arts">Arts</a></li>
-                        <li><a class="dropdown-item" href="{% url 'events' %}?category=food-and-drinks">Food &amp; Drinks</a></li>
-                        <li><a class="dropdown-item" href="{% url 'events' %}?category=fitness-and-sports">Fitness &amp; Sports</a></li>
-                        <li><a class="dropdown-item" href="{% url 'events' %}?category=kids">Kids</a></li>
-                        <li><a class="dropdown-item" href="{% url 'events' %}?category=services">Services</a></li>
-                        <li><a class="dropdown-item" href="{% url 'events' %}?category=other">Other</a></li>
+                        <li><a class="dropdown-item fw-bolder" href="{% url 'events' %}">View All</a></li>
+                        <li><a class="dropdown-item disabled" href="">Category</a></li>
+                        <li><a class="dropdown-item ps-5" href="{% url 'events' %}?category=arts">Arts</a></li>
+                        <li><a class="dropdown-item ps-5" href="{% url 'events' %}?category=food-and-drinks">Food &amp; Drinks</a></li>
+                        <li><a class="dropdown-item ps-5" href="{% url 'events' %}?category=fitness-and-sports">Fitness &amp; Sports</a></li>
+                        <li><a class="dropdown-item ps-5" href="{% url 'events' %}?category=kids">Kids</a></li>
+                        <li><a class="dropdown-item ps-5" href="{% url 'events' %}?category=services">Services</a></li>
+                        <li><a class="dropdown-item ps-5" href="{% url 'events' %}?category=other">Other</a></li>
+                        <li><a class="dropdown-item disabled" href="">Event Date</a></li>
+                        <li><a class="dropdown-item ps-5" href="{% url 'events' %}?date=upcoming-events">Upcoming events</a></li>
                     </ul>
                 </div>
             </div>
@@ -50,7 +54,7 @@
                 {% for event in page_obj %}
                 <div class="col">
                     <div class="card shadow-sm h-100">
-                        <div class="card-body bg-light">
+                        <div class="card-body bg-light-gray">
                             <!-- Event title -->
                             <h5 class="card-title card-content__title my-3 fw-bolder">{{ event.title }}</h5>
 

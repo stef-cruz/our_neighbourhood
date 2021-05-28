@@ -3,6 +3,7 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from django.db.models import Q
 from django.core.paginator import Paginator
+from django.utils.datetime_safe import date, datetime
 
 from profiles.models import UserProfile
 from .models import Event
@@ -29,8 +30,15 @@ def all_events(request):
     events = Event.objects.filter(is_paid=True).order_by('id')
     query = None
     category = None
+    date = None
 
     if request.GET:
+        if 'date' in request.GET:
+            date_event = request.GET['date']
+            print(date_event)
+            if date_event == 'upcoming-events':
+                events = events.filter(event_date__gt=datetime.now())
+
         if 'category' in request.GET:
             categories = request.GET['category']
             if categories == 'arts':

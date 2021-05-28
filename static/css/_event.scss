@@ -43,4 +43,8 @@
   .dropdown-toggle::after {
     margin-left: 1rem;
   }
+
+  .disabled {
+    color: $prim-colour;
+  }
 }
