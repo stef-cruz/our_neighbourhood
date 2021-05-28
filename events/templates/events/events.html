@@ -12,14 +12,17 @@
         <div class="row justify-content-center">
             <div class="col-12 col-md-3 order-2">
                 <div class="d-flex justify-content-center align-items-center pt-3">
-                    <div class="btn btn-sm btn-secondary filter-search__filter-btn" id="dropdownFilter"
+                    <div class="btn btn-sm btn-secondary filter-search__filter-btn dropdown-toggle" id="dropdownFilter"
                          data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-filter"></i>
-                        <span>Filter</span>
+                        <span>Category</span>
                     </div>
                     <ul class="dropdown-menu" aria-labelledby="dropdownFilter">
-                        <li><a class="dropdown-item" href="#">Alphabetically</a></li>
-                        <li><a class="dropdown-item" href="#">Category</a></li>
+                        <li><a class="dropdown-item" href="{% url 'events' %}?category=arts">Arts</a></li>
+                        <li><a class="dropdown-item" href="{% url 'events' %}?category=food-and-drinks">Food &amp; Drinks</a></li>
+                        <li><a class="dropdown-item" href="{% url 'events' %}?category=fitness-and-sports">Fitness &amp; Sports</a></li>
+                        <li><a class="dropdown-item" href="{% url 'events' %}?category=kids">Kids</a></li>
+                        <li><a class="dropdown-item" href="{% url 'events' %}?category=services">Services</a></li>
+                        <li><a class="dropdown-item" href="{% url 'events' %}?category=other">Other</a></li>
                     </ul>
                 </div>
             </div>

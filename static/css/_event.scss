@@ -17,7 +17,6 @@
   }
 
   .return-to-events {
-
     a {
       text-decoration: none;
       color: #212529; /* text-dark */
@@ -26,5 +25,22 @@
     &:hover {
       color: $prim-colour;
     }
+  }
+}
+
+//Events
+.filter-search {
+  &__filter-btn {
+    padding: .375rem 1rem;
+    font-size: 1rem;
+    position: relative;
+
+    span {
+      padding-left: 1rem;
+    }
+  }
+
+  .dropdown-toggle::after {
+    margin-left: 1rem;
   }
 }

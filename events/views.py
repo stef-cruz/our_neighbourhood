@@ -27,8 +27,25 @@ def all_events(request):
     # Source fix to issue unordered object list warning
     # https://stackoverflow.com/questions/44033670/python-django-rest-framework-unorderedobjectlistwarning
     events = Event.objects.filter(is_paid=True).order_by('id')
+    query = None
+    category = None
 
     if request.GET:
+        if 'category' in request.GET:
+            categories = request.GET['category']
+            if categories == 'arts':
+                events = events.filter(event_category__contains='arts')
+            elif categories == 'food-and-drinks':
+                events = events.filter(event_category__contains='food')
+            elif categories == 'fitness-and-sports':
+                events = events.filter(event_category__contains='fitness')
+            elif categories == 'kids':
+                events = events.filter(event_category__contains='kids')
+            elif categories == 'services':
+                events = events.filter(event_category__contains='services')
+            else:
+                events = events.filter(event_category__contains='other')
+
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
