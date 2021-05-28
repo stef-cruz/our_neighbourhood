@@ -370,9 +370,12 @@
 }
 
 .event-detail {
-  max-width: 70vw;
+  max-width: 95vw;
 }
 @media (min-width: 48rem) {
+  .event-detail {
+    max-width: 70vw;
+  }
   .event-detail__wrapper {
     padding-right: 1.5rem;
     padding-left: 1.5rem;

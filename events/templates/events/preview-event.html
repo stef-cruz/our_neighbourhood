@@ -8,24 +8,25 @@
 {% block content %}
 <div class="container event-detail">
     <div class="row">
-
-        <!-- Event title -->
-        <div class="col-12 col-md-10 offset-md-2 my-4 fw-bold">
+        <div class="bg-light-gray shadow-sm card ">
+            <div class="col-12 my-4 fw-bolder">
             {{ event.title }}
         </div>
 
-        <!-- Event description -->
-        <div class="col-12 col-md-10 offset-md-2 text-muted my-4">
-            {{ event.description }}
-        </div>
+            <!-- Event description -->
+            <div class="col-12 text-muted my-4">
+                {{ event.description }}
+            </div>
+
+            <hr>
 
         <!-- Event category -->
-        <div class="col-12 col-md-10 offset-md-2 my-4">
-            <h4><span class="badge card-content__badge">{{ event.event_category }}</span></h4>
-        </div>
+            <div class="col-12 my-4">
+                <h4><span class="badge card-content__badge">{{ event.event_category }}</span></h4>
+            </div>
 
         <!-- Event details -->
-        <div class="col-12 col-md-10 py-3 offset-md-2">
+        <div class="col-12 col-md-10 py-3">
             {% if event.event_date %}
             <div class="card-content__key fw-bolder">
                 <p>Date:</p>
@@ -75,6 +76,11 @@
                 </button>
             </a>
         </div>
+        </div>
+
+        <!-- Event title -->
+
     </div>
 </div>
+
 {% endblock %}
