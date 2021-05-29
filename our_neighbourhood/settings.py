@@ -30,13 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 development = os.environ.get("DEVELOPMENT", False)
 DEBUG = development
 
-# if development:
-#     ALLOWED_HOSTS = [os.environ.get('LOCALHOST')]
-# else:
-#     ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
-
 ALLOWED_HOSTS = [
-    '77f17fafcb7f.ngrok.io',
     os.environ.get('LOCALHOST'),
     'ci-milestone4.herokuapp.com'
 ]
@@ -65,7 +59,6 @@ INSTALLED_APPS = [
     # allauth social
     'allauth.socialaccount',
     'allauth.socialaccount.providers.facebook',
-    'allauth.socialaccount.providers.twitter',
     'allauth.socialaccount.providers.google',
 
     # project's apps
@@ -119,7 +112,7 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
-SITE_ID = 1
+SITE_ID = 2
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
@@ -135,22 +128,15 @@ LOGIN_REDIRECT_URL = '/'
 SOCIALACCOUNT_PROVIDERS = {
     'facebook': {
         'APP': {
-            'client_id': '123',
-            'secret': '456',
-            'key': ''
-        }
-    },
-    'twitter': {
-        'APP': {
-            'client_id': '123',
-            'secret': '456',
+            'client_id': os.environ.get('FACEBOOK_APP_ID'),
+            'secret': os.environ.get('FACEBOOK_APP_SECRET'),
             'key': ''
         }
     },
     'google': {
         'APP': {
-            'client_id': '123',
-            'secret': '456',
+            'client_id': os.environ.get('GOOGLE_CLIENT_ID'),
+            'secret': os.environ.get('GOOGLE_SECRET'),
             'key': ''
         }
     }

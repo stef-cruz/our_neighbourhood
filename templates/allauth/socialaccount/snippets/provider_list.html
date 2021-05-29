@@ -21,11 +21,6 @@
          href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}">
           Log in with <i class="fab fa-facebook-f"></i> {{provider.name}}
         </a>
-    {% elif provider.name == "Twitter" %}
-        <a title="{{provider.name}}" class="btn btn-sm my-2 btn-info socialaccount_provider {{provider.id}}"
-           href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}">
-            Log in with <i class="fab fa-twitter"></i> {{provider.name}}
-        </a>
     {% elif provider.name == "Google" %}
         <a title="{{provider.name}}" class="btn btn-sm my-2 btn-danger socialaccount_provider {{provider.id}}"
            href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}">

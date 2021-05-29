@@ -4,12 +4,12 @@ from django.conf import settings
 from profiles.models import UserProfile
 
 EVENTS_CATEGORY = (
-    ('Arts', 'arts'),
-    ('Food & Drinks', 'food-and-drinks'),
-    ('Fitness & Sports', 'fitness-and-sports'),
-    ('Kids', 'kids'),
-    ('Services', 'services'),
-    ('Other', 'other'),
+    ('Arts', 'Arts'),
+    ('Food & Drinks', 'Food & Drinks'),
+    ('Fitness & Sports', 'Fitness & Sports'),
+    ('Kids', 'Kids'),
+    ('Services', 'Services'),
+    ('Other', 'Other'),
 )
 
 
