@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% load static %}
-{% load crispy_forms_field %}
 
 {% block page_header %}
 <h2 class="text-center page-header-bg">Admin Panel</h2>
@@ -8,8 +7,12 @@
 
 {% block content %}
 
-<section class="container">
+<section class="container event-mgmt">
+    <h4>Contact requests</h4>
+    {% include 'includes/contact-requests.html' %}
 
+    <h4>Event Management</h4>
+    {% include 'includes/events-mgmt.html' %}
 </section>
 
 {% endblock %}

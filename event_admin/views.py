@@ -12,6 +12,9 @@ def event_admin(request):
     """ A view to enable the superuser to access all contact requests
      and events """
 
+    if not request.user.is_superuser:
+        return redirect(reverse('home'))
+
     contacts = Contact.objects.all()
     events = Event.objects.all()
 

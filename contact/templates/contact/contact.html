@@ -8,7 +8,7 @@
 
 {% block content %}
 
-<section class="container contact add-edit-event">
+<section class="container contact">
     <form action="{% url 'contact' %}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="row form-custom form-group">
