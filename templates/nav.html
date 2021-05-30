@@ -13,7 +13,7 @@
                     <ul class="list-unstyled">
                         {% if request.user.is_authenticated %}
                             {% if request.user.is_superuser %}
-                                <li><a href="#" class="text-black">Event Management</a></li>
+                                <li><a href="{% url 'event_admin' %}" class="text-black">Event Management</a></li>
                             {% endif %}
                                 <li><a href="{% url 'profile' %}" class="text-black">My Profile</a></li>
                                 <li><a href="{% url 'events' %}" class="text-black">Local Events</a></li>
