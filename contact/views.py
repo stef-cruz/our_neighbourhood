@@ -14,7 +14,7 @@ def contact(request):
             form.save()
             return redirect(reverse('contact'))
         else:
-            messages.error(request, 'Message could not be submited, please ensure the form is valid.')
+            messages.error(request, 'Message was not sent, please ensure the form is valid.')
     else:
         form = ContactForm
 
@@ -23,4 +23,3 @@ def contact(request):
         'form': form,
     }
     return render(request, template, context)
-

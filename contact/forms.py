@@ -6,15 +6,16 @@ class ContactForm(forms.ModelForm):
 
     # Name field
     contact_name = forms.CharField(label='Name',
-                           max_length=100,
-                           required=True,
-                           widget=forms.TextInput(attrs={'placeholder': 'Your name'}))
+                                   max_length=100,
+                                   required=True,
+                                   widget=forms.TextInput(attrs={'placeholder': 'Your name'}))
 
-    # Name field
-    contact_email = forms.CharField(label='Email',
-                                    max_length=100,
-                                    required=True,
-                                    widget=forms.TextInput(attrs={'placeholder': 'Your email'}))
+    # Email field
+    contact_email = forms.EmailField(label='Email',
+                                     max_length=100,
+                                     required=True,
+                                     error_messages={'invalid': 'Please enter a valid email address.'},
+                                     widget=forms.TextInput(attrs={'placeholder': 'Your email'}))
 
     # Message field
     message = forms.CharField(label='Message',
