@@ -150,12 +150,14 @@ def edit_event(request, event_id):
     user_db = get_object_or_404(UserProfile, user=request.user)
 
     # check if event is created by the user editing it
-    if event.user == user_db:
+    if event.user == user_db or request.user.is_superuser:
         if request.method == 'POST':
             form = EventForm(request.POST, instance=event)
             if form.is_valid():
                 form.save()
                 messages.success(request, 'Event updated successfully.')
+                if request.user.is_superuser:
+                    return redirect(reverse('event_admin'))
                 return redirect(reverse('event_detail', args=[event.id]))
             else:
                 messages.error(request, 'Event could not be updated, please ensure the form is valid.')
@@ -189,9 +191,11 @@ def delete_event(request, event_id):
     event = get_object_or_404(Event, pk=event_id)
     user_db = get_object_or_404(UserProfile, user=request.user)
 
-    if event.user == user_db:
+    if event.user == user_db or request.user.is_superuser:
         event.delete()
         messages.success(request, 'Event successfully deleted.')
+        if request.user.is_superuser:
+            return redirect(reverse('event_admin'))
         return redirect(reverse('profile'))
 
     else:
