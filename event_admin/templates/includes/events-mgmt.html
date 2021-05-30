@@ -24,10 +24,10 @@
                 <th scope="row">{{ event.id }}</th>
                 <td>
                     <div class="dropdown">
-                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                      <button class="btn btn-green dropdown-toggle" type="button" id="dropdownMenuEventMgmt" data-bs-toggle="dropdown" aria-expanded="false">
                         Actions
                       </button>
-                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuEventMgmt">
                         <li><a class="dropdown-item" href="{% url 'edit_event' event.id %}">Edit</a></li>
                         <li><a class="dropdown-item" href="{% url 'delete_event' event.id %}">Delete</a></li>
                       </ul>

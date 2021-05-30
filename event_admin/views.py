@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
@@ -25,3 +25,20 @@ def event_admin(request):
     }
     return render(request, template, context)
 
+
+@login_required
+def mark_as_resolved(request, contact_id):
+    """ A view to enable the superuser to mark contact
+    requests as resolved"""
+
+    if not request.user.is_superuser:
+        return redirect(reverse('home'))
+
+    try:
+        contact = get_object_or_404(Contact, pk=contact_id)
+        contact.is_resolved = True
+        contact.save()
+        messages.success(request, 'Contact request marked as resolved.')
+        return redirect(reverse('event_admin'))
+    except ValueError as e:
+        messages.error(request, f"There was a problem to mark this contact request as resolved. Error: {e.code}.")

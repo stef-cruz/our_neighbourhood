@@ -19,12 +19,11 @@
                 <th scope="row">{{ contact.id }}</th>
                 <td>
                     <div class="dropdown">
-                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                      <button class="btn btn-green dropdown-toggle" type="button" id="dropdownMenuContact" data-bs-toggle="dropdown" aria-expanded="false">
                         Actions
                       </button>
-                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="">Edit</a></li>
-                        <li><a class="dropdown-item" href="">Delete</a></li>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuContact">
+                          <li><a class="dropdown-item" href="{% url 'mark_as_resolved' contact.id %}">Mark as resolved</a></li>
                       </ul>
                     </div>
                 </td>
