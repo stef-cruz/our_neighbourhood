@@ -474,6 +474,10 @@
   /* colour danger */
 }
 
+.event-mgmt__btn {
+  width: 20rem;
+}
+
 * {
   margin: 0;
 }

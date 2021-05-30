@@ -1,8 +1,42 @@
 <div class="row">
-    <div class="col-6 col-md-12">
-        Events paid for
-    </div>
-    <div class="col-6 col-md-12">
-        Events not paid
+    <div class="col table-responsive">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Actions</th>
+                <th scope="col">Category</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Message</th>
+                <th scope="col">Is resolved</th>
+                <th scope="col">Creation Date</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for contact in contacts %}
+            <tr>
+                <th scope="row">{{ contact.id }}</th>
+                <td>
+                    <div class="dropdown">
+                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        Actions
+                      </button>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="">Edit</a></li>
+                        <li><a class="dropdown-item" href="">Delete</a></li>
+                      </ul>
+                    </div>
+                </td>
+                <td>{{ contact.contact_category }}</td>
+                <td>{{ contact.contact_name }}</td>
+                <td>{{ contact.contact_email }}</td>
+                <td>{{ contact.message }}</td>
+                <td>{{ contact.is_resolved }}</td>
+                <td>{{ contact.creation_date }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
     </div>
 </div>
