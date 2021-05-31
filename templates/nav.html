@@ -17,14 +17,14 @@
                             {% endif %}
                                 <li><a href="{% url 'profile' %}" class="text-black">My Profile</a></li>
                                 <li><a href="{% url 'events' %}" class="text-black">Local Events</a></li>
-                                <li><a href="" class="text-black">FAQ</a></li>
+                                <li><a href="{% url 'faq' %}" class="text-black">FAQ</a></li>
                                 <li><a href="{% url 'contact' %}" class="text-black">Contact</a></li>
                                 <li><a href="{% url 'account_logout' %}" class="text-black">Log Out</a></li>
                         {% else %}
                             <li><a href="{% url 'account_login' %}" class="text-black">Log In</a></li>
                             <li><a href="{% url 'account_signup' %}" class="text-black">Sign up</a></li>
                             <li><a href="{% url 'events' %}" class="text-black">Local Events</a></li>
-                            <li><a href="" class="text-black">FAQ</a></li>
+                            <li><a href="{% url 'faq' %}" class="text-black">FAQ</a></li>
                             <li><a href="{% url 'contact' %}" class="text-black">Contact</a></li>
                         {% endif %}
                     </ul>

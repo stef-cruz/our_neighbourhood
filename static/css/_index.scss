@@ -39,7 +39,8 @@
 
 //Faq
 .accordion-button:not(.collapsed) {
-  color: $prim-colour;
+  color: #fff;
+  background-color: $sec-colour;
 }
 
 .accordion-button:focus {
