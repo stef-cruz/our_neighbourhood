@@ -47,3 +47,41 @@
   border-color: $prim-colour;
   box-shadow: 0 0 0 0.25rem rgb($prim-colour, 0.25);
 }
+
+.subheading {
+  h2 {
+    color: $prim-colour;
+  }
+  a {
+    i {
+      font-size: 0.9rem;
+    }
+  }
+
+  &__image {
+    background: url('/media/homepage-img.png') no-repeat center center;
+    background-size: contain;
+    min-height: 20rem;
+  }
+}
+
+.content-cards {
+  a {
+    text-decoration: none;
+  }
+
+  .card-1 {
+    background-color: rgba($sec-colour, 0.9);
+    color: $prim-colour;
+  }
+
+  .card-2 {
+    background-color: rgba($sec-colour, 0.7);
+    color: $prim-colour;
+  }
+
+  .card-3 {
+    background-color: rgba($sec-colour, 0.5);
+    color: $prim-colour;
+  }
+}
