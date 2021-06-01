@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<section class="container error-page">
+    <div class="row flex-lg-row-reverse text-center g-5 py-5">
+        <div class="col-12">
+            <h3 class="text-purple-custom my-3"><i class="fas fa-exclamation-triangle"></i></h3>
+            <h3 class="fw-bold lh-1 py-3">Oopss... this page isn't working.</h3>
+            <p class="lead">500 internal server error</p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-center my-5">
+                <a href="{% url 'home' %}">
+                    <button type="button" class="btn btn-green btn-lg px-4 me-md-2">Back to home page</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
