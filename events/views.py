@@ -3,7 +3,7 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from django.db.models import Q
 from django.core.paginator import Paginator
-from django.utils.datetime_safe import date, datetime
+from django.utils.datetime_safe import datetime
 
 from profiles.models import UserProfile
 from .models import Event
@@ -42,17 +42,17 @@ def all_events(request):
         if 'category' in request.GET:
             categories = request.GET['category']
             if categories == 'arts':
-                events = events.filter(event_category__contains='arts')
+                events = events.filter(event_category__icontains='arts')
             elif categories == 'food-and-drinks':
-                events = events.filter(event_category__contains='food')
+                events = events.filter(event_category__icontains='food')
             elif categories == 'fitness-and-sports':
-                events = events.filter(event_category__contains='fitness')
+                events = events.filter(event_category__icontains='fitness')
             elif categories == 'kids':
-                events = events.filter(event_category__contains='kids')
+                events = events.filter(event_category__icontains='kids')
             elif categories == 'services':
-                events = events.filter(event_category__contains='services')
+                events = events.filter(event_category__icontains='services')
             else:
-                events = events.filter(event_category__contains='other')
+                events = events.filter(event_category__icontains='other')
 
         if 'q' in request.GET:
             query = request.GET['q']
@@ -171,13 +171,11 @@ def edit_event(request, event_id):
         return redirect(reverse('home'))
 
     template = 'events/edit-event.html'
-
     context = {
         'form': form,
         'event': event,
         'user_db': user_db,
     }
-
     return render(request, template, context)
 
 
