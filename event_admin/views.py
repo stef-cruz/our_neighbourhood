@@ -42,3 +42,20 @@ def mark_as_resolved(request, contact_id):
         return redirect(reverse('event_admin'))
     except ValueError as e:
         messages.error(request, f"There was a problem to mark this contact request as resolved. Error: {e.code}.")
+
+
+@login_required
+def mark_as_paid(request, event_id):
+    """ A view to enable the superuser to mark events as paid"""
+
+    if not request.user.is_superuser:
+        return redirect(reverse('home'))
+
+    try:
+        event = get_object_or_404(Event, pk=event_id)
+        event.is_paid = True
+        event.save()
+        messages.success(request, 'Event marked as paid.')
+        return redirect(reverse('event_admin'))
+    except ValueError as e:
+        messages.error(request, f"There was a problem to mark this event as paid. Error: {e.code}.")
