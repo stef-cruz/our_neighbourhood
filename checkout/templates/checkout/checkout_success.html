@@ -11,7 +11,7 @@
 <section class="container checkout-success">
     <div class="row mb-8 bg-light m-3 text-center">
         <div class="col-12">
-            <p>Thank you for your payment. A confirmation email will be sent to {{ user.email_address }}</p>
+            <p>Thank you for your payment. A confirmation email will be sent to {{ user_from_allauth_email_address }}</p>
         </div>
         <div class="col-12 my-4">
             <a href="{% url 'home' %}">

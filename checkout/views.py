@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.conf import settings
 from django.utils.datetime_safe import datetime
 from django.contrib import messages
-
+from django.contrib.auth.models import User
 
 from .models import Order
 from profiles.models import UserProfile
@@ -76,12 +76,14 @@ def checkout_success(request):
         except:
             return redirect(reverse('home'))
 
-    user = get_object_or_404(UserProfile, user=request.user)
+    # get user email address
+    user_from_allauth = get_object_or_404(User, username=request.user)
+    user_from_allauth_email_address = user_from_allauth.email
 
     template = 'checkout/checkout_success.html'
 
     context = {
-        'user': user
+        'user_from_allauth_email_address': user_from_allauth_email_address,
     }
 
     return render(request, template, context)
