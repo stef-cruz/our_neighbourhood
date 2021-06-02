@@ -7,6 +7,7 @@ class UserProfileAdmin(admin.ModelAdmin):
     list_display = (
         'user',
         'full_name',
+        'bio',
         'email_address',
         'creation_date',
         'is_superuser',
