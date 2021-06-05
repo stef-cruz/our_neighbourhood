@@ -6,7 +6,10 @@ for (let i = 0 ; i < input.length; i++) {
     input[i].addEventListener('change', function(e) {
         button.classList.remove("disabled");
     });
-    textArea[i].addEventListener('change', function(e) {
+}
+
+for (let j = 0 ; j < input.length; j++) {
+    textArea[j].addEventListener('change', function(e) {
         button.classList.remove("disabled");
     });
 }

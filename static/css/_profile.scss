@@ -29,6 +29,13 @@
       display: inline-block;
       margin: 2%;
       box-sizing: border-box;
+
+      @include bp(tablet) {
+        min-width: 12rem;
+      }
+      @include bp(desktop) {
+        min-width: 15rem;
+      }
     }
 
   }

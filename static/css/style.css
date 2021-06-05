@@ -258,6 +258,16 @@
   margin: 2%;
   box-sizing: border-box;
 }
+@media (min-width: 48rem) {
+  .my-profile__image img {
+    min-width: 12rem;
+  }
+}
+@media (min-width: 64rem) {
+  .my-profile__image img {
+    min-width: 15rem;
+  }
+}
 
 .disabled {
   pointer-events: none;
