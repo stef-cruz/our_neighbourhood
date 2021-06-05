@@ -259,6 +259,11 @@
   box-sizing: border-box;
 }
 
+.disabled {
+  pointer-events: none;
+  background-color: rgba(32, 212, 137, 0.6) !important;
+}
+
 .account-settings a {
   text-decoration: none;
   color: #212529;

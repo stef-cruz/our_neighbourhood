@@ -1,6 +1,6 @@
 <form action="{% url 'profile' %}" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
-    <div class="row form-custom">
+    <div class="row form-custom" id="profile-form-js">
         <!-- Profile picture-->
         <div id="order-2" class="col-md-5 p-3 p-lg-5 pt-lg-3 my-profile__image">
             {% if profile.profile_pic %}
@@ -19,7 +19,7 @@
                 <div class="form-group">
                     {{ form.bio|as_crispy_field }}
                 </div>
-            <button type="submit" class="mt-4">Update profile</button>
+            <button type="submit" class="mt-4 disabled" id="profile-form-buton-js">Update profile</button>
         </div>
     </div>
 </form>

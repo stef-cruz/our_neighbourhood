@@ -44,3 +44,8 @@
     </div>
 </div>
 {% endblock %}
+
+{% block postload_js %}
+{{ block.super }}
+<script src="{% static 'profiles/js/enableButtonUpdateProfile.js' %}"></script>
+{% endblock %}
