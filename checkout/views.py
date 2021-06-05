@@ -4,6 +4,7 @@ from django.conf import settings
 from django.utils.datetime_safe import datetime
 from django.contrib import messages
 from django.contrib.auth.models import User
+from django.core.mail import EmailMultiAlternatives
 
 from .models import Order
 from profiles.models import UserProfile
@@ -70,15 +71,30 @@ def checkout(request):
 def checkout_success(request):
     """ Success checkout """
 
+    # get user email address
+    user_from_allauth = get_object_or_404(User, username=request.user)
+    user_from_allauth_email_address = user_from_allauth.email
+
+    # get username
+    user = get_object_or_404(UserProfile, user=request.user)
+
+    subject, from_email, to = 'Our Neighbourhood Order Confirmation', \
+                              settings.EMAIL_HOST_USER, user_from_allauth_email_address
+    text_content = f'Hi {user}, Thank you for posting an event on Our Neighbourhood.'
+    html_content = '<h3 style="color:#5710b2;">Our Neighbourhood - Order received</h3>' \
+                   f'<p>Hi <strong>{user}</strong>, </p>' \
+                   f'<p> Thank you for posting an event on Our Neighbourhood.</p>' \
+                   '<p>If you need assistance, please contact us ' \
+                   '<a href="https://ci-milestone4.herokuapp.com/contact/" target="_blank">here</a>.</p>'
+    msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+    msg.attach_alternative(html_content, "text/html")
+    msg.send()
+
     if request.session:
         try:
             del request.session['event_session']
         except:
             return redirect(reverse('home'))
-
-    # get user email address
-    user_from_allauth = get_object_or_404(User, username=request.user)
-    user_from_allauth_email_address = user_from_allauth.email
 
     template = 'checkout/checkout_success.html'
 
