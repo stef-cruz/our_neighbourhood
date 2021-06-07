@@ -43,8 +43,12 @@ def delete_profile(request, user):
     if not request.user.is_authenticated:
         return redirect(reverse('home'))
 
-    if request.user.username == user:
-        user = request.user
-        user.delete()
+    try:
+        if request.user.username == user:
+            user = request.user
+            user.delete()
+            messages.success(request, 'Profile deleted successfully')
+    except ValueError as e:
+        messages.error(request, "There was a problem deleting your profile. Please contact us for assistance.")
 
     return redirect(reverse('home'))

@@ -19,3 +19,9 @@ class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
         fields = ['full_name', 'email_address', 'bio', 'profile_pic']
+
+    def clean_title(self):
+        full_name = self.cleaned_data.get('title')
+        if full_name.isalnum() or " " in full_name:
+            return full_name
+        raise forms.ValidationError('Only letters and numbers allowed.')
