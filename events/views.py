@@ -100,7 +100,7 @@ def add_event(request):
             event.user = user
             # save to DB
             event.save()
-            return redirect(reverse('preview_event', args=[event.id]))
+            return redirect(reverse('preview_event', args=[event.id, user.id]))
         else:
             messages.error(request, 'Event could not be created, please ensure the form is valid.')
     else:
@@ -114,12 +114,19 @@ def add_event(request):
 
 
 @login_required
-def preview_event(request, event_id):
+def preview_event(request, event_id, user_id):
     """ Preview event before payment """
+
+    #Get user ID
+    user = Event.objects.get(pk=user_id)
+
+    if user != request.user:
+        return redirect(reverse('home'))
 
     # if event has been already paid in the DB, redirect to home and
     # prevent session to be stored in the browser
     event_is_paid = Event.objects.get(pk=event_id)
+
     if event_is_paid.is_paid:
         return redirect(reverse('home'))
 
@@ -134,6 +141,7 @@ def preview_event(request, event_id):
 
     context = {
         'event': event,
+        'user': user
     }
 
     return render(request, 'events/preview-event.html', context)
