@@ -6,6 +6,7 @@ from django.core.paginator import Paginator
 from django.utils.datetime_safe import datetime
 
 from profiles.models import UserProfile
+from django.contrib.auth.models import User
 from .models import Event
 from .forms import EventForm
 
@@ -100,7 +101,7 @@ def add_event(request):
             event.user = user
             # save to DB
             event.save()
-            return redirect(reverse('preview_event', args=[event.id, user.id]))
+            return redirect(reverse('preview_event', args=[event.id]))
         else:
             messages.error(request, 'Event could not be created, please ensure the form is valid.')
     else:
@@ -114,20 +115,21 @@ def add_event(request):
 
 
 @login_required
-def preview_event(request, event_id, user_id):
+def preview_event(request, event_id,):
     """ Preview event before payment """
 
-    #Get user ID
-    user = Event.objects.get(pk=user_id)
+    # get event from DB using event ID
+    event_from_db = Event.objects.get(pk=event_id)
 
-    if user != request.user:
+    # get user who created event in the DB and if current
+    # user is not the event creator, redirect to home
+    user_event_creator = event_from_db.user
+    if user_event_creator != request.user:
         return redirect(reverse('home'))
 
     # if event has been already paid in the DB, redirect to home and
     # prevent session to be stored in the browser
-    event_is_paid = Event.objects.get(pk=event_id)
-
-    if event_is_paid.is_paid:
+    if event_from_db.is_paid:
         return redirect(reverse('home'))
 
     # check if session exists, if not create session dict
@@ -140,8 +142,7 @@ def preview_event(request, event_id, user_id):
     request.session['event_session'] = event_session
 
     context = {
-        'event': event,
-        'user': user
+        'event': event
     }
 
     return render(request, 'events/preview-event.html', context)
