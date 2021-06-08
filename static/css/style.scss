@@ -23,6 +23,16 @@ footer {
   font-family: $paragraph;
 }
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
 //Page header
 .page-header-bg {
   width: 100vw;

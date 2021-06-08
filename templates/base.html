@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Our Neighbourhood" />
+    <meta name="description" content="Our Neighbourhood"/>
 
     {% endblock %}
 
@@ -43,6 +43,7 @@
 
 <body>
 
+<div class="wrapper">
     <!-- Header -->
     <header>
         {% include './nav.html' %}
@@ -57,36 +58,37 @@
     </div>
     {% endif %}
 
+    <!-- Header -->
     {% block page_header %}
     {% endblock %}
 
     <!-- Main content -->
-    <main id="page-container">
+    <main>
         {% block content %}
         {% endblock %}
-
     </main>
 
     <!-- Footer -->
     <footer>
         {% include './footer.html' %}
     </footer>
+</div>
 
-    <!-- Scripts -->
-    {% block postload_js %}
-    <script type="text/javascript">
-        const toastEl = document.getElementById('js-toast');
-        const myToast = new bootstrap.Toast(toastEl, {
-            autohide: true,
-            delay: 5000,
-        });
-        if (toastEl) {
-            myToast.show();
-            myToast.hide();
-        }
+<!-- Scripts -->
+{% block postload_js %}
+<script type="text/javascript">
+    const toastEl = document.getElementById('js-toast');
+    const myToast = new bootstrap.Toast(toastEl, {
+        autohide: true,
+        delay: 5000,
+    });
+    if (toastEl) {
+        myToast.show();
+        myToast.hide();
+    }
 
-    </script>
-    {% endblock %}
+</script>
+{% endblock %}
 
 </body>
 </html>
