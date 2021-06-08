@@ -188,16 +188,27 @@ _Registered users_
 
 ## Database Schema
 
-ER Diagram
+This project's database contains 4 tables: UserProfile, Order, Event and Contact.
+
+The Django Auth User table feeds the UserProfile table via a `OneToOneField`. The UserProfile table is linked to the Event and Checkout tables via a Foreign Key, establishing a `OneToMany` relationship. 
+
+The Contact table is its own entity and does not establish any relationship with the other tables.  
+
+ER Diagram - Allauth and django tables included  
+[![ER Diagram all in](https://github.com/stefcruz/ci_milestone4/tree/master/readme/er-diagram-allin.png)](https://github.com/stefcruz/ci_milestone4/tree/master/readme/er-diagram-allin.png)
+
+ER diagram - only the project apps  
+[![ER Diagram project apps](https://github.com/stefcruz/ci_milestone4/tree/master/readme/er-diagram-project-apps.png)](https://github.com/stefcruz/ci_milestone4/tree/master/readme/er-diagram-project-apps.png)
+
 
 ## Technologies
 
 ### Programming Languages
 
 - Python  
-  This project was developed using the Python framework [Django](https://www.djangoproject.com/) following the Model-View-Template.
+  The Python framework [Django](https://www.djangoproject.com/) was used to create this project, following the Model-View-Template design pattern.
 - PostgreSQL  
-  Relational database used in this application.
+  The relational database used in this application.
 - HTML5  
   Markup language used across the app.
 - CSS3  
