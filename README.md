@@ -61,7 +61,7 @@
 <details>
   <summary>Testing</summary>
 
-  - [Testing Documentation](https://github.com/stefcruz/ci_milestone3/blob/master/TESTING.md)
+  - [Testing Documentation](https://github.com/stefcruz/ci_milestone4/blob/master/TESTING.md)
 </details>
 
 <details>
@@ -159,32 +159,105 @@ _Registered users_
 
 
 #### Profile
-##### Profile view
-##### Edit Profile
-##### Delete Profile
-##### Profile picture
 
+The profile view contains is an accordion with 3 tabs, account, posts and settings.
 
-#### Events
-##### Add event
-##### View event detail
-##### Edit event
-##### Delete event
-##### Events page
+In the account tab the user can edit their profile, editing name, bio and uploading a profile picture.  
+<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/profile-account.png" width="450">
+
+In the posts tab, the user can create new events and see the events they posted.  
+<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/profile-posts.png" width="450">
+
+The user can see the CRUD operations button on the event card.  
+<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/event-card.png" width="350">
+
+In the settings tab, the user can change their email address, password or deactivate their account.  
+<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/profile-settings.png" width="450">
+
+Deactivate account pop up.  
+<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/deactivate-account.png" width="450">
+
+Change email address page.  
+<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/change-email-address.png" width="450">
+
+Change password page.  
+<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/change-password.png" width="450">
+
+#### CRUD operations - Event
+
+In the posts tab on the profile page, the user can perform the CRUD operations on their posts (events). 
+
+Create event.  
+<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/create-event.png" width="450">
+
+Preview event.  
+<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/preview-event.png" width="450">
+
+Edit event.  
+<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/edit-event.png" width="450">
+
+Delete event.  
+<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/delete-event.png" width="450">
+
+#### Events page
+
+Filter by category and upcoming events (event date is greater than today).  
+<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/filter-dropdown.png" width="300">  
+
+Filter example, filtering by category Arts.  
+<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/filter.png" width="300">
+
+Search functionality that filters by title and description.  
+<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/search.png" width="450">
+
+View event detail, where only the user who created the event is able to see the buttons edit or delete event.  
+<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/event-detail.png" width="450">
 
 #### Checkout
 
+The checkout is powered by Stripe.  
+<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/checkout-review-order.png" width="450">
+
+Checkout success page.  
+<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/checkout-success.png" width="450">
+
+The user gets a confirmation email after an event is posted.    
+<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/confirmation-email.png" width="450">
+
 #### Registration
 ##### Sign up
+Users can sign up with email, Facebook and Google. The library allauth enabled this functionality.   
+<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/sign-up.png" width="450">
+
 ##### Log in
+Similarly, users can log in using email or their Facebook and Google social accounts.  
+<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/log-in.png" width="450">
 
 #### Admin panel
 
+The admin panel displays the contact requests and the events.
+
+Contact requests are listed on a table and enables the admin to mark the requests as resolved.  
+<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/contact-requests.png" width="450">  
+<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/actions-contacts.png" width="250">
+
+Events are shown on a table and enables for marking them as paid so they are displayed on the events board, editing or deleting.   
+<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/event-management.png" width="450">  
+<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/actions-events.png" width="250">
+
+
 #### Contact page
+The contact page is a form that the user can select the reason for contact so their query can be looked after more promptly.  
+<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/contact.png" width="450">  
 
 #### Error pages
+The custom error pages created are for the 404 and 500 errors.  
+<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/error-page.png" width="450">
 
 #### Features Left to Implement
+The nice to have features that were not implemented on this project:
+
+  - Admin panel: enable the admin to reply to the email without leaving the application.
 
 ## Database Schema
 
@@ -195,10 +268,10 @@ The Django Auth User table feeds the UserProfile table via a `OneToOneField`. Th
 The Contact table is its own entity and does not establish any relationship with the other tables.  
 
 ER Diagram - Allauth and django tables included  
-[![ER Diagram all in](https://github.com/stefcruz/ci_milestone4/tree/master/readme/er-diagram-allin.png)](https://github.com/stefcruz/ci_milestone4/tree/master/readme/er-diagram-allin.png)
+[![ER Diagram all in](https://github.com/stefcruz/ci_milestone4/blob/master/readme/er-diagram-allin.png)](https://github.com/stefcruz/ci_milestone4/blob/master/readme/er-diagram-allin.png)
 
 ER diagram - only the project apps  
-[![ER Diagram project apps](https://github.com/stefcruz/ci_milestone4/tree/master/readme/er-diagram-project-apps.png)](https://github.com/stefcruz/ci_milestone4/tree/master/readme/er-diagram-project-apps.png)
+[![ER Diagram project apps](https://github.com/stefcruz/ci_milestone4/blob/master/readme/er-diagram-project-apps.png)](https://github.com/stefcruz/ci_milestone4/blob/master/readme/er-diagram-project-apps.png)
 
 
 ## Technologies
