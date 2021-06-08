@@ -6,7 +6,6 @@ from django.core.paginator import Paginator
 from django.utils.datetime_safe import datetime
 
 from profiles.models import UserProfile
-from django.contrib.auth.models import User
 from .models import Event
 from .forms import EventForm
 
@@ -115,16 +114,16 @@ def add_event(request):
 
 
 @login_required
-def preview_event(request, event_id,):
+def preview_event(request, event_id):
     """ Preview event before payment """
 
     # get event from DB using event ID
     event_from_db = Event.objects.get(pk=event_id)
-
+    print(event_from_db)
     # get user who created event in the DB and if current
     # user is not the event creator, redirect to home
     user_event_creator = event_from_db.user
-    if user_event_creator != request.user:
+    if str(request.user) != str(user_event_creator):
         return redirect(reverse('home'))
 
     # if event has been already paid in the DB, redirect to home and
