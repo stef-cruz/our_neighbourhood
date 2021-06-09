@@ -21,20 +21,10 @@
   - [Existing Features](#existing-features)
      * [App structure](#app-structure)
      * [Profile](#profile)
-       * [Profile view](#profile-view)
-       * [Edit profile](#edit-profile)
-       * [Delete profile](#delete-profile)
-       * [Profile picture](#profile-picture)
-     * [Events](#events)
-       * [Add event](#add-event)
-       * [View event detail](#view-event-detail)
-       * [Edit event](#edit-event)
-       * [Delete event](#delete-event)
-       * [Events page](#events-page)
+     * [Event](#events)
+     * [Events page](#events)
      * [Checkout](#checkout)
      * [Registration](#registration)
-       * [Log in](#log-in)
-       * [Sign up](#sign-up)
      * [Admin Panel](#admin-panel)
      * [Contact page](#contact-page)
      * [Error pages](#error-pages)
@@ -121,9 +111,9 @@ As a website admin I want to be able to…
 
 ### Wireframes
 
-The wireframes for this project can be seen [here](https://www.figma.com/).
+The wireframes for this project can be seen [here](https://www.figma.com/file/yfUmkr3ZyPUhC23yjcaqch/Our-Neighourhood?node-id=0%3A1).
 
-[![img](https://github.com/stefcruz/ci_milestone4/tree/master/readme/wireframes.png)](https://www.figma.com/file/)
+[![img](https://github.com/stefcruz/ci_milestone4/blob/master/readme/wireframes.png)](https://www.figma.com/file/yfUmkr3ZyPUhC23yjcaqch/Our-Neighourhood?node-id=0%3A1)
 
 ## Features
 
@@ -163,7 +153,7 @@ _Registered users_
 The profile view contains is an accordion with 3 tabs, account, posts and settings.
 
 In the account tab the user can edit their profile, editing name, bio and uploading a profile picture.  
-<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/profile-account.png" width="450">
+<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/profile-account.png" width="500">
 
 In the posts tab, the user can create new events and see the events they posted.  
 <img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/profile-posts.png" width="450">
@@ -183,7 +173,7 @@ Change email address page.
 Change password page.  
 <img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/change-password.png" width="450">
 
-#### CRUD operations - Event
+#### Event
 
 In the posts tab on the profile page, the user can perform the CRUD operations on their posts (events). 
 
@@ -202,7 +192,7 @@ Delete event.
 #### Events page
 
 Filter by category and upcoming events (event date is greater than today).  
-<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/filter-dropdown.png" width="300">  
+<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/filter-dropdown.png" width="200">  
 
 Filter example, filtering by category Arts.  
 <img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/filter.png" width="300">
@@ -227,7 +217,7 @@ The user gets a confirmation email after an event is posted.
 #### Registration
 ##### Sign up
 Users can sign up with email, Facebook and Google. The library allauth enabled this functionality.   
-<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/sign-up.png" width="450">
+<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/sign-up.png" width="450">  
 
 ##### Log in
 Similarly, users can log in using email or their Facebook and Google social accounts.  
@@ -239,11 +229,11 @@ The admin panel displays the contact requests and the events.
 
 Contact requests are listed on a table and enables the admin to mark the requests as resolved.  
 <img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/contact-requests.png" width="450">  
-<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/actions-contacts.png" width="250">
+<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/actions-contact.png" width="150">
 
 Events are shown on a table and enables for marking them as paid so they are displayed on the events board, editing or deleting.   
 <img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/event-management.png" width="450">  
-<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/actions-events.png" width="250">
+<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/actions-events.png" width="150">
 
 
 #### Contact page
