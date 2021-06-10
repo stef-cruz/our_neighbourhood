@@ -9,8 +9,8 @@ from events.forms import Event
 
 @login_required
 def event_admin(request):
-    """ A view to enable the superuser to access all contact requests
-     and events """
+    """ A view to enable the superuser to access
+    all contact requests and events """
 
     if not request.user.is_superuser:
         return redirect(reverse('home'))
@@ -41,7 +41,8 @@ def mark_as_resolved(request, contact_id):
         messages.success(request, 'Contact request marked as resolved.')
         return redirect(reverse('event_admin'))
     except ValueError as e:
-        messages.error(request, f"There was a problem to mark this contact request as resolved. Error: {e.code}.")
+        messages.error(request, f"There was a problem to mark this "
+                                f"contact request as resolved. Error: {e.code}.")
 
 
 @login_required
@@ -58,4 +59,5 @@ def mark_as_paid(request, event_id):
         messages.success(request, 'Event marked as paid.')
         return redirect(reverse('event_admin'))
     except ValueError as e:
-        messages.error(request, f"There was a problem to mark this event as paid. Error: {e.code}.")
+        messages.error(request, f"There was a problem to mark "
+                                f"this event as paid. Error: {e.code}.")
