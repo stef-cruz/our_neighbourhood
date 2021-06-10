@@ -12,22 +12,23 @@
 <!--Design inspired by https://themes.getbootstrap.com/preview/?theme_id=85897-->
 <div class="container my-profile shadow-sm">
     <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item" role="presentation">
-            <button class="nav-link active fw-bolder" id="home-tab" data-bs-toggle="tab" data-bs-target="#account" type="button"
+        <li class="nav-item col-12 col-md-3" role="presentation">
+            <button class="nav-link active fw-bolder my-profile__tab" id="home-tab" data-bs-toggle="tab" data-bs-target="#account" type="button"
                     role="tab" aria-controls="account" aria-selected="true">Account
             </button>
         </li>
-        <li class="nav-item" role="presentation">
-            <button class="nav-link fw-bolder" id="profile-tab" data-bs-toggle="tab" data-bs-target="#posts" type="button"
+        <li class="nav-item col-12 col-md-3" role="presentation">
+            <button class="nav-link fw-bolder my-profile__tab" id="profile-tab" data-bs-toggle="tab" data-bs-target="#posts" type="button"
                     role="tab" aria-controls="posts" aria-selected="false">My Events
             </button>
         </li>
-        <li class="nav-item" role="presentation">
-            <button class="nav-link fw-bolder" id="contact-tab" data-bs-toggle="tab" data-bs-target="#settings" type="button"
+        <li class="nav-item col-12 col-md-3" role="presentation">
+            <button class="nav-link fw-bolder my-profile__tab" id="contact-tab" data-bs-toggle="tab" data-bs-target="#settings" type="button"
                     role="tab" aria-controls="settings" aria-selected="false">Settings
             </button>
         </li>
     </ul>
+    <hr class="my-profile__divider">
     <div class="tab-content" id="myTabContent">
         <!-- My details -->
         <div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab">
