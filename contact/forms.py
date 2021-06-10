@@ -8,24 +8,20 @@ class ContactForm(forms.ModelForm):
     contact_name = forms.CharField(label='Name',
                                    max_length=100,
                                    required=True,
-                                   widget=forms.TextInput
-                                   (attrs={'placeholder': 'Your name'}))
+                                   widget=forms.TextInput(attrs={'placeholder': 'Your name'}))
 
     # Email field
     contact_email = forms.EmailField(label='Email',
                                      max_length=100,
                                      required=True,
-                                     error_messages={'invalid': 'Please '
-                                                                'enter a valid email address.'},
-                                     widget=forms.TextInput
-                                     (attrs={'placeholder': 'Your email'}))
+                                     error_messages={'invalid': 'Please enter a valid email address.'},
+                                     widget=forms.TextInput(attrs={'placeholder': 'Your email'}))
 
     # Message field
     message = forms.CharField(label='Message',
                               max_length=2000,
                               required=True,
-                              widget=forms.Textarea
-                              (attrs={'placeholder': 'Message'}))
+                              widget=forms.Textarea(attrs={'placeholder': 'Message'}))
 
     class Meta:
         model = Contact

@@ -12,12 +12,10 @@ def contact(request):
 
         if form.is_valid():
             form.save()
-            messages.success(request, 'Contact request '
-                                      'sent successfully, thank you!')
+            messages.success(request, 'Contact request sent successfully, thank you!')
             return redirect(reverse('contact'))
         else:
-            messages.error(request, 'Contact request not sent, '
-                                    'please ensure the form is valid.')
+            messages.error(request, 'Contact request not sent, please ensure the form is valid.')
     else:
         form = ContactForm
 
