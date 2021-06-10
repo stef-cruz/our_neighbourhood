@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 
+
 class StripeWH_Handler:
     """ Handle stripe webhooks """
 
@@ -26,7 +27,7 @@ class StripeWH_Handler:
 
     def handle_payment_intent_failed(self, event):
         """
-        Handle the payment_intent.faied webhook from Stripe
+        Handle the payment_intent.failed webhook from Stripe
         """
         return HttpResponse(
             content=f'Webhook received: {event["type"]}',
