@@ -102,7 +102,8 @@ def add_event(request):
             event.save()
             return redirect(reverse('preview_event', args=[event.id]))
         else:
-            messages.error(request, 'Event could not be created, please ensure the form is valid.')
+            messages.error(request, 'Event could not be created, '
+                                    'please ensure the form is valid.')
     else:
         form = EventForm
 
@@ -168,14 +169,16 @@ def edit_event(request, event_id):
                     return redirect(reverse('event_admin'))
                 return redirect(reverse('event_detail', args=[event.id]))
             else:
-                messages.error(request, 'Event could not be updated, please ensure the form is valid.')
+                messages.error(request, 'Event could not be updated, '
+                                        'please ensure the form is valid.')
         else:
             form = EventForm(instance=event)
             messages.info(request, f'You are editing {event.title}')
 
     # if event is not created by the user editing it
     else:
-        messages.error(request, 'You do not have permission to edit this event.')
+        messages.error(request, 'You do not have permission '
+                                'to edit this event.')
         return redirect(reverse('home'))
 
     template = 'events/edit-event.html'
@@ -205,5 +208,6 @@ def delete_event(request, event_id):
         return redirect(reverse('profile'))
 
     else:
-        messages.error(request, 'You do not have permission to delete this event.')
+        messages.error(request, 'You do not have permission '
+                                'to delete this event.')
         return redirect(reverse('profile'))

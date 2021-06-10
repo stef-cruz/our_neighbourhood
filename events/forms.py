@@ -19,7 +19,8 @@ class EventForm(forms.ModelForm):
     # Date field - format DD/MM/YYYY
     event_date = forms.DateField(label='Date',
                                  required=False,
-                                 widget=forms.DateInput(format='%d/%m/%Y', attrs={'placeholder': '01/01/2021'}),
+                                 widget=forms.DateInput(format='%d/%m/%Y',
+                                                        attrs={'placeholder': '01/01/2021'}),
                                  input_formats=('%d/%m/%Y', ))
 
     # Time field - format HH:MM

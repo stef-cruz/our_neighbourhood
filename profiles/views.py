@@ -49,6 +49,7 @@ def delete_profile(request, user):
             user.delete()
             messages.success(request, 'Profile deleted successfully')
     except ValueError as e:
-        messages.error(request, "There was a problem deleting your profile. Please contact us for assistance.")
+        messages.error(request, "There was a problem deleting your profile."
+                                "Please contact us for assistance.")
 
     return redirect(reverse('home'))
