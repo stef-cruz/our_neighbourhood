@@ -5,7 +5,7 @@
 {% block content %}
 <section>
     <h2 class="text-center page-header-bg">Contact us</h2>
-    <article class="container contact">
+    <div class="container contact">
         <form action="{% url 'contact' %}" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="row form-custom form-group">
@@ -26,6 +26,6 @@
                 </div>
             </div>
         </form>
-    </article>
+    </div>
 </section>
 {% endblock %}

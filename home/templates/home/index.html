@@ -18,14 +18,13 @@
                     businesses.</p>
                 <div class="gap-2 d-sm-flex justify-content-sm-center">
                     {% if request.user.is_authenticated %}
-                    <a type="button" class="btn btn-outline-green btn-lg px-4 me-sm-3 fw-bold" href="{% url 'add_event' %}">
+                    <a class="btn btn-outline-green btn-lg px-4 me-sm-3 fw-bold" href="{% url 'add_event' %}" role="button">
                         Create event</a>
                     {% else %}
-                    <a type="button" class="btn btn-outline-green btn-lg px-4 me-sm-3 fw-bold"
-                       href="{% url 'account_signup' %}">
+                    <a class="btn btn-outline-green btn-lg px-4 me-sm-3 fw-bold" href="{% url 'account_signup' %}" role="button">
                         Sign up
                     </a>
-                    <a type="button" class="btn btn-outline-light btn-lg px-4" href="{% url 'account_login' %}">
+                    <a class="btn btn-outline-light btn-lg px-4" href="{% url 'account_login' %}" role="button">
                         Log in
                     </a>
                     {% endif %}

@@ -82,9 +82,9 @@
                     <!-- Card buttons -->
                     <div class="d-flex justify-content-between align-items-center pt-3">
                         <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{% url 'event_detail' event.id %}">View</a></button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{% url 'edit_event' event.id %}">Edit</a></button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary"><a data-bs-target="#modalDeleteEvent{{ event.id }}" data-bs-toggle="modal">Delete</a></button>
+                            <a class="btn btn-sm btn-outline-secondary" href="{% url 'event_detail' event.id %}" role="button">View</a>
+                            <a class="btn btn-sm btn-outline-secondary" href="{% url 'edit_event' event.id %}" role="button">Edit</a>
+                            <a class="btn btn-sm btn-outline-secondary" data-bs-target="#modalDeleteEvent{{ event.id }}" data-bs-toggle="modal" role="button">Delete</a>
                         </div>
                     </div>
                 </div>

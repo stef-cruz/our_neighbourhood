@@ -69,10 +69,8 @@
                     {% if request.user.is_superuser %}
                     <div class="d-flex justify-content-center align-items-center my-4">
                         <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-secondary"><a
-                                    href="{% url 'edit_event' event.id %}">Edit this event</a></button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary"><a
-                                    href="{% url 'delete_event' event.id %}">Delete this event</a></button>
+                            <a class="btn btn-sm btn-outline-secondary" href="{% url 'edit_event' event.id %}" role="button">Edit this event</a>
+                            <a class="btn btn-sm btn-outline-secondary" href="{% url 'delete_event' event.id %}" role="button">Delete this event</a>
                         </div>
                     </div>
                     {% endif %}
