@@ -44,7 +44,9 @@ def checkout(request):
             return redirect(reverse('checkout_success'))
 
         except stripe.error.CardError as e:
-            messages.info(request, f"There was a problem processing your payment. Error: {e.code}.")
+            messages.info(request, f"There was a problem "
+                                   f"processing your payment. "
+                                   f"Error: {e.code}.")
 
     else:
         stripe_amount = round(1 * 100)
@@ -79,13 +81,18 @@ def checkout_success(request):
     user = get_object_or_404(UserProfile, user=request.user)
 
     subject, from_email, to = 'Our Neighbourhood Order Confirmation', \
-                              settings.EMAIL_HOST_USER, user_from_allauth_email_address
-    text_content = f'Hi {user}, Thank you for posting an event on Our Neighbourhood.'
-    html_content = '<h3 style="color:#5710b2;">Our Neighbourhood - Order received</h3>' \
+                              settings.EMAIL_HOST_USER, \
+                              user_from_allauth_email_address
+    text_content = f'Hi {user}, Thank you for posting an ' \
+                   f'event on Our Neighbourhood.'
+    html_content = '<h3 style="color:#5710b2;">' \
+                   'Our Neighbourhood - Order received</h3>' \
                    f'<p>Hi <strong>{user}</strong>, </p>' \
-                   f'<p> Thank you for posting an event on Our Neighbourhood.</p>' \
+                   f'<p> Thank you for posting an event on' \
+                   f' Our Neighbourhood.</p>' \
                    '<p>If you need assistance, please contact us ' \
-                   '<a href="https://ci-milestone4.herokuapp.com/contact/" target="_blank">here</a>.</p>'
+                   '<a href="https://ci-milestone4.herokuapp.com/contact/"' \
+                   ' target="_blank">here</a>.</p>'
     msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
     msg.attach_alternative(html_content, "text/html")
     msg.send()
@@ -93,7 +100,7 @@ def checkout_success(request):
     if request.session:
         try:
             del request.session['event_session']
-        except:
+        except ValueError as e:
             return redirect(reverse('home'))
 
     template = 'checkout/checkout_success.html'

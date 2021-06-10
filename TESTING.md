@@ -1,4 +1,4 @@
-# Our Neighourhood - Test Plan
+# Our Neighbourhood - Test Plan
 
 ## Table of Contents
 
@@ -20,7 +20,6 @@ All HTML pages passed the W3C HTML validation as below.
 
 Pages tested:
 
-
   - https://ci-milestone4.herokuapp.com/  
 No errors  
   - https://ci-milestone4.herokuapp.com/accounts/login & https://ci-milestone4.herokuapp.com/accounts/signup    
@@ -32,7 +31,7 @@ Warning related to the JS type attribute which comes from the allauth library no
 No errors 
   - https://ci-milestone4.herokuapp.com/faq  
 No errors 
-  - https://ci-milestone4.herokuapp.com/localevents  
+  - https://ci-milestone4.herokuapp.com/events  
 No errors 
 
 ## W3C CSS Validator
@@ -52,12 +51,27 @@ The app also passed the Google Lighthouse validation.
 
 <img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/google-lighthouse.png" width="400">
 
+## Python PEP8 Validator
+
+The python files passed PEP8 validation on [this site](http://pep8online.com/) but PyCharm's PEP8 validation had preference where there were diverging results.   
+
+Also, no corrections have been made to settings.py as it is a Django default. 
+
 ## CircleCI
 
-Circle CI Continuous Integration was added to GitHub to make sure the app would still run after every commit.
+Circle CI Continuous Integration has been linked to GitHub to make sure every build would pass the tests.
 
-<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/circle-ci.png" width="500">
-
-![Circle CI](https://github.com/stefcruz/ci_milestone4/blob/master/readme/circle-ci.png)
+<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/circle-ci.png" width="400">
 
 ## User Stories Testing
+
+## Manual Testing
+
+### Testing plan
+
+### Browser and Device Testing
+
+### Bugs and Fixes
+
+#### Browser Bugs
+#### General Bugs

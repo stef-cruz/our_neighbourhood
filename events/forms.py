@@ -19,13 +19,15 @@ class EventForm(forms.ModelForm):
     # Date field - format DD/MM/YYYY
     event_date = forms.DateField(label='Date',
                                  required=False,
-                                 widget=forms.DateInput(format='%d/%m/%Y', attrs={'placeholder': '01/01/2021'}),
+                                 widget=forms.DateInput(format='%d/%m/%Y',
+                                                        attrs={'placeholder': '01/01/2021'}),
                                  input_formats=('%d/%m/%Y', ))
 
     # Time field - format HH:MM
     event_time = forms.TimeField(label='Time',
                                  required=False,
-                                 widget=forms.DateInput(format='%H:%M', attrs={'placeholder': '17:30'}),
+                                 widget=forms.DateInput(format='%H:%M',
+                                                        attrs={'placeholder': '17:30'}),
                                  input_formats=('%H:%M', ))
 
     # Price field
