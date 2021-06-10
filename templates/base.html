@@ -5,11 +5,10 @@
 <html lang="en">
 <head>
     {% block meta %}
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Our Neighbourhood"/>
-
     {% endblock %}
 
     {% block extra_meta %}
@@ -21,7 +20,6 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon.ico' %}">
-
     {% endblock %}
 
     {% block extra_css %}
@@ -58,10 +56,6 @@
     </div>
     {% endif %}
 
-    <!-- Header -->
-    {% block page_header %}
-    {% endblock %}
-
     <!-- Main content -->
     <main>
         {% block content %}
@@ -76,7 +70,7 @@
 
 <!-- Scripts -->
 {% block postload_js %}
-<script type="text/javascript">
+<script>
     const toastEl = document.getElementById('js-toast');
     const myToast = new bootstrap.Toast(toastEl, {
         autohide: true,

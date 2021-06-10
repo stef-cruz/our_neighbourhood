@@ -4,89 +4,91 @@
 {% block content %}
 
 <!-- Hero -->
-<section class="text-secondary pe-4 pb-5 text-center hero">
-    <div id="triangle-badge">
-        <span class="fw-bolder">Only €1 per post!</span>
-    </div>
-    <div class="pb-5">
-        <h1 class="display-5 fw-bold text-white">Our Neighbourhood:
-            <div>Drimnagh</div>
-        </h1>
-        <div class="col-lg-6 mx-auto">
-            <p class="fs-5 mb-4">Enabling communities to share and promote local events, activities, services and
-                businesses.</p>
-            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                {% if request.user.is_authenticated %}
-                <a href="{% url 'add_event' %}">
-                    <button type="button" class="btn btn-outline-green btn-lg px-4 me-sm-3 fw-bold">Create event
-                    </button>
-                </a>
-                {% else %}
-                <a href="{% url 'account_signup' %}">
-                    <button type="button" class="btn btn-outline-green btn-lg px-4 me-sm-3 fw-bold">Sign up</button>
-                </a>
-                <a href="{% url 'account_login' %}">
-                    <button type="button" class="btn btn-outline-light btn-lg px-4">Log in</button>
-                </a>
-                {% endif %}
+<section>
+    <article class="text-secondary pb-5 text-center hero">
+        <div id="triangle-badge">
+            <span class="fw-bolder">Only €1 per post!</span>
+        </div>
+        <div class="pb-5">
+            <h1 class="display-5 fw-bold text-white">Our Neighbourhood:
+                <span>Drimnagh</span>
+            </h1>
+            <div class="col-lg-6 mx-auto">
+                <p class="fs-5 mb-4">Enabling communities to share and promote local events, <br> activities, services and
+                    businesses.</p>
+                <div class="gap-2 d-sm-flex justify-content-sm-center">
+                    {% if request.user.is_authenticated %}
+                    <a type="button" class="btn btn-outline-green btn-lg px-4 me-sm-3 fw-bold" href="{% url 'add_event' %}">
+                        Create event</a>
+                    {% else %}
+                    <a type="button" class="btn btn-outline-green btn-lg px-4 me-sm-3 fw-bold"
+                       href="{% url 'account_signup' %}">
+                        Sign up
+                    </a>
+                    <a type="button" class="btn btn-outline-light btn-lg px-4" href="{% url 'account_login' %}">
+                        Log in
+                    </a>
+                    {% endif %}
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </article>
 
-<!-- Subheading -->
-<section class="container subheading">
-    <div class="row g-4 py-5 row-cols-1 row-cols-lg-2">
-        <div class="feature col">
-            <h2 class="pt-5 pb-2">Discover what's on your neighbourhood.</h2>
-            <p>Whether it’s the coffee shop around the corner; a face paint event for kids or yoga in the park, promote
-                your
-                events and services using our site and get to know your neighbourhood!</p>
-            <a href="{% url 'events' %}" class="icon-link text-dark">Discover local events</a> <i
-                class="fas fa-caret-right"></i>
+    <!-- Subheading -->
+    <article class="container subheading">
+        <div class="row g-4 py-5 row-cols-1 row-cols-lg-2">
+            <div class="feature col">
+                <h2 class="pt-5 pb-2">Discover what's on your neighbourhood.</h2>
+                <p>Whether it’s the coffee shop around the corner; a face paint event for kids or yoga in the park,
+                    promote
+                    your
+                    events and services using our site and get to know your neighbourhood!</p>
+                <a href="{% url 'events' %}" class="icon-link text-dark">Discover local events</a> <i
+                    class="fas fa-caret-right"></i>
+            </div>
+            <div class="feature col">
+                <div class="subheading__image"></div>
+            </div>
         </div>
-        <div class="feature col">
-            <div class="subheading__image"></div>
-        </div>
-    </div>
-</section>
+    </article>
 
-<hr>
+    <hr>
 
-<!--Content cards -->
-<section class="container content-cards">
-    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-        <div class="col">
-            <a href="{% url 'events' %}">
-                <div class="card card-cover h-100 overflow-hidden rounded-5 shadow-md card-1">
-                    <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
-                        <h2 class="pt-5"><i class="far fa-calendar-alt"></i></h2>
-                        <h2 class="mt-4 mb-4 display-6 lh-1 fw-bold">Bring me to local events</h2>
+    <!--Content cards -->
+    <article class="container content-cards">
+        <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+            <div class="col-12 col-md-6">
+                <a href="{% url 'events' %}">
+                    <div class="card card-cover h-100 overflow-hidden rounded-5 shadow-md card-1">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                            <i class="far fa-calendar-alt pt-5"></i>
+                            <h2 class="mt-4 mb-4 lh-1 fw-bold">Bring me to local events</h2>
+                        </div>
                     </div>
-                </div>
-            </a>
-        </div>
-        <div class="col">
-            <a href="{% url 'contact' %}">
-                <div class="card card-cover h-100 overflow-hidden rounded-5 shadow-md card-2">
-                    <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
-                        <h2 class="pt-5"><i class="fas fa-question-circle"></i></h2>
-                        <h2 class="mt-4 mb-4 display-6 lh-1 fw-bold">Got questions? Contact us</h2>
+                </a>
+            </div>
+            <div class="col-12 col-md-6">
+                <a href="{% url 'contact' %}">
+                    <div class="card card-cover h-100 overflow-hidden rounded-5 shadow-md card-2">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                            <i class="fas fa-question-circle pt-5"></i>
+                            <h2 class="mt-4 mb-4 lh-1 fw-bold">Got questions? Contact us</h2>
+                        </div>
                     </div>
-                </div>
-            </a>
-        </div>
-        <div class="col">
-            <a href="{% url 'faq' %}">
-                <div class="card card-cover h-100 overflow-hidden rounded-5 shadow-md card-3">
-                    <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
-                        <h2 class="pt-5"><i class="fas fa-list"></i></h2>
-                        <h2 class="mt-4 mb-4 display-6 lh-1 fw-bold">Check out the FAQ</h2>
+                </a>
+            </div>
+            <div class="col-12 col-md-6">
+                <a href="{% url 'faq' %}">
+                    <div class="card card-cover h-100 overflow-hidden rounded-5 shadow-md card-3">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                            <i class="fas fa-list pt-5"></i>
+                            <h2 class="mt-4 mb-4 lh-1 fw-bold">Check out the FAQ</h2>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
+            </div>
         </div>
-    </div>
+    </article>
 </section>
 
 {% endblock %}

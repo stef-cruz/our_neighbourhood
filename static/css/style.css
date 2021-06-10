@@ -55,6 +55,9 @@
   min-height: 20rem;
 }
 
+.content-cards i {
+  font-size: 2rem;
+}
 .content-cards a {
   text-decoration: none;
 }
@@ -365,10 +368,6 @@
   background-size: contain;
   min-height: 10rem;
 }
-.my-posts .btn-group a {
-  text-decoration: none;
-  color: inherit;
-}
 
 #authentication {
   display: flex;
@@ -447,6 +446,11 @@
 .card-content__value {
   position: relative;
   width: 57%;
+}
+
+.btn-group a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .event-detail {

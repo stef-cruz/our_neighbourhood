@@ -44,7 +44,7 @@ var form = document.getElementById('payment-form');
 form.addEventListener('submit', function (ev) {
     ev.preventDefault();
 
-    card.update({'disabled': true})
+    card.update({'disabled': true});
     document.getElementById("submit-button").disabled = true;
 
     stripe.confirmCardPayment(clientSecret, {
@@ -56,7 +56,7 @@ form.addEventListener('submit', function (ev) {
             let displayError = document.getElementById('card-errors');
             displayError.textContent = result.error.message;
             console.log(result.error.message);
-            card.update({'disabled': false})
+            card.update({'disabled': false});
             document.getElementById("submit-button").disabled = false;
         } else {
             if (result.paymentIntent.status === 'succeeded') {

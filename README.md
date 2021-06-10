@@ -248,6 +248,8 @@ The custom error pages created are for the 404 and 500 errors.
 The nice to have features that were not implemented on this project:
 
   - Admin panel: enable the admin to reply to the email without leaving the application.
+  - Scalability idea: Locate the user and suggest the neighbourhood where they want to see events in.
+  - Address validation so users cannot insert an event outside the selected neighbourhood.
 
 ## Database Schema
 
