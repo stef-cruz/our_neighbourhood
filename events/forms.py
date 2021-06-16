@@ -80,12 +80,6 @@ class EventForm(forms.ModelForm):
             return event_price
         raise forms.ValidationError('Only letters and numbers allowed.')
 
-    def clean_event_contact(self):
-        event_contact = self.cleaned_data.get('event_contact')
-        if event_contact.isalnum() or " " in event_contact:
-            return event_contact
-        raise forms.ValidationError('Only letters and numbers allowed.')
-
     def clean_event_location(self):
         event_location = self.cleaned_data.get('event_location')
         if event_location != "":

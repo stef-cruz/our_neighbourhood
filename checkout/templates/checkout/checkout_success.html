@@ -1,27 +1,25 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block page_header %}
-<h2 class="text-center page-header-bg">Thank you!</h2>
-{% endblock %}
-
 {% block content %}
 
 <!-- Checkout success -->
-<section class="container checkout-success">
-    <div class="row mb-8 bg-light m-3 text-center">
-        <div class="col-12">
-            <p>Thank you for your payment. A confirmation email will be sent to {{ user_from_allauth_email_address }}</p>
-        </div>
-        <div class="col-12 my-4">
-            <a href="{% url 'home' %}">
-                <button type="button" class="btn btn-outline-green btn-md px-4 me-sm-3 fw-bold"><i class="fas fa-undo-alt"></i> Back to home page
-                </button>
-            </a>
+<section>
+    <div class="container checkout-success">
+        <h2 class="text-center page-header-bg">Thank you!</h2>
+        <div class="row mb-8 bg-light m-3 text-center">
+            <div class="col-12">
+                <p>Thank you for your payment. A confirmation email will be sent to {{ user_from_allauth_email_address}}</p>
+            </div>
+            <div class="col-12 my-4">
+                <a href="{% url 'home' %}">
+                    <button type="button" class="btn btn-outline-green btn-md px-4 me-sm-3 fw-bold"><i
+                            class="fas fa-undo-alt"></i> Back to home page</button>
+                </a>
+            </div>
         </div>
     </div>
 </section>
-
 
 {% endblock %}
 

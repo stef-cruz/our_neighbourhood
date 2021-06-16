@@ -34,7 +34,7 @@ class Event(models.Model):
     event_price = models.CharField(max_length=50, blank=False,
                                    null=True, validators=[no_alpha])
     event_contact = models.CharField(max_length=100, blank=False,
-                                     null=True, validators=[no_alpha])
+                                     null=True)
     event_category = models.CharField(max_length=100,
                                       default='Arts', choices=EVENTS_CATEGORY)
     creation_date = models.DateTimeField(auto_now_add=True)
