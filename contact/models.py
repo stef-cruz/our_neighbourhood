@@ -8,7 +8,7 @@ CONTACT_CATEGORY = (
     ('payment_issue', 'Payment issue'),
 )
 
-no_alpha = RegexValidator(r'^[a-zA-Z0-9]+$',
+no_alpha = RegexValidator(r'^[ ]*[A-Za-z0-9][A-Za-z0-9 ]*$',
                           'Only letters and numbers allowed.')
 
 
