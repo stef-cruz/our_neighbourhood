@@ -5,6 +5,7 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Actions</th>
+                <th scope="col">Is paid</th>
                 <th scope="col">User</th>
                 <th scope="col">Title</th>
                 <th scope="col">Description</th>
@@ -15,7 +16,6 @@
                 <th scope="col">Contact</th>
                 <th scope="col">Category</th>
                 <th scope="col">Creation Date</th>
-                <th scope="col">Is paid</th>
             </tr>
             </thead>
             <tbody>
@@ -35,6 +35,7 @@
                         </ul>
                     </div>
                 </td>
+                <td>{{ event.is_paid }}</td>
                 <td>{{ event.user }}</td>
                 <td>{{ event.title }}</td>
                 <td>{{ event.description }}</td>
@@ -45,7 +46,6 @@
                 <td>{{ event.event_contact }}</td>
                 <td>{{ event.event_category }}</td>
                 <td>{{ event.creation_date }}</td>
-                <td>{{ event.is_paid }}</td>
             </tr>
             {% endfor %}
             </tbody>

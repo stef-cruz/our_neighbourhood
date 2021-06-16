@@ -34,11 +34,15 @@ def mark_as_resolved(request, contact_id):
     if not request.user.is_superuser:
         return redirect(reverse('home'))
 
+    contact = get_object_or_404(Contact, pk=contact_id)
+
     try:
-        contact = get_object_or_404(Contact, pk=contact_id)
-        contact.is_resolved = True
-        contact.save()
-        messages.success(request, 'Contact request marked as resolved.')
+        if contact.is_resolved:
+            messages.error(request, 'This contact has been resolved already.')
+        else:
+            contact.is_resolved = True
+            contact.save()
+            messages.success(request, 'Contact request marked as resolved.')
         return redirect(reverse('event_admin'))
     except ValueError as e:
         messages.error(request, f"There was a problem to mark this "
@@ -52,11 +56,15 @@ def mark_as_paid(request, event_id):
     if not request.user.is_superuser:
         return redirect(reverse('home'))
 
+    event = get_object_or_404(Event, pk=event_id)
+
     try:
-        event = get_object_or_404(Event, pk=event_id)
-        event.is_paid = True
-        event.save()
-        messages.success(request, 'Event marked as paid.')
+        if event.is_paid:
+            messages.error(request, 'This event has been paid already.')
+        else:
+            event.is_paid = True
+            event.save()
+            messages.success(request, 'Event marked as paid.')
         return redirect(reverse('event_admin'))
     except ValueError as e:
         messages.error(request, f"There was a problem to mark "

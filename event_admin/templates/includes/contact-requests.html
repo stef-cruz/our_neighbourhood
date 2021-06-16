@@ -5,11 +5,11 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Actions</th>
+                <th scope="col">Is resolved</th>
                 <th scope="col">Category</th>
                 <th scope="col">Name</th>
                 <th scope="col">Email</th>
                 <th scope="col">Message</th>
-                <th scope="col">Is resolved</th>
                 <th scope="col">Creation Date</th>
             </tr>
             </thead>
@@ -27,11 +27,11 @@
                       </ul>
                     </div>
                 </td>
+                <td>{{ contact.is_resolved }}</td>
                 <td>{{ contact.contact_category }}</td>
                 <td>{{ contact.contact_name }}</td>
                 <td>{{ contact.contact_email }}</td>
                 <td>{{ contact.message }}</td>
-                <td>{{ contact.is_resolved }}</td>
                 <td>{{ contact.creation_date }}</td>
             </tr>
             {% endfor %}
