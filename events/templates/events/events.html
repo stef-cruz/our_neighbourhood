@@ -47,6 +47,11 @@
     <!--  Events  -->
     <div class="album py-5">
         <div class="container">
+            <div class="row">
+                <div class="col text-end pb-2">
+                    <span class="text-muted">{{ events.count }} Events</span>
+                </div>
+            </div>
             <div class="row row-cols-1 row-cols-md-2 g-4 mb-4">
                 {% for event in page_obj %}
                 <div class="col">

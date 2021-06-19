@@ -120,7 +120,7 @@ def preview_event(request, event_id):
 
     # get event from DB using event ID
     event_from_db = Event.objects.get(pk=event_id)
-    print(event_from_db)
+
     # get user who created event in the DB and if current
     # user is not the event creator, redirect to home
     user_event_creator = event_from_db.user
@@ -141,11 +141,13 @@ def preview_event(request, event_id):
     # update session
     request.session['event_session'] = event_session
 
+    template = 'events/preview-event.html'
+
     context = {
         'event': event
     }
 
-    return render(request, 'events/preview-event.html', context)
+    return render(request, template, context)
 
 
 @login_required
