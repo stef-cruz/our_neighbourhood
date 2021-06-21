@@ -509,6 +509,13 @@
 }
 .checkout__pay-form {
   border: 0.1rem solid rgba(108, 117, 125, 0.3);
+  text-align: center;
+  margin: 0 auto;
+}
+@media (min-width: 48rem) {
+  .checkout__pay-form {
+    max-width: 70vw;
+  }
 }
 
 .StripeElement,

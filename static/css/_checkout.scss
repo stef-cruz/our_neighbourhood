@@ -16,6 +16,11 @@
 
   &__pay-form {
     border: .1rem solid rgba($gray, .3);
+    text-align: center;
+    margin: 0 auto;
+    @include bp(tablet) {
+      max-width: 70vw;
+    }
   }
 }
 
@@ -43,17 +48,17 @@
 }
 
 .stripe-style-input::placeholder {
-    color: #aab7c4;
+  color: #aab7c4;
 }
 
 .fieldset-label {
-    position: relative;
-    right: .5rem;
+  position: relative;
+  right: .5rem;
 }
 
 #payment-form .form-control,
 #card-element {
-    max-width: 90vw;
+  max-width: 90vw;
 }
 
 .ElementsApp input {
