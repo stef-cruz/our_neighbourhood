@@ -19,7 +19,7 @@
 
   - [Features Section](#features-section)
   - [Existing Features](#existing-features)
-     * [App structure](#app-structure)
+     * [Content structure](#app-structure)
      * [Profile](#profile)
      * [Event](#events)
      * [Events page](#events)
@@ -139,7 +139,7 @@ _Registered users_
   - Events board
   - Create/ Edit/ Delete events
 
-**Django apps used the create the site:**
+**Django apps used to create the site:**
   - Home (index, faq)
   - Profiles
   - Events
@@ -150,15 +150,15 @@ _Registered users_
 
 #### Profile
 
-The profile view contains is an accordion with 3 tabs, account, posts and settings.
+The profile view contains an accordion with 3 tabs, account, posts and settings.
 
-In the account tab the user can edit their profile, editing name, bio and uploading a profile picture.  
-<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/profile-account.png" width="500">
+In the account tab, the user can edit their name, bio and upload a profile picture.  
+<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/profile-account.png" width="600">
 
 In the posts tab, the user can create new events and see the events they posted.  
-<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/profile-posts.png" width="450">
+<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/profile-posts.png" width="6000">
 
-The user can see the CRUD operations button on the event card.  
+The user can perform the CRUD operations by clicking on the buttons in the event card.  
 <img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/event-card.png" width="350">
 
 In the settings tab, the user can change their email address, password or deactivate their account.  
@@ -175,7 +175,7 @@ Change password page.
 
 #### Event
 
-In the posts tab on the profile page, the user can perform the CRUD operations on their posts (events). 
+In the posts tab on the profile page, the user can perform the CRUD operations on the events they created. 
 
 Create event.  
 <img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/create-event.png" width="450">
@@ -191,13 +191,13 @@ Delete event.
 
 #### Events page
 
-Filter by category and upcoming events (event date is greater than today).  
+The user can filter by category and upcoming events (where event date is greater than today).  
 <img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/filter-dropdown.png" width="200">  
 
 Filter example, filtering by category Arts.  
 <img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/filter.png" width="300">
 
-Search functionality that filters by title and description.  
+The search functionality searches the keyword that matches the event title or description.  
 <img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/search.png" width="450">
 
 View event detail, where only the user who created the event is able to see the buttons edit or delete event.  
@@ -231,7 +231,7 @@ Contact requests are listed on a table and enables the admin to mark the request
 <img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/contact-requests.png" width="450">  
 <img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/actions-contact.png" width="150">
 
-Events are shown on a table and enables for marking them as paid so they are displayed on the events board, editing or deleting.   
+Events are shown on a table and enables the admin to mark them as paid so they are displayed on the events board. The admin can also edit or delete events.   
 <img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/event-management.png" width="450">  
 <img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/actions-events.png" width="150">
 
@@ -445,3 +445,5 @@ More information can be found [here](https://docs.github.com/en/free-pro-team@la
 
 ### Code
 - [Fix to issue unordered object list warning](https://stackoverflow.com/questions/44033670/python-django-rest-framework-unorderedobjectlistwarning)
+- [Django 3.0 crash course tutorials which helped understanding Django](https://www.youtube.com/playlist?list=PL-51WBLyFTg2vW-_6XBoUpE7vpmoR3ztO)
+- [CSS triangle top left shape](https://css-tricks.com/the-shapes-of-css/)

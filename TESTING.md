@@ -24,8 +24,8 @@ Pages tested:
 No errors  
   - https://ci-milestone4.herokuapp.com/accounts/login & https://ci-milestone4.herokuapp.com/accounts/signup    
 
-Warning related to the JS type attribute which comes from the allauth library not my code.   
-<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/html-validation-login.png" width="300">
+Warning related to the JS type attribute which comes from the allauth library not my code.  
+![Warning css](https://github.com/stefcruz/ci_milestone4/blob/master/readme/html-validation-login.png)
 
   - https://ci-milestone4.herokuapp.com/contact  
 No errors 
@@ -38,7 +38,7 @@ No errors
 
 No errors found on the CSS file.
 
-<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/css-validator.png" width="400">
+<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/css-validator.png" width="500">
 
 ## JSHint
 
@@ -58,7 +58,7 @@ Initially the website scored 84 in performance due to invisible text. Then the i
   `font-display: swap;`  
 `}`
 
-<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/google-lighthouse.png" width="600">
+<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/google-lighthouse.png" width="500">
 
 ## PEP8 Python Validation
 
@@ -66,9 +66,9 @@ The python files passed the PEP8 validation on [this site](http://pep8online.com
 
 ## CircleCI
 
-Circle CI Continuous Integration has been added to GitHub to make sure every build would be tested and deployed successfully.
+Circle CI Continuous Integration has been added to GitHub to make sure every build would be tested and deployed successfully.  
 
-<img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/circle-ci.png" width="500">
+![Circle CI](https://github.com/stefcruz/ci_milestone4/blob/master/readme/circle-ci.png)
 
 ## Test Plan
 
