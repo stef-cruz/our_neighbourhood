@@ -73,8 +73,6 @@ def checkout(request):
 def checkout_success(request):
     """ Success checkout """
 
-    print(request.session.get('event_session'))
-
     if request.session:
         try:
             # get user email address

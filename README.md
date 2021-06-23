@@ -245,11 +245,12 @@ The custom error pages created are for the 404 and 500 errors.
 <img src="https://github.com/stefcruz/ci_milestone4/blob/master/readme/error-page.png" width="450">
 
 #### Features Left to Implement
-The nice to have features that were not implemented on this project:
+The nice to have features that were not implemented on this project are:
 
   - Admin panel: enable the admin to reply to the email without leaving the application.
   - Scalability idea: Locate the user and suggest the neighbourhood where they want to see events in.
-  - Address validation so users cannot insert an event outside the selected neighbourhood.
+  - Address validation so users cannot insert an event outside the selected neighbourhood. Maybe hook up Google auto complete to address field.
+  - Price field on add_event.html could accept euro sign
 
 ## Database Schema
 
