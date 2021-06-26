@@ -89,7 +89,7 @@ Registration
 - Receive a confirmation email when registering for an account so I can make sure the account was created
 - Log in and log out of my account so that I can come and go from the website
 - Recover my password if I forget it so that I can access the website again
-- Have a personalised user profile so that I can view, edit and delete my personal information and card information
+- Have a personalised user profile so that I can view, edit and delete my personal information
 - Upload services with a name, description, price and pictures so that I can promote an activity that will be visible on the community board
 
 Events
@@ -100,14 +100,16 @@ Events
 - View details of the events that are on the events board
 
 Checkout
-- Pay for the events I create securely
+- Securely pay for the events I create
 - Receive a confirmation email after I place an order
 
 Contact
 - Contact the site in case I have any issues
 
-As a website admin I want to be able to…
-- Visualise all the contact requests and events on one page and perform actions such as mark events as paid, edit and delete events and mark contact requests as resolved.
+As a website admin I want to be able to…  
+
+- Visualise all the contact requests and events on one page
+- Perform actions such as mark events as paid, edit and delete events and mark contact requests as resolved
 
 ### Wireframes
 
