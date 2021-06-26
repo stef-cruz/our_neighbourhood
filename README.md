@@ -449,3 +449,4 @@ More information can be found [here](https://docs.github.com/en/free-pro-team@la
 - [Fix to issue unordered object list warning](https://stackoverflow.com/questions/44033670/python-django-rest-framework-unorderedobjectlistwarning)
 - [Django 3.0 crash course tutorials which helped understanding Django](https://www.youtube.com/playlist?list=PL-51WBLyFTg2vW-_6XBoUpE7vpmoR3ztO)
 - [CSS triangle top left shape](https://css-tricks.com/the-shapes-of-css/)
+- [Serve custom error pages with Django](https://engineertodeveloper.com/serving-custom-error-pages-with-django/)
