@@ -2,7 +2,7 @@
 
 ## Overview
 
-[Our Neighbourhood](http://ci-milestone4.herokuapp.com/) is a service that enables communities to share and promote local events, activities, services and businesses.
+[Our Neighbourhood](http://our-neighbourhood.onrender.com) is a service that enables communities to share and promote local events, activities, services and businesses.
 
 ## Table of Contents
 
@@ -56,9 +56,6 @@
 
 <details>
   <summary>Deployment</summary>
-
-  - [How to provision a PostGres database on Heroku](#how-to-publish-to-heroku)
-  - [How to deploy to Heroku](#how-to-publish-to-heroku)
   - [How to fork this repository](#how-to-fork-this-repository)
   - [How to open this project locally](#how-to-open-this-project-locally)
 </details>
@@ -311,94 +308,6 @@ Testing documentation is available [here](https://github.com/stefcruz/ci_milesto
 This project's source code is hosted on GitHub and deployed to Heroku. It was created using Pycharm.
 
 A clone of this repository was made locally, and the changes were deployed directly in the master branch. The commands used to push the changes were `git add .`, `git commit -m "message"` and `git push`. All the commits can be clearly identified by a concise and meaningful message.
-
-### How to provision a Postgres database on Heroku
-
-Before deploying to Heroku first provision a database on Heroku and apply migrations to Postgres following the below:
-
-1. Create an account and log in to Heroku
-2. On the apps page select NEW.
-3. Give the app a name and select the closest region, then click Create App.
-4. Navigate to the Resources tab and search for ‘Heroku Postgres’ on the search bar under Add-ons
-5. Select plan name and click on ‘Submit Order Form’ (this project uses Hobby Dev - Free)
-
-In order to connect to Postgrest from Heroku, save the Database URL navigating to the Settings tab and clicking Reveal Config Vars.
-
-**In the IDE**:  
-- Install packages `psycopg2` and `gunicorn`  
-`pip3 install psycopg2-binary`  
-`pip3 install gunicorn`  
-`pip3 install dj_database_url`
-- Create requirements.txt file so Heroku knows which dependencies to install.
-`pip3 freeze --local > requirements.txt`
-- Create procfile  
-`echo web: gunicorn PROJECTNAME.wsgi:application > Procfile`
-- Get the database URL from Heroku through the CLI (heroku config) or Heroku website (settings tab > click on reveal config vars > get database url)
-- Navigate to settings.py located in the main project’s folder and add the imports at the top  
-`import dj_database_url`  
-`import os`
-- On the same settings.py file, comment out the existing DATABASE code and and add the following:
-
-` DATABASES = {`  
-        `'default': dj_database_url.parse( ** DB URL from Heroku ** )`  
-    `}`
-  
-- Run migrations to the Postgres database, which will apply the migrations from the local database.  
-`python3 manage.py migrate`
-- Still on the settings.py file, add hostname of the Heroku app  
-`ALLOWED_HOSTS = [‘project-name.herokuapp.com’]`
-- Before pushing to git make sure the .gitignore file contains the following files:
-`*sqlite3`  
-`__pycache__/`
-- Push to github  
-`git add .`  
-`git commit -m “Your commit message”`  
-`git push`
-
-
-### How to deploy to Heroku
-
-There are two ways to deploy to Heroku. One is installing Heroku on your project and pushing changes to Heroku and the other is setting the automatic deployment from GitHub, which is easier.
-
-Both require the creation of the app on the Heroku website or through the CLI (instructions [here](https://devcenter.heroku.com/articles/creating-apps)).
-
-Enabling automatic deployment from GitHub:
-
-1. Assuming the requirements.txt has been created already as per above, update file in case there is a new package installed  
-``pip3 freeze --local > requirements.txt``
-2. Make sure the Procfile is at the project level, if not create one, then push requirements and procfile to git  
-`echo web: gunicorn PROJECTNAME.wsgi:application > Procfile`
-3. Add the environment variables to Heroku in Settings > Config Vars. I used the following on this project:
-   
-SECRET_KEY  
-DEVELOPMENT  
-LOCALHOST  
-DATABASE_URL  
-AWS_ACCESS_KEY_ID  
-AWS_SECRET_ACCESS_KEY  
-STRIPE_PUBLIC_KEY  
-STRIPE_SECRET_KEY  
-STRIPE_WH_SECRET  
-FACEBOOK_APP_ID  
-FACEBOOK_APP_SECRET  
-GOOGLE_CLIENT_ID  
-GOOGLE_SECRET  
-EMAIL_HOST_USER  
-EMAIL_HOST_PASS  
-
-5. Go to Deploy > connect the repo name > enable automatic deploy from master branch, then go to the next section ‘Manual Deploy’ and click on ‘Deploy Branch’
-
-Installing Heroku on your project:
-1. Create app on Heroku website
-2. Make sure your project has requirements.txt file so Heroku knows which dependencies to install. To create one ``pip3 freeze --local > requirements.txt``
-3. Install Heroku on your project ``npm install -g heroku``
-4. Before pushing to Heroku, use the command git remote -v and see that only github links are listed
-5. Add your project to heroku with the command ``git remote add heroku project-link``. Project link can be found at your Heroku app > Settings > Heroku git URL
-7. Push to heroku ``git push -u heroku master``
-8. Create procfile ``echo web: python run.py > Procfile``, then ``git add -A``, ``git commit -m "Add Procfile"``, ``git push``
-9. If your project uses any keys hidden on the gitignore file, go to Heroku and add them there in Settings > Config Vars
-
-More information about deploying with Git [here](https://devcenter.heroku.com/articles/git).
 
 ### How to fork this repository
 
