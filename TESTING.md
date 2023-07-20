@@ -20,19 +20,8 @@ All HTML pages passed the W3C HTML validation as below.
 
 Pages tested:
 
-  - https://ci-milestone4.herokuapp.com/  
-No errors  
-  - https://ci-milestone4.herokuapp.com/accounts/login & https://ci-milestone4.herokuapp.com/accounts/signup    
-
-Warning related to the JS type attribute which comes from the allauth library not my code.  
-![Warning css](https://github.com/stefcruz/ci_milestone4/blob/master/readme/html-validation-login.png)
-
-  - https://ci-milestone4.herokuapp.com/contact  
-No errors 
-  - https://ci-milestone4.herokuapp.com/faq  
-No errors 
-  - https://ci-milestone4.herokuapp.com/events  
-No errors 
+- Homepage, Contact, FAQ, Signup, Login, Events.
+Couple of warnings and info, no big deal.
 
 ## W3C CSS Validator
 
