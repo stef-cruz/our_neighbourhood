@@ -290,7 +290,7 @@ ER diagram - only the project apps
 
 - GitHub  
   Used to store this project's source code.
-- Heroku  
+- Render  
   Used to host this app.
 - Pycharm  
   IDE of choice to write this project.
@@ -305,7 +305,7 @@ Testing documentation is available [here](https://github.com/stefcruz/ci_milesto
 
 ## Deployment
 
-This project's source code is hosted on GitHub and deployed to Heroku. It was created using Pycharm.
+This project's source code is hosted on GitHub and deployed to Render. It was created using Pycharm.
 
 A clone of this repository was made locally, and the changes were deployed directly in the master branch. The commands used to push the changes were `git add .`, `git commit -m "message"` and `git push`. All the commits can be clearly identified by a concise and meaningful message.
 
